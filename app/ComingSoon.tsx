@@ -11,13 +11,13 @@ const BelieveInUs = () => {
         <h1 className="ml-2 text-2xl font-bold text-gray-800 dark:text-white">I Believe in Us</h1>
       </div>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-        Just like this future website, our journey is currently under construction.
-        I believe that with love and patience, we&apos;ll continue bulding something truly special, brick by brick.
+        Just like this future website, our journey is currently under construction. 
+        I believe that with love and patience, we&apos;ll continue bulding something truly special, brick by brick. 
         I love you :)
       </p>
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <img src="/IMG_4079.jpg" alt="My Image" style={{ maxWidth: '200px', maxHeight: '200px', display: 'block', margin: '20px auto 0' }} />
-      </div>
+      </div> 
       </div>
   );
 };
