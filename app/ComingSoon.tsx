@@ -12,7 +12,7 @@ const BelieveInUs = () => {
       </div>
       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
         Just like this future website, our journey is currently under construction.
-        I believe that with love and patience, we&apos;ll continue bulding something truly special, brick by brick.
+        I believe that with love and patience, we'll continue bulding something truly special, brick by brick.
         I love you :)
       </p>
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
