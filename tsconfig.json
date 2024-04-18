@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -7,7 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",  // Changed from 'bundler' to 'node' for compatibility with Node.js module resolution
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -17,10 +18,18 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",  // Set base URL for non-relative module imports
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@heroicons/react/solid/*": ["node_modules/@heroicons/react/solid/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "node_modules/@heroicons/react/**/*"  // Include heroicons in the TypeScript context
+  ],
   "exclude": ["node_modules"]
 }
