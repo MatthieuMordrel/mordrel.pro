@@ -18,18 +18,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.text-balance {
+  text-wrap: balance;
 }
 
 * {
@@ -75,17 +68,12 @@ body {
 }
 
 .card-wrapper::before {
-  @apply animate-smooth-spin absolute h-[800%] w-[200%] content-[''];
+  @apply absolute h-[800%] w-[200%] animate-smooth-spin content-[''];
   background: transparent; /* Default background */
 }
 
 .card-wrapper:hover::before {
-  background: conic-gradient(
-    rgba(159, 130, 156, 0.4) 90deg,
-    rgba(159, 215, 202, 0.4) 180deg,
-    rgba(159, 130, 156, 0.4) 270deg,
-    transparent 360deg
-  ); /* Gradient appears on hover */
+  background: conic-gradient(rgba(159, 130, 156, 0.4) 90deg, rgba(159, 215, 202, 0.4) 180deg, rgba(159, 130, 156, 0.4) 270deg, transparent 360deg); /* Gradient appears on hover */
 }
 
 .card-content {
