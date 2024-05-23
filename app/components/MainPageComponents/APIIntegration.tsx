@@ -42,35 +42,20 @@ const ApiIntegrationShowcase = () => {
   }, [])
 
   return (
-    <div
-      className={
-        'pane flex max-h-full flex-row flex-wrap justify-between gap-4 bg-paneGrey font-bold md:p-6'
-      }
-    >
+    <div className={'pane flex max-h-full flex-row flex-wrap justify-between gap-4 bg-paneGrey font-bold md:p-6'}>
       <div className="flex min-w-[35%] max-w-[50%] flex-[1_1_0] flex-col justify-between p-4">
         <div className="">
-          <h2 className={`mb-2 text-lg md:text-xl lg:text-2xl `}>
-            Automate Your Workflow
-          </h2>
+          <h2 className={`mb-2 text-lg md:text-xl lg:text-2xl `}>Automate Your Workflow</h2>
           <p className="text-base text-textGrey md:text-lg">
-            <span className="text-techPurple">
-              Let the machine do the work for you.
-            </span>{' '}
-            Harness the power of APIs to integrate and automate your business
-            processes efficiently. We specialize in creating seamless
-            integrations that save time and reduce errors, allowing you to focus
-            on what's important.
+            <span className="text-techPurple">Let the machine do the work for you.</span>
+            Harness the power of APIs to integrate and automate your business processes efficiently. We specialize in creating seamless integrations that save time and reduce errors, allowing you to focus on what&apos;s important.
           </p>
         </div>
         <div className="text-white md:text-base">
           <ul className="flex list-none flex-col">
-            <li className={styles.item}>
-              Integrate with your current environment
-            </li>
+            <li className={styles.item}>Integrate with your current environment</li>
             <li className={styles.item}>Tailor our approach for your needs</li>
-            <li className={styles.item}>
-              Incorporated ideally to plan for the future
-            </li>
+            <li className={styles.item}>Incorporated ideally to plan for the future</li>
           </ul>
         </div>
       </div>

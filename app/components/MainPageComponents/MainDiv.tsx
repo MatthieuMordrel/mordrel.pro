@@ -14,19 +14,10 @@ const MainDiv = ({ className }: { className?: string }) => {
       </h1>
       <div className="font-bold">
         <p className="space-y-2">
+          <span className="block">The world of tomorrow leverages automations everywhere.</span>
+          <span className="block">Book today a starting session and we&apos;ll analyse all the potential for automating your work.</span>
           <span className="block">
-            The world of tomorrow leverages automations everywhere.
-          </span>
-          <span className="block">
-            Book today a starting session and we'll analyse all the potential
-            for automating your work.
-          </span>
-          <span className="block">
-            Discover our{' '}
-            <span className="text-white">
-              Excel automation, PowerBI propositions, API integrations and
-              tailored solutions.
-            </span>
+            Discover our <span className="text-white">Excel automation, PowerBI propositions, API integrations and tailored solutions.</span>
           </span>
         </p>
       </div>

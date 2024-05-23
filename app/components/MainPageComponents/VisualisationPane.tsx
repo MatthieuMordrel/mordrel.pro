@@ -23,14 +23,10 @@ const VisualisationPane = () => {
       </div>
       <div className="min-w-[35%] max-w-[50%] flex-[1_1_0] p-4 ">
         {/* <MdScreenSearchDesktop className="mb-6 size-8 rounded bg-techGrey fill-techBlue ring-8 ring-techGrey" /> */}
-        <h2 className={`mb-2 text-lg md:text-xl lg:text-2xl `}>
-          Get insights from your data
-        </h2>
+        <h2 className={`mb-2 text-lg md:text-xl lg:text-2xl `}>Get insights from your data</h2>
         <p className="mb-8 text-base text-textGrey md:text-lg">
-          <span className="text-techPurple">Don't let your data sleep.</span>{' '}
-          Unlock your potential of data visualization to maximize your business
-          insights. We specialize in crafting intuitive visual representations
-          that enhance decision-making and highlight key metrics.
+          <span className="text-techPurple">Don&apos;t let your data sleep.</span>
+          Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics.
         </p>
         <PowerBISkillsCard />
       </div>
