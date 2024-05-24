@@ -2,14 +2,14 @@
 
 import React, { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
-import styles from './styles/PowerBISkillsCard.module.css'
+import styles from '../styles/PowerBISkillsCard.module.css'
 
 interface DataItem {
   date: Date
   value: number
 }
 
-const D3Visualization = ({ data }: { data: DataItem[] }) => {
+const Graph = ({ data }: { data: DataItem[] }) => {
   const d3Container = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -39,10 +39,7 @@ const D3Visualization = ({ data }: { data: DataItem[] }) => {
         .domain([0, d3.max(data, (d) => d.value) as number])
         .range([height, 0])
 
-      svg
-        .append('g')
-        .attr('transform', `translate(0,${height})`)
-        .call(d3.axisBottom(x))
+      svg.append('g').attr('transform', `translate(0,${height})`).call(d3.axisBottom(x))
 
       svg.append('g').call(d3.axisLeft(y))
 
@@ -74,10 +71,7 @@ const D3Visualization = ({ data }: { data: DataItem[] }) => {
         .attr('fill', 'white')
 
       // Create a tooltip
-      const tooltip = d3
-        .select(d3Container.current)
-        .append('div')
-        .attr('class', styles.tooltip)
+      const tooltip = d3.select(d3Container.current).append('div').attr('class', styles.tooltip)
 
       svg
         .selectAll('.dot')
@@ -86,9 +80,7 @@ const D3Visualization = ({ data }: { data: DataItem[] }) => {
           tooltip.transition().duration(200).style('opacity', 0.9)
           tooltip
             // Start of Selection
-            .html(
-              `Date: ${(d as DataItem).date.toLocaleDateString()}<br/>Value: ${(d as DataItem).value}`
-            )
+            .html(`Date: ${(d as DataItem).date.toLocaleDateString()}<br/>Value: ${(d as DataItem).value}`)
             .style('left', `${event.pageX + 10}px`)
             .style('top', `${event.pageY - 28}px`)
         })
@@ -102,4 +94,4 @@ const D3Visualization = ({ data }: { data: DataItem[] }) => {
   return <div className="d3-container" ref={d3Container} />
 }
 
-export default D3Visualization
+export default Graph

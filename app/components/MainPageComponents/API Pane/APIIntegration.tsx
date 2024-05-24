@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css' // Styling theme, you can choose others
-import styles from './styles/API.module.css'
+import styles from '../styles/API.module.css'
 
 const ApiIntegrationShowcase = () => {
   const codeSnippet = `
@@ -37,9 +37,7 @@ const ApiIntegrationShowcase = () => {
     fetch_customer_data("https://api.example.com", "123456")
     `
 
-  useEffect(() => {
-    hljs.highlightAll() // Apply syntax highlighting when the component mounts
-  }, [])
+  const highlightedCode = hljs.highlight(codeSnippet, { language: 'python' }).value
 
   return (
     <div className={'pane flex max-h-full flex-row flex-wrap justify-between gap-4 bg-paneGrey font-bold md:p-6'}>
@@ -60,8 +58,8 @@ const ApiIntegrationShowcase = () => {
         </div>
       </div>
       <div className="flex-[0_0_1/2] p-4">
-        <pre className="max-h-full max-w-full overflow-auto border-borderGrey font-mono text-xs ">
-          <code className="language-python">{codeSnippet}</code>
+        <pre className="max-h-full max-w-full overflow-auto border-borderGrey bg-techGrey font-mono text-xs ">
+          <code className="language-python" dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
         </pre>
       </div>
     </div>

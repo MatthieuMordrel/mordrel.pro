@@ -1,16 +1,10 @@
-import ComingSoon from './components/OldComponents/ComingSoon' // Adjust the path as necessary
 import VideoPlayer from './components/MainPageComponents/VisualEffect'
-import MainDiv from './components/MainPageComponents/MainDiv'
+import MainDiv from './components/MainPageComponents/Main Pane/MainDiv'
 import StyledWrapper from './components/MainPageComponents/StyledWrapper'
-import ApiIntegrationShowcase from './components/MainPageComponents/APIIntegration'
-import ValueProposition from './components/MainPageComponents/AddedValue'
-import ExcelSkillsCard from './components/OldComponents/ExcelSkilsCard'
-import PowerBISkillsCard from './components/MainPageComponents/PowerBICard'
-import VisualisationPane from './components/MainPageComponents/VisualisationPane'
-import GradientBorder from './components/MainPageComponents/GradientBorder'
-import SkillToggleBar from './components/MainPageComponents/ExcelProposition'
-import ValuesComponent from './components/AboutComponents/AboutValues'
-import AutomateOnce from './components/OldComponents/AutomateOnce'
+import ApiIntegrationShowcase from './components/MainPageComponents/API Pane/APIIntegration'
+import ValueProposition from './components/MainPageComponents/Main Pane/AddedValue'
+import PaneDataViz from './components/MainPageComponents/Data VIz Pane/PaneDataViz'
+import ExcelProposition from './components/MainPageComponents/Excel Pane/ExcelProposition'
 
 export default function Home() {
   return (
@@ -30,7 +24,7 @@ export default function Home() {
 
         <div className="flex w-[95vw] flex-col items-center gap-y-28 md:w-[80vw] 3xl:w-[60vw]">
           <div id="visu-block" className="w-full scroll-mt-28">
-            <VisualisationPane />
+            <PaneDataViz />
           </div>
 
           <div className="">
@@ -40,7 +34,7 @@ export default function Home() {
           </div>
 
           <div className="w-full">
-            <SkillToggleBar />
+            <ExcelProposition />
           </div>
         </div>
       </div>

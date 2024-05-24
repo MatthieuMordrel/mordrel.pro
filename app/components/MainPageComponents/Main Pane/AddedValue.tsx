@@ -2,9 +2,9 @@ import React from 'react'
 import { HiAcademicCap } from 'react-icons/hi2'
 import { HiCpuChip } from 'react-icons/hi2'
 import { HiFaceSmile } from 'react-icons/hi2'
-import GradientBorder from './GradientBorder'
-import HoverBox from './HoverBox'
-import { PlayrightIcon } from './SVG'
+import GradientBorder from '../GradientBorder'
+import HoverBox from '../HoverBox'
+import { PlayrightIcon } from '../SVG'
 
 const ValueProposition = () => {
   return (
