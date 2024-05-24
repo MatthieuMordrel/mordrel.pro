@@ -1,16 +1,16 @@
-import VideoPlayer from './components/MainPageComponents/VisualEffect'
+import MainVideo from './ui/MainVideo'
 import MainDiv from './components/MainPageComponents/Main Pane/MainDiv'
-import StyledWrapper from './components/MainPageComponents/StyledWrapper'
-import ApiIntegrationShowcase from './components/MainPageComponents/API Pane/APIIntegration'
-import ValueProposition from './components/MainPageComponents/Main Pane/AddedValue'
-import PaneDataViz from './components/MainPageComponents/Data VIz Pane/PaneDataViz'
-import ExcelProposition from './components/MainPageComponents/Excel Pane/ExcelProposition'
+import StyledWrapper from './ui/StyledWrapper'
+import ApiIntegrationShowcase from './components/MainPageComponents/API Pane/_PaneAPI'
+import _PaneValue from './components/MainPageComponents/Main Pane/_PaneValue'
+import PaneDataViz from './components/MainPageComponents/Data VIz Pane/_PaneDataViz'
+import ExcelProposition from './components/MainPageComponents/Excel Pane/_PaneExcel'
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-techGrey pb-6">
       <div className="mt-8">
-        <VideoPlayer src="/PurpleVideo.mp4" />
+        <MainVideo src="/PurpleVideo.mp4" />
       </div>
       <div className="z-10 flex flex-col items-center">
         <div className="min-h-screen">
@@ -18,7 +18,7 @@ export default function Home() {
             <MainDiv />
           </div>
           <div className="w-[95vw] md:w-[75vw] 3xl:w-[60vw]">
-            <ValueProposition />
+            <_PaneValue />
           </div>
         </div>
 

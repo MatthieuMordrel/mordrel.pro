@@ -32,9 +32,7 @@ const Navbar = () => {
 
   // The function signature (event: React.MouseEvent<HTMLDivElement, MouseEvent>) defines the input of the function.
   // Here, event is an object that contains information about the mouse event, including where it occurred, the target element, and other metadata related to the mouse action.
-  const handleMouseLeave = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     // Schedule to close the dropdown after a delay of 300 milliseconds.
     timeoutIdRef.current = setTimeout(() => {
       // Check if the mouse did not leave to a child element of the dropdown.
@@ -70,18 +68,12 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 flex h-16 items-center justify-between border-b-2 border-borderGrey bg-techGrey p-4 text-white">
       <div className="mx-auto flex w-full items-center justify-center gap-14">
         {/* Dropdown menu container with event handlers for mouse enter and leave. This div refers to the dropdownRef*/}
-        <div
-          ref={dropdownRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {/* A link that might trigger the dropdown when hovered */}
+        <div ref={dropdownRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <div>
             <Link href="/" className="hover:text-techBlue">
               Services
             </Link>
           </div>
-          {/* Conditionally render the dropdown menu if isDropdownOpen state is true */}
           {isDropdownOpen && (
             <div className="absolute -ml-3 mt-2 w-48 rounded-lg border-2 border-borderGrey bg-techGrey py-3 text-white shadow-lg">
               {/* Individual links in the dropdown, each with hover styles */}
@@ -97,34 +89,23 @@ const Navbar = () => {
               >
                 PowerBI
               </Link> */}
-              <Link
-                href="/#api-block"
-                className="block px-4 py-1 hover:text-techBlue"
-              >
+              <Link href="/#api-block" className="block px-4 py-1 hover:text-techBlue">
                 API Integration
               </Link>
-              <Link
-                href="/#visu-block"
-                className="block px-4 py-1 hover:text-techBlue"
-              >
+              <Link href="/#visu-block" className="block px-4 py-1 hover:text-techBlue">
                 Visualisations
               </Link>
             </div>
           )}
         </div>
-        {/* Other links in the navbar */}
-        <Link href="/pages/about" className="hover:text-techBlue">
+        <Link href="/about" className="hover:text-techBlue">
           About
         </Link>
-        <Link href="/pages/pricing" className="hover:text-techBlue">
+        <Link href="/pricing" className="hover:text-techBlue">
           Pricing
         </Link>
       </div>
-      {/* Link contact button visible on larger screens */}
-      <Link
-        href="/pages/contact"
-        className="hidden rounded bg-techGreen px-4 py-2 hover:text-black md:block"
-      >
+      <Link href="/contact" className="hidden rounded bg-techGreen px-4 py-2 hover:text-black md:block">
         Contact
       </Link>
     </nav>

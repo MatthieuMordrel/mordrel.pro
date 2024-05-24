@@ -10,7 +10,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.19",
+    "@headlessui/react": "^2.0.3",
     "@heroicons/react": "^2.1.3",
     "@sendgrid/mail": "^8.1.3",
     "d3": "^7.9.0",
@@ -19,26 +19,26 @@
     "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.1.0"
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@types/d3": "^7.4.3",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.15",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.2.3",
     "postcss": "^8",
     "postcss-apply": "^0.12.0",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^6.0.1",
-    "postcss-preset-env": "^9.5.9",
+    "postcss-preset-env": "^9.5.14",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5"
   }
 }

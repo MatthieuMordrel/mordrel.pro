@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 // import { HiAcademicCap, HiCpuChip, HiFaceSmile } from 'react-icons/hi'
 
-import GradientBorder from './GradientBorder'
+import GradientBorder from '../../../ui/GradientBorder'
 
 const HoverBox = ({ topContent, bottomContent }: { topContent: JSX.Element; bottomContent: JSX.Element }) => {
   return (

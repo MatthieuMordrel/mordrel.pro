@@ -1,12 +1,10 @@
 import React from 'react'
-import { HiAcademicCap } from 'react-icons/hi2'
 import { HiCpuChip } from 'react-icons/hi2'
 import { HiFaceSmile } from 'react-icons/hi2'
-import GradientBorder from '../GradientBorder'
-import HoverBox from '../HoverBox'
-import { PlayrightIcon } from '../SVG'
+import { PlayrightIcon } from '../../../data/SVG'
+import HoverBox from './HoverBox'
 
-const ValueProposition = () => {
+const _PaneValue = () => {
   return (
     <div className="flex justify-center space-x-8 ">
       <div className="basis-1/3">
@@ -17,7 +15,7 @@ const ValueProposition = () => {
               <p>We are a client-first company. We listen to your needs and tailor our solutions to meet them.</p>
             </>
           }
-          bottomContent={<HiFaceSmile className="mb-2 h-12 w-12 text-white" />}
+          // bottomContent={<HiFaceSmile className="mb-2 h-12 w-12 text-white" />}
         />
       </div>
       <div className="basis-1/3">
@@ -50,11 +48,10 @@ const ValueProposition = () => {
               <p>Our team follows industry best practices to ensure the highest quality of our products and services.</p>
             </>
           }
-          bottomContent={<HiAcademicCap className="mb-2 h-12 w-12 text-white" />}
         />
       </div>
     </div>
   )
 }
 
-export default ValueProposition
+export default _PaneValue
