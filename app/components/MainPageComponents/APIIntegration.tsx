@@ -47,7 +47,7 @@ const ApiIntegrationShowcase = () => {
         <div className="">
           <h2 className={`mb-2 text-lg md:text-xl lg:text-2xl `}>Automate Your Workflow</h2>
           <p className="text-base text-textGrey md:text-lg">
-            <span className="text-techPurple">Let the machine do the work for you.</span>
+            <span className="text-techPurple">Let the machine do the work for you. </span>
             Harness the power of APIs to integrate and automate your business processes efficiently. We specialize in creating seamless integrations that save time and reduce errors, allowing you to focus on what&apos;s important.
           </p>
         </div>
