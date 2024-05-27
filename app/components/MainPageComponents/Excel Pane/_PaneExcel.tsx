@@ -1,6 +1,7 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ExcelContent from './ExcelContent'
+import 'animate.css/animate.min.css'
 
 const skills = [
   {
@@ -21,6 +22,13 @@ const skills = [
 
 const ExcelProposition = () => {
   const [activeSkill, setActiveSkill] = useState(skills[0])
+  const [animationClass, setAnimationClass] = useState('')
+
+  useEffect(() => {
+    setAnimationClass('animate__fadeInRight')
+    const timer = setTimeout(() => setAnimationClass(''), 1000) // Reset animation class after 1 second
+    return () => clearTimeout(timer)
+  }, [activeSkill])
 
   return (
     <div className="flex flex-col items-center py-20 text-white">
@@ -32,7 +40,7 @@ const ExcelProposition = () => {
           </button>
         ))}
       </div>
-      <div className="rounded-lg border-2 border-techPurple p-4">
+      <div className={`animate__animated ${animationClass} rounded-lg border-2 border-techPurple p-4`}>
         <h3 className="text-lg font-semibold">{activeSkill.name}</h3>
         <div>{activeSkill.content}</div>
       </div>

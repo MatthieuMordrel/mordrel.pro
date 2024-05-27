@@ -1,10 +1,20 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Flex } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/NavBar'
 import Footer from './components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+})
+
+const main_font = Roboto_Flex({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: {
