@@ -18,7 +18,7 @@ const main_font = Roboto_Flex({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Automation Services - Matthieu Mordrel', //the % is replaced with the specific page title
+    template: '%s | Automation Services - Matthieu Mordrel', // the % is replaced with the specific page title
     default: 'Automation Services'
   },
   description: 'Consulting services provided by Matthieu Mordrel'

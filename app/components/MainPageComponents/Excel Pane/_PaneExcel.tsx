@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import ExcelContent from './ExcelContent'
 import 'animate.css/animate.min.css'
+import { TextHighlight } from '@/app/ui/TextHighlight'
 
 const skills = [
   {
@@ -31,16 +32,21 @@ const ExcelProposition = () => {
   }, [activeSkill])
 
   return (
-    <div className="flex flex-col items-center py-20 text-white">
-      <h1 className="mb-16 text-lg font-bold md:text-xl lg:text-2xl">Maximize the power of Excel</h1>
-      <div className="mb-4 flex space-x-2">
+    <div className="flex flex-col items-center gap-y-2 py-20 text-white">
+      <TextHighlight className="title-responsive">Maximize the power of Excel</TextHighlight>
+      <p>We know Excel can stay an important part of any business, ensure you are maximizing its power an minimizing the trouble of your employees</p>
+      <div className="mt-6 flex space-x-2">
         {skills.map((skill) => (
-          <button key={skill.name} className={`rounded-lg border-2 px-4 py-2 text-sm font-medium ${activeSkill.name === skill.name ? 'border-techPurple bg-paneGrey text-techPurple' : 'border-borderGrey text-white'}`} onClick={() => setActiveSkill(skill)}>
+          <button
+            key={skill.name}
+            className={`rounded-lg border-2 px-4 py-2 text-sm font-medium ${activeSkill.name === skill.name ? 'border-techPurple bg-paneGrey text-techPurple' : 'border-borderGrey text-white'}`}
+            onClick={() => setActiveSkill(skill)}
+          >
             {skill.name}
           </button>
         ))}
       </div>
-      <div className={`animate__animated ${animationClass} rounded-lg border-2 border-techPurple p-4`}>
+      <div className={`animate__animated ${animationClass} mt-2 rounded-lg border-2 border-techPurple p-4`}>
         <h3 className="text-lg font-semibold">{activeSkill.name}</h3>
         <div>{activeSkill.content}</div>
       </div>

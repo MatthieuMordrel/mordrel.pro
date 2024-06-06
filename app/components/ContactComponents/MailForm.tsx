@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import FormField from './FormField'
+import styles from './MailForm.module.css'
 
-const MailForm = () => {
+const MailForm = ({ className }: { className?: string }) => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -36,16 +37,28 @@ const MailForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-4xl px-12 ">
+    <form onSubmit={handleSubmit} className={`mx-auto max-w-4xl px-12 ${className}`}>
       <div className="flex justify-between space-x-4">
         <FormField id="firstName" label="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="w-1/2" />
         <FormField id="lastName" label="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} className="w-1/2" />
       </div>
       <FormField id="company" label="Company" value={company} onChange={(e) => setCompany(e.target.value)} />
-      <FormField id="email" label="Email (required)" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <FormField id="message" label="Message (required)" type="textarea" value={message} onChange={(e) => setMessage(e.target.value)} required placeholder="Please tell us about your project, your goals and what you expect of the service !" />
+      <FormField id="email" label="Email*" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      <FormField
+        id="message"
+        label="Message*"
+        type="textarea"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        required
+        className="bold"
+        placeholder="Please tell us about your project, your goals and what you expect of the service !"
+      />
 
-      <button type="submit" className="mt-4 w-full transform rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-offset-2">
+      <button
+        type="submit"
+        className={`${styles.button} mt-4 w-full transform rounded-lg px-8 py-4 text-lg font-semibold text-white shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-offset-2`}
+      >
         Send Message
       </button>
       <p className="mt-6 text-center text-lg font-medium text-gray-200">{status}</p>

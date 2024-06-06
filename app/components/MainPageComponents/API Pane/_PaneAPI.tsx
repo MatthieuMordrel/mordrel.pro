@@ -1,9 +1,11 @@
 'use client'
 
-import React from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css' // Styling theme, you can choose others
 import styles from '../styles/API.module.css'
+import { BorderBeam } from '@/app/ui/BorderBeam'
+import { TextHighlight } from '@/app/ui/TextHighlight'
+import { FontTextPanes } from '@/app/ui/FontTextPanes'
 
 const ApiIntegrationShowcase = () => {
   const codeSnippet = `
@@ -40,20 +42,23 @@ const ApiIntegrationShowcase = () => {
   const highlightedCode = hljs.highlight(codeSnippet, { language: 'python' }).value
 
   return (
-    <div className={'pane flex max-h-full flex-row flex-wrap justify-between gap-4 bg-paneGrey font-bold md:p-6'}>
+    <div className="relative flex max-h-full flex-row flex-wrap justify-between gap-4 overflow-hidden  md:p-6">
       <div className="flex min-w-[35%] max-w-[50%] flex-[1_1_0] flex-col justify-between p-4">
         <div className="">
-          <h2 className={`mb-2 text-lg md:text-xl lg:text-2xl `}>Automate Your Workflow</h2>
-          <p className="text-base text-textGrey md:text-lg">
-            <span className="text-techPurple">Let the machine do the work for you. </span>
-            Harness the power of APIs to integrate and automate your business processes efficiently. We specialize in creating seamless integrations that save time and reduce errors, allowing you to focus on what&apos;s important.
+          <TextHighlight className="mb-2 text-2xl md:text-3xl lg:text-4xl">Improve your Data Management</TextHighlight>
+          <p className="text-base text-textGrey md:text-xl">
+            <span className="font-extrabold text-techPurple">Let the machine do the work for you. </span>
+            <FontTextPanes className=" ">
+              Harness the power of APIs to integrate and automate your business processes efficiently. <br />
+              We specialize in creating seamless integrations that save time and reduce errors, allowing you to focus on what&apos;s important.
+            </FontTextPanes>
           </p>
         </div>
         <div className="text-white md:text-base">
           <ul className="flex list-none flex-col">
             <li className={styles.item}>Integrate with your current environment</li>
             <li className={styles.item}>Tailor our approach for your needs</li>
-            <li className={styles.item}>Incorporated ideally to plan for the future</li>
+            <li className={styles.item}>Incorporated to plan for the future</li>
           </ul>
         </div>
       </div>

@@ -10,11 +10,7 @@ const StyledWrapper: React.FC<StyledWrapperProps> = ({ children }) => {
     // Check if the child is a React element
     if (React.isValidElement(child)) {
       // Apply styles directly to the divs that wrap your actual components
-      return (
-        <div className={`${child.props.className || ''} border-white`}>
-          {child}
-        </div>
-      )
+      return <div className={`${child.props.className || ''}`}>{child}</div>
     }
     return child
   })

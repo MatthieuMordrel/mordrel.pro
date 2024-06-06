@@ -3,24 +3,32 @@ import React from 'react'
 import MailForm from '../../components/ContactComponents/MailForm'
 import ContactText from '../../components/ContactComponents/ContactText'
 import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
+import { MailIconAnimated } from '@/app/components/ContactComponents/IconMail'
 
 // Contact page
 export default function ContactPage() {
   return (
-    <div className="flex h-[100vh] flex-col bg-techGrey">
-      <div className="py-12">
+    <div className="flex min-h-[100vh] flex-col space-y-2 bg-techGrey">
+      <div className="mx-auto mt-12">
         <ContactText />
       </div>
-      <div className="">
-        <MailForm />
+      <div className="flex w-full justify-between">
+        <div className="w-[60%] ">
+          <MailForm className="w-full" />
+        </div>
+        <div className="w-[40%]">
+          <MailIconAnimated className="max-h-[33rem]" />
+        </div>
       </div>
       <div className="mb-4 flex items-center justify-center">
-        <div className="flex flex-col items-center space-y-2 rounded-lg bg-techGrey p-4 shadow-lg">
-          <p className="text-lg font-semibold text-white">Or contact me directly at: </p>
-          <div className="flex items-center space-x-2">
-            <EnvelopeIcon className="h-8 w-8 text-techBlue" />
-            <span className="text-lg font-semibold text-techBlue">matthieu@mordrel.pro</span>
-          </div>
+        <div className="mt-10 flex flex-row items-center space-x-2 rounded-lg p-4">
+          <EnvelopeIcon className="h-6 w-6"> </EnvelopeIcon>
+          <p className="text-lg font-semibold text-white">
+            Or contact me directly at&nbsp;
+            <a href="mailto:matthieu@mordrel.pro" target="_blank" className="text-lg font-semibold underline">
+              matthieu@mordrel.pro
+            </a>
+          </p>
         </div>
       </div>
     </div>

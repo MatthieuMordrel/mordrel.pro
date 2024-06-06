@@ -3,6 +3,8 @@ import styles from './API.module.css'
 import { MdScreenSearchDesktop } from 'react-icons/md'
 import Graph from './Graph'
 import PowerBISkillsCard from './PowerBICard'
+import { TextHighlight } from '@/app/ui/TextHighlight'
+import { FontTextPanes } from '@/app/ui/FontTextPanes'
 
 const currentYear = new Date().getFullYear()
 
@@ -17,19 +19,20 @@ const data = [
 
 const PaneDataViz = () => {
   return (
-    <div className="flex flex-col items-center bg-techGrey p-8 font-bold">
-      <h2 className="mb-6 text-center text-2xl font-extrabold text-white md:text-4xl lg:text-5xl">Get insights from your data</h2>
-      <div className="flex w-full flex-row flex-wrap justify-between">
-        <div className="flex-[0_0_1/2] self-center p-4">
-          <Graph data={data} />
-        </div>
-        <div className="min-w-[35%] max-w-[50%] flex-[1_1_0] p-4">
-          <p className="mb-8 text-base text-textGrey md:text-lg">
-            <span className="text-techPurple">Don&apos;t let your data sleep. </span>
-            Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics.
-          </p>
-          <PowerBISkillsCard />
-        </div>
+    <div className="flex w-full flex-wrap justify-between p-6">
+      <div className="self-center">
+        <Graph data={data} />
+      </div>
+      <div className="min-w-[35%] max-w-[50%] flex-1">
+        <TextHighlight className="mb-2 text-2xl md:text-3xl lg:text-4xl">Get insights from your data</TextHighlight>
+        <p className="mb-8 text-base text-textGrey md:text-lg">
+          <span className="text-techPurple">Don&apos;t let your data sleep. </span>
+          <FontTextPanes>
+            Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations
+            that enhance decision-making and highlight key metrics.
+          </FontTextPanes>
+        </p>
+        <PowerBISkillsCard />
       </div>
     </div>
   )

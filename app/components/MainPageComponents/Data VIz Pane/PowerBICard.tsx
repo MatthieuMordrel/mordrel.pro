@@ -1,4 +1,5 @@
 // components/PowerBISkillsCard.js
+import { FontTextPanes } from '@/app/ui/FontTextPanes'
 import React from 'react'
 
 const PowerBISkillsCard = () => {
@@ -30,7 +31,9 @@ const PowerBISkillsCard = () => {
             <span className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-textGrey"></span>
             <div>
               <h3 className="font-semibold text-white">{skill.name}</h3>
-              <p className="text-sm text-textGrey">{skill.description}</p>
+              <p className="text-sm text-textGrey">
+                <FontTextPanes> {skill.description}</FontTextPanes>
+              </p>
             </div>
           </li>
         ))}
