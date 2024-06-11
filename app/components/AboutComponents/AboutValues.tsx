@@ -1,7 +1,5 @@
 // ValuesComponent.jsx or ValuesComponent.tsx if you are using TypeScript
-import { HiBookOpen } from 'react-icons/hi2'
-import { HiChip } from 'react-icons/hi'
-import { HiFaceSmile } from 'react-icons/hi2'
+import { BookOpen, Cpu, Smile } from 'lucide-react'
 
 const ValuesComponent = () => {
   return (
@@ -13,15 +11,15 @@ const ValuesComponent = () => {
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-around">
           <div className="flex w-1/3 flex-col items-center p-4">
-            <HiChip className="mb-2 h-12 w-12" /> {/* Icon component */}
+            <Cpu className="mb-2 h-12 w-12" /> {/* Icon component */}
             <p className="text-lg font-medium">Cutting Edge Technology</p>
           </div>
           <div className="flex w-1/3 flex-col items-center p-4">
-            <HiBookOpen className="mb-2 h-12 w-12" /> {/* Icon component */}
+            <BookOpen className="mb-2 h-12 w-12" /> {/* Icon component */}
             <p className="text-lg font-medium">Best practices first</p>
           </div>
           <div className="flex w-1/3 flex-col items-center p-4">
-            <HiFaceSmile className="mb-2 h-12 w-12" /> {/* Icon component */}
+            <Smile className="mb-2 h-12 w-12" /> {/* Icon component */}
             <p className="text-lg font-medium">Client Oriented</p>
           </div>
         </div>
