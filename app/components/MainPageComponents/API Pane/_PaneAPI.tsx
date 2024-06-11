@@ -1,11 +1,9 @@
 'use client'
-
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css' // Styling theme, you can choose others
 import styles from '../styles/API.module.css'
-import { BorderBeam } from '@/app/ui/BorderBeam'
-import { TextHighlight } from '@/app/ui/TextHighlight'
-import { FontTextPanes } from '@/app/ui/FontTextPanes'
+import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
 
 const ApiIntegrationShowcase = () => {
   const codeSnippet = `

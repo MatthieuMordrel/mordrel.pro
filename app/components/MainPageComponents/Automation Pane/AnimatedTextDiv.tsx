@@ -1,8 +1,7 @@
-import GradualSpacing from '@/app/ui/GradualSpacing'
-import { motion } from 'framer-motion'
-import { FontTextPanes } from '@/app/ui/FontTextPanes'
-import { BatteryCharging, Armchair, HandCoins, Smile, Target } from 'lucide-react'
-import CustomIcon from '@/app/ui/LucideIcons'
+import GradualSpacing from '@/app/ui/Effects/GradualSpacing'
+import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
+import { HandCoins, Smile, Target } from 'lucide-react'
+import CustomIcon from '@/app/ui/Components/LucideIcons'
 
 interface AnimateTextdivProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string

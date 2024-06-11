@@ -61,8 +61,8 @@ const Navbar = () => {
         <div className="flex h-full w-1/3 ">
           <div className="flex h-full w-full items-center gap-x-4">
             <div className="relative h-full w-16">
-              <Image src="/M5.png" alt="LogoIcon" fill={true} className="p-2" />
-            </div>{' '}
+              <Image src="/M5.png" alt="LogoIcon" fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="p-2" />
+            </div>
             <div className=""></div>
           </div>
         </div>

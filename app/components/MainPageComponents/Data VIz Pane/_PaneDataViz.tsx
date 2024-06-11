@@ -1,10 +1,8 @@
 import React from 'react'
-import styles from './API.module.css'
-import { MdScreenSearchDesktop } from 'react-icons/md'
 import Graph from './Graph'
 import PowerBISkillsCard from './PowerBICard'
-import { TextHighlight } from '@/app/ui/TextHighlight'
-import { FontTextPanes } from '@/app/ui/FontTextPanes'
+import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
 
 const currentYear = new Date().getFullYear()
 

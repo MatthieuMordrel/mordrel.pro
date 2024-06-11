@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '../lib/utils'
+import { cn } from '../../lib/utils'
 import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
@@ -34,7 +34,7 @@ export default function WordRotate({
   }, [words, duration])
 
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <AnimatePresence mode="wait">
         <motion.h1 key={words[index]} className={cn(className, 'uppercase')} {...framerProps}>
           {words[index]}

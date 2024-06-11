@@ -6,8 +6,7 @@ const ComingSoon = () => {
     <div className="m-4 rounded-lg border bg-techGrey px-6 py-4 shadow-lg">
       <h1 className="text-2xl font-bold">We&apos;re Launching Soon</h1>
       <p className="mt-2 text-sm dark:text-techBlue">
-        Our website is currently under construction. We will be here soon with
-        our new awesome site. Please hang on while we get to work !
+        Our website is currently under construction. We will be here soon with our new awesome site. Please hang on while we get to work !
       </p>
       {/* <form className="mt-4 flex justify-center">
         <input

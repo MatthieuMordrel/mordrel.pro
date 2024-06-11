@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/app/ui/AccordionComp'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/app/ui/Components/AccordionComp'
 
 export default function FAQ({ className }: { className?: string }) {
   const faqData = [

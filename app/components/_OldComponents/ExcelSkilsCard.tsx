@@ -17,8 +17,7 @@ const ExcelSkillsCard = () => {
     },
     {
       name: 'Dynamic Arrays',
-      description:
-        'Leverage advanced functions like FILTER and BYROW for dynamic control over your spreadsheets.'
+      description: 'Leverage advanced functions like FILTER and BYROW for dynamic control over your spreadsheets.'
     }
   ]
 

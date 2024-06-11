@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { cn } from '../lib/utils'
+import { cn } from '../../lib/utils'
 import styles from './GradualSpacing.module.css'
 
 interface GradualSpacingProps {

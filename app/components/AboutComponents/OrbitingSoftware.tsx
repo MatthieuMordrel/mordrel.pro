@@ -1,4 +1,4 @@
-import OrbitingCircles from '@ui/OrbitingCircles'
+import OrbitingCircles from '@/app/ui/Components/OrbitingCircles'
 import { IconProps } from '@radix-ui/react-icons/dist/types'
 import Yoga from './Yoga'
 import Image from 'next/image'

@@ -1,4 +1,4 @@
-import { TextHighlight } from '@/app/ui/TextHighlight'
+import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
 import { AnimateTextDiv } from '@/app/components/MainPageComponents/Automation Pane/AnimatedTextDiv'
 import { GlobeDemo } from '@/app/components/MainPageComponents/Automation Pane/Globe'
 
