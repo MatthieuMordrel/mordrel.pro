@@ -29,7 +29,7 @@ export default function Home() {
               <div>Test</div>
             </ScrollTriggered>
           </div> */}
-        <Pane className="relative flex h-[75vh] w-full flex-col justify-center overflow-hidden ">
+        <Pane className="relative flex h-[75vh] w-full flex-col justify-center overflow-hidden">
           <AutomationPane />
         </Pane>
 

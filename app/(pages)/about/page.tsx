@@ -1,13 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
-import Aboutvideo from '../../components/AboutComponents/VideoBanner'
-import StyledWrapper from '../../ui/Effects/StyledWrapper'
-import AboutPane from '../../components/AboutComponents/AboutPane'
-import ValuesComponent from '../../components/AboutComponents/AboutValues'
-import CustomizedTimeline from '@/app/components/Pricing Components/Timeline'
+import Aboutvideo from '@/app/components/AboutComponents/VideoBanner'
+import StyledWrapper from '@ui/Effects/StyledWrapper'
+import AboutPane from '@/app/components//AboutComponents/AboutPane'
+import ValuesComponent from '@/app/components/AboutComponents/AboutValues'
 import { OribitingSoftware } from '@/app/components/AboutComponents/OrbitingSoftware'
-import Yoga from '@/app/components/AboutComponents/Yoga'
 
 export default function About() {
   return (
