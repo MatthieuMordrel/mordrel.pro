@@ -2,26 +2,7 @@ import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
 import { Pane } from '@/app/ui/Effects/Pane'
 import { Check } from 'lucide-react'
 import Image from 'next/image'
-
-interface BestPracticesListProps {
-  items: string[]
-}
-
-//Export list in Carousel
-export const BestPracticesList: React.FC<BestPracticesListProps> = ({ items }) => {
-  return (
-    <ul className="mt-2 flex flex-1 flex-col">
-      <FontTextPanes className="flex flex-1 flex-col gap-y-2">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-x-2">
-            <CheckMarkLucid />
-            {item}
-          </li>
-        ))}
-      </FontTextPanes>
-    </ul>
-  )
-}
+import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
 
 //Export icons for list
 export const CheckMarkLucid = () => (
@@ -54,7 +35,13 @@ interface CarouselComponentProps {
 }
 
 //export the full carouselcomponent for each skill
-export const CarouselComponent: React.FC<CarouselComponentProps> = ({ title, description, items, imageSrc, imageAlt }) => {
+export const CarouselComponent: React.FC<CarouselComponentProps> = ({
+  title,
+  description,
+  items,
+  imageSrc,
+  imageAlt
+}) => {
   return (
     <div className="flex h-full gap-x-4">
       <div className="relative flex-1">
@@ -70,7 +57,7 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({ title, des
         <TopDiv title={title} description={description} />
         <Pane includeBorderBeam={false} className="flex h-[50%] w-full flex-col p-6">
           <h2 className="mb-4 text-center text-xl font-bold">Let us help ! </h2>
-          <BestPracticesList items={items}></BestPracticesList>
+          <BulletPointsList items={items} />
         </Pane>
       </div>
     </div>

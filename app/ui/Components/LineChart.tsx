@@ -7,16 +7,16 @@ interface LineChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const formatCurrency = (value: number) => {
   if (value >= 1e9) {
-    return `${(value / 1e9).toFixed(1)}b`
+    return `$${(value / 1e9).toFixed(1)}b`
   } else if (value >= 1e6) {
-    return `${(value / 1e6).toFixed(1)}m`
+    return `$${(value / 1e6).toFixed(1)}m`
   } else if (value >= 1e3) {
-    return `${(value / 1e3).toFixed(1)}k`
+    return `$${(value / 1e3).toFixed(1)}k`
   } else {
-    return value.toString()
+    return `$${value.toFixed(2)}`
   }
-  // Start of Selection
 }
+// Start of Selection
 
 export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [] }) => {
   console.log(colors)
@@ -28,10 +28,20 @@ export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [
   }
   const maxYAxis = findMaxRevenue(data)
 
+  const formattedData = data.map((item) => {
+    const date = new Date(item.Date)
+    const quarter = Math.floor(date.getMonth() / 3) + 1
+    const year = date.getFullYear().toString().slice(-2)
+    return {
+      ...item,
+      Date: `Q${quarter} ${year}`
+    }
+  })
+
   return (
     <div className="h-full w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data} margin={{ top: 0, right: 30, left: 20, bottom: 0 }}>
+        <LineChart data={formattedData} margin={{ top: 0, right: 30, left: 20, bottom: 0 }}>
           <XAxis dataKey="Date" />
           <YAxis type="number" tickFormatter={formatCurrency} domain={[0, maxYAxis]} />
           <Tooltip

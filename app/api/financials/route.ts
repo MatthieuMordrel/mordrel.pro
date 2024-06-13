@@ -6,11 +6,11 @@ export async function POST(req: NextRequest) {
   console.log(label.label)
   const api_key = process.env.ALPHAVINTAGE_API_KEY
   const url = `https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=${label.label}&apikey=${api_key}`
-  console.log(url)
+  // console.log(url)
   // const response = await fetch(url)
   const data = mockData
   // const data = await response.json()
-  console.log(data)
+  // console.log(data)
   return NextResponse.json(data)
 }
 

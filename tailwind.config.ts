@@ -23,7 +23,13 @@ const config: Config = {
         borderGrey: '#262626',
         paneGrey: '#232323',
         textGrey: '#676767',
-        activeBorderGrey: '#434343'
+        activeBorderGrey: '#434343',
+        primary: {
+          DEFAULT: 'hsl(222.2, 47.4%, 11.2%)', // Your primary color
+          foreground: 'hsl(210, 40%, 98%)' // Your primary foreground color
+        },
+        background: 'hsl(0, 0%, 100%)', // Background color
+        foreground: 'hsl(222.2, 47.4%, 11.2%)' // Foreground color
       },
       screens: {
         '3xl': '2000px'

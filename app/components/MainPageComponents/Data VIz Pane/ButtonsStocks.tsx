@@ -1,12 +1,14 @@
 'use client'
-import React from 'react'
-import ButtonsToggle from '@ui/Components/ButtonsToggle'
+import React, { useEffect } from 'react'
+import ButtonsList from '@/app/ui/Components/ButtonsList'
 
 const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
   onFetchComplete
 }) => {
+  const stocks = ['MSFT', 'AAPL', 'NVDA']
+
   const fetchData = async (label: string) => {
-    console.log(`Button clicked: ${label}`)
+    // console.log(`Button clicked: ${label}`)
     try {
       const response = await fetch('/api/financials', {
         method: 'POST',
@@ -19,7 +21,7 @@ const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
         throw new Error('Network response was not ok')
       }
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       const modifiedData = data.annualReports
         .map((report: any) => ({
           Date: report.fiscalDateEnding,
@@ -33,11 +35,18 @@ const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
     }
   }
 
+  useEffect(() => {
+    fetchData('MSFT')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className="flex w-full items-center justify-center">
-      <div className="flex min-w-[50%] justify-between">
-        <ButtonsToggle className="relative" labels={['MSFT', 'AAPL', 'NVDA']} onClick={fetchData} />
-      </div>
+      <ButtonsList
+        className="relative flex gap-x-4"
+        items={stocks}
+        onActiveIndexChange={(index) => fetchData(stocks[index])}
+      />
     </div>
   )
 }
