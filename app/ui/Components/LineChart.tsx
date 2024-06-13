@@ -1,9 +1,17 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { colors } from '@lib/colors' // Adjust the path as necessary
+import { colors as originalColors } from '@lib/colors' // Adjust the path as necessary
 
 interface LineChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   data: any[]
 }
+
+interface ExtendedColors {
+  techGrey: string
+  techPurple: string
+  techBlue: string
+  // Add other color properties as needed
+}
+const colors: ExtendedColors = originalColors as unknown as ExtendedColors
 
 const formatCurrency = (value: number) => {
   if (value >= 1e9) {
@@ -20,6 +28,7 @@ const formatCurrency = (value: number) => {
 
 export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [] }) => {
   console.log(colors)
+  console.log(colors.techGrey)
 
   const findMaxRevenue = (data: any[]) => {
     const maxRevenue = Math.max(...data.map((item) => item.Revenue))
