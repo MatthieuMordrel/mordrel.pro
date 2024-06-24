@@ -16,6 +16,8 @@ const main_font = Roboto_Flex({
   display: 'swap'
 })
 
+// export const fetchCache = 'default-cache'
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Automation Services - Matthieu Mordrel', // the % is replaced with the specific page title

@@ -12,13 +12,13 @@ interface CustomIconProps {
 const CustomIcon: React.FC<CustomIconProps> = ({
   icon: Icon,
   size = 30,
-  color = 'black',
-  backgroundColor = '#e0e0e0',
-  borderRadius = '7px',
+  color = 'white',
+  backgroundColor = '', //#e0e0e0
+  borderRadius = '0px',
   strokeWidth = 1
 }) => {
   return (
-    <div className={`inline-flex items-center justify-center border-activeBorderGrey p-2`} style={{ backgroundColor, borderRadius }}>
+    <div className={``} style={{ backgroundColor, borderRadius }}>
       <Icon size={size} color={color} strokeWidth={strokeWidth} />
     </div>
   )

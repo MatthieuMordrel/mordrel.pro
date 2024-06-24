@@ -18,6 +18,7 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
   return (
     <>
       <ButtonsList
+        classButton="px-4 py-2"
         onActiveIndexChange={setActiveIndex}
         items={items.map((item) => item.title)}
         className="mt-2 flex gap-x-2"

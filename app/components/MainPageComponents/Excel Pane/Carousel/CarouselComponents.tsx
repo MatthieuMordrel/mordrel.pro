@@ -49,8 +49,9 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({
           src={imageSrc}
           alt={imageAlt}
           fill={true}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="100vw"
           className="rounded-xl object-cover p-1"
+          quality={100}
         />
       </div>
       <div className="flex h-full max-w-[30%] flex-initial flex-col items-center justify-between gap-y-6">

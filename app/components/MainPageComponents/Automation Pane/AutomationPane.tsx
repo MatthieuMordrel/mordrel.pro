@@ -7,8 +7,8 @@ const AutomationPane = () => {
     <>
       <div className="title-responsive flex h-[20%] w-full flex-col justify-center gap-y-2 text-center">
         <TextHighlight>Automate your processes</TextHighlight>
-        <p className="text-balance text-lg tracking-tight text-white  md:text-xl">
-          Ensure your business stay connect during all part of its processes.
+        <p className="text-balance text-lg tracking-tight text-white md:text-xl">
+          Ensure your business stay connected during all part of its processes.
         </p>
       </div>
       <div className="wrap flex h-[80%] flex-col md:flex-row">

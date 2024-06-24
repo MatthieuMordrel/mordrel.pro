@@ -23,7 +23,8 @@
       "@/*": ["./*"],
       "@ui/*": ["app/ui/*"],
       "@lib/*": ["app/lib/*"],
-      "@data/*": ["app/data/*"]
+      "@data/*": ["app/data/*"],
+      "@components/*": ["app/components/*"]
     }
   },
   "typeRoots": ["./node_modules/@types", "./"],

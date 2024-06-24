@@ -14,7 +14,7 @@ const PowerPivotContent = () => {
       title="Power Pivot"
       description="Efficiently manage large datasets and establish connections through relationships."
       items={listContent}
-      imageSrc="/PowerPivot.jpg"
+      imageSrc="/Excel Images/PowerPivot.jpg"
       imageAlt="PowerQueryImage"
     />
   )

@@ -14,7 +14,7 @@ const PowerQueryContent = () => {
       title="Power Query"
       description="Automate and optimize your ETL processes in Excel and PowerBI."
       items={listContent}
-      imageSrc="/PowerQuery.png"
+      imageSrc="/Excel Images/PowerQuery.png"
       imageAlt="PowerQueryImage"
     />
   )

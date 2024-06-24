@@ -14,7 +14,7 @@ const VBAContent = () => {
       title="VBA"
       description="Enhance Excel functionality with Visual Basic for Applications."
       items={listContent}
-      imageSrc="/VBA.webp"
+      imageSrc="/Excel Images/VBA.webp"
       imageAlt="VBAImage"
     />
   )

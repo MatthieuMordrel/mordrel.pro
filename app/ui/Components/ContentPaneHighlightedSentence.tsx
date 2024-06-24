@@ -10,7 +10,7 @@ export const HighlightedSentenceContent: React.FC<
 > = ({ HighlightedSentence, MainContent, className }) => (
   <>
     <p className={`text-base text-textGrey md:text-xl ${className}`}>
-      <span className="font-extrabold text-techPurple">{HighlightedSentence} </span>
+      <span className="font-bold text-techPurple">{HighlightedSentence} </span>
       <FontTextPanes>{MainContent}</FontTextPanes>
     </p>
   </>

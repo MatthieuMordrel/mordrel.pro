@@ -3,18 +3,16 @@ import { NextResponse, NextRequest } from 'next/server'
 export async function POST(req: NextRequest) {
   console.log('Entered the route handler')
   const label = await req.json()
-  console.log(label.label)
+  // console.log(label.label)
   const api_key = process.env.ALPHAVINTAGE_API_KEY
   const url = `https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=${label.label}&apikey=${api_key}`
-  console.log(url)
-  const response = await fetch(url, { next: { revalidate: 3600 * 24 } })
-  console.log('Response Headers:', JSON.stringify(Array.from(response.headers.entries())))
-
-  // const data = mockData
-  const data = await response.json()
-  // console.log(data)
+  // console.log('request URL: ', url)
+  const response = await fetch(url, { next: { revalidate: 24 * 3600 } })
+  // console.log('Response Headers:', JSON.stringify(Array.from(response.headers.entries())))
+  // const data = await response.json()
+  const data = mockData
   const jsonResponse = NextResponse.json(data)
-  console.log(jsonResponse)
+  // console.log('NextResponse:', jsonResponse)
   return jsonResponse
 }
 

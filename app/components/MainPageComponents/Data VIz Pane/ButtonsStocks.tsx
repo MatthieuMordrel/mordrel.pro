@@ -26,7 +26,7 @@ const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
         .map((report: any) => ({
           Date: report.fiscalDateEnding,
           Revenue: report.totalRevenue,
-          EBTIDA: report.operatingIncome
+          EBITDA: report.operatingIncome
         }))
         .reverse()
       onFetchComplete(modifiedData)
@@ -41,8 +41,9 @@ const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
   }, [])
 
   return (
-    <div className="flex w-full items-center justify-center">
+    <div className="flex items-center justify-center">
       <ButtonsList
+        classButton="px-4 py-2"
         className="relative flex gap-x-4"
         items={stocks}
         onActiveIndexChange={(index) => fetchData(stocks[index])}

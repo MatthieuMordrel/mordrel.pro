@@ -8,6 +8,7 @@ import ExcelProposition from './components/MainPageComponents/Excel Pane/_PaneEx
 import { TypewriterEffectSmoothDemo } from './components/MainPageComponents/Link To Contact form/LinkToContactForm'
 import { Pane } from '@/app/ui/Effects/Pane'
 import AutomationPane from './components/MainPageComponents/Automation Pane/AutomationPane'
+import Examples from './components/MainPageComponents/Examples/Examples'
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
         <div className="w-full">
           <ExcelProposition />
         </div>
+        <Examples />
 
         <TypewriterEffectSmoothDemo />
       </section>

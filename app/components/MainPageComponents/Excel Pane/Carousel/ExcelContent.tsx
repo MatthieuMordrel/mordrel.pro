@@ -14,7 +14,7 @@ const AdvancedFormulasContent = () => {
       title="Advanced Excel Formulas"
       description="Unlock the full potential of Excel with advanced formula techniques."
       items={listContent}
-      imageSrc="/Formulas.jpg"
+      imageSrc="/Excel Images/Formulas.jpg"
       imageAlt="AdvancedFormulasImage"
     />
   )
