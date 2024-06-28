@@ -2,23 +2,23 @@ import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
 import { AnimateTextDiv } from '@/app/components/MainPageComponents/Automation Pane/AnimatedTextDiv'
 import { GlobeDemo } from '@/app/components/MainPageComponents/Automation Pane/Globe'
 
-const AutomationPane = () => {
-  return (
-    <>
-      <div className="title-responsive flex h-[20%] w-full flex-col justify-center gap-y-2 text-center">
+const AutomationPane = () => (
+  <>
+    <div className="grid h-full grid-cols-1 grid-rows-[auto_auto_1fr] gap-y-2 p-4 md:grid-cols-2 md:grid-rows-[auto_1fr]">
+      <div className="title-responsive col-span-full row-span-1 flex h-auto w-full flex-col justify-center gap-y-2 text-center">
         <TextHighlight>Automate your processes</TextHighlight>
-        <p className="text-balance text-lg tracking-tight text-white md:text-xl">
-          Ensure your business stay connected during all part of its processes.
+        <p className="hidden text-balance text-base tracking-tight text-white sm:block sm:text-lg md:text-xl">
+          Ensure your business stays connected during all parts of its processes.
         </p>
       </div>
-      <div className="wrap flex h-[80%] flex-col md:flex-row">
-        <AnimateTextDiv className="py-4" />
-        <div className="h-full w-full md:w-1/2">
-          <GlobeDemo />
-        </div>
+
+      <AnimateTextDiv className="col-span-1 row-start-2 w-full pt-4 md:py-4" />
+
+      <div className="col-span-1 row-span-1 row-start-3 md:col-start-2 md:row-start-2">
+        <GlobeDemo />
       </div>
-    </>
-  )
-}
+    </div>
+  </>
+)
 
 export default AutomationPane

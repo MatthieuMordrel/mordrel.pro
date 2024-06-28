@@ -13,7 +13,7 @@ export const AreaChartComponent: React.FC<AreaChartComponentProps> = ({ data = [
   return (
     <div className="h-full w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={formattedData} margin={{ top: 0, right: 30, left: 20, bottom: 0 }}>
+        <AreaChart data={formattedData} margin={{ top: 15, right: 10, left: 20, bottom: 0 }}>
           <XAxis dataKey="Date" tickMargin={10} />
           <YAxis
             type="number"

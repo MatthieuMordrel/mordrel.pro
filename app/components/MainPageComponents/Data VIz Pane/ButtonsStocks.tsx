@@ -2,9 +2,11 @@
 import React, { useEffect } from 'react'
 import ButtonsList from '@/app/ui/Components/ButtonsList'
 
-const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
-  onFetchComplete
-}) => {
+interface ButtonsStocksProps extends React.HTMLAttributes<HTMLDivElement> {
+  onFetchComplete: (data: any[]) => void
+}
+
+const ButtonsStocks: React.FC<ButtonsStocksProps> = ({ onFetchComplete, ...props }) => {
   const stocks = ['MSFT', 'AAPL', 'NVDA']
 
   const fetchData = async (label: string) => {
@@ -41,14 +43,13 @@ const ButtonsStocks: React.FC<{ onFetchComplete: (data: any[]) => void }> = ({
   }, [])
 
   return (
-    <div className="flex items-center justify-center">
-      <ButtonsList
-        classButton="px-4 py-2"
-        className="relative flex gap-x-4"
-        items={stocks}
-        onActiveIndexChange={(index) => fetchData(stocks[index])}
-      />
-    </div>
+    <ButtonsList
+      classButton="p-1 sm:p-2"
+      className=""
+      items={stocks}
+      onActiveIndexChange={(index) => fetchData(stocks[index])}
+      {...props}
+    />
   )
 }
 

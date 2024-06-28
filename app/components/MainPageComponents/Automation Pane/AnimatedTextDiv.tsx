@@ -6,10 +6,24 @@ import CustomIcon from '@/app/ui/Components/LucideIcons'
 interface AnimateTextdivProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string
 }
+interface TitleAndTextProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string
+  title: string
+  TextContentString: string
+  delayMultiple: number
+  icon: React.ReactNode // Change here
+}
 
-export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({ className = '', children, ...props }) => {
+export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({
+  className = '',
+  children,
+  ...props
+}) => {
   return (
-    <div className={`flex w-1/2 max-w-full flex-col justify-center gap-y-16 overflow-hidden ${className}`} {...props}>
+    <div
+      className={`flex flex-col overflow-hidden sm:flex-row md:flex md:flex-col md:gap-y-12 ${className}`}
+      {...props}
+    >
       {/* <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
@@ -20,7 +34,7 @@ export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({ className = '', 
         title="Simplify your life"
         delayMultiple={0.04}
         TextContentString="And the one of your employees by removing manual tasks from your workflow."
-        icon={<CustomIcon icon={Smile} />}
+        icon={<CustomIcon icon={Smile} className="" />}
         className=""
       />
       <TitleAndText
@@ -31,7 +45,7 @@ export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({ className = '', 
         className=""
       />
       <TitleAndText
-        title="Focus on what truly matters"
+        title="Focus on what matters"
         delayMultiple={0.1}
         TextContentString="So you can continue bringing value to your customers without worrying about the necessary evil."
         icon={<CustomIcon icon={Target} />}
@@ -41,22 +55,31 @@ export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({ className = '', 
   )
 }
 
-interface TitleAndTextProps extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string
-  title: string
-  TextContentString: string
-  delayMultiple: number
-  icon: React.ReactNode // Change here
-}
-
-export const TitleAndText: React.FC<TitleAndTextProps> = ({ className = '', children, title, TextContentString, delayMultiple, icon, ...props }) => {
+export const TitleAndText: React.FC<TitleAndTextProps> = ({
+  className = '',
+  children,
+  title,
+  TextContentString,
+  delayMultiple,
+  icon,
+  ...props
+}) => {
   return (
-    <div className={`flex flex-col items-start pl-8 ${className}`} {...props}>
-      <div className="mb-2 flex items-center gap-x-3">
+    <div
+      className={`flex flex-col items-center gap-y-2 sm:items-start md:pl-8 ${className}`}
+      {...props}
+    >
+      <div className="flex items-center gap-x-3 md:mb-2">
         {icon}
-        <GradualSpacing text={title} delayMultiple={delayMultiple} className="text-xs font-bold sm:text-sm md:text-base lg:text-lg xl:text-3xl" />
+        <GradualSpacing
+          text={title}
+          delayMultiple={delayMultiple}
+          className="text-xs font-bold sm:text-xs md:text-sm lg:text-base xl:text-lg"
+        />
       </div>
-      <FontTextPanes className="">{TextContentString}</FontTextPanes>
+      <FontTextPanes className="text-center text-xs sm:text-start sm:text-xs md:text-sm lg:text-base xl:text-lg">
+        {TextContentString}
+      </FontTextPanes>
     </div>
   )
 }

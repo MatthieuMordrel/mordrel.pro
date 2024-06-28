@@ -21,7 +21,7 @@ const processTitles = ['Automation Solutions', 'Data Visualization', 'Custom Dev
 const processDescriptions = [
   'Eliminate manual work; automate for efficiency and accuracy.',
   'Explore and analyze your data with powerful visualization.',
-  'Need a very specific service that does not fit in any category ? We might be able to help!'
+  'Need a specific service that does not fit in any category ?'
 ]
 
 const processSteps = [

@@ -37,7 +37,7 @@ const ButtonsList: React.FC<ToggleButtonsList> = ({
         <button
           type="button"
           key={item}
-          className={`rounded-lg border-2 px-4 py-2 text-sm font-medium ${classButton} ${
+          className={`rounded-lg border-2 text-sm font-medium ${classButton} ${
             activeIndex === index
               ? 'border-techBlue bg-paneGrey text-techBlue'
               : 'border-borderGrey text-white hover:bg-activeBorderGrey hover:text-techBlue'

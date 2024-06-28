@@ -8,29 +8,19 @@ import { Mail } from 'lucide-react'
 // Contact page
 export default function ContactPage() {
   return (
-    <div className="flex min-h-[100vh] flex-col space-y-2 bg-techGrey">
-      <div className="mx-auto mt-12">
-        <ContactText />
+    <div className="grid min-h-[100vh] grid-rows-[auto_auto_auto_auto_auto] gap-y-4 bg-techGrey p-2">
+      <ContactText className="mt-8 text-center" />
+      <MailForm className="w-full max-w-[50rem] px-2" />
+      <div className="flex items-center justify-center gap-x-2">
+        <Mail className="h-6 w-6"> </Mail>
+        <p className="text-[clamp(0.75rem,2vw,1rem)] font-semibold text-white">
+          Or contact me at&nbsp;
+          <a href="mailto:matthieu@mordrel.pro" target="_blank" className="underline">
+            matthieu@mordrel.pro
+          </a>
+        </p>
       </div>
-      <div className="flex w-full justify-between">
-        <div className="w-[60%] ">
-          <MailForm className="w-full" />
-        </div>
-        <div className="w-[40%]">
-          <MailIconAnimated className="max-h-[33rem]" />
-        </div>
-      </div>
-      <div className="mb-4 flex items-center justify-center">
-        <div className="mt-10 flex flex-row items-center space-x-2 rounded-lg p-4">
-          <Mail className="h-6 w-6"> </Mail>
-          <p className="text-lg font-semibold text-white">
-            Or contact me directly at&nbsp;
-            <a href="mailto:matthieu@mordrel.pro" target="_blank" className="text-lg font-semibold underline">
-              matthieu@mordrel.pro
-            </a>
-          </p>
-        </div>
-      </div>
+      <MailIconAnimated className="mx-auto h-[clamp(9rem,10vw,18rem)]" />
     </div>
   )
 }

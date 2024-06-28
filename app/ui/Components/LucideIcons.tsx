@@ -1,6 +1,6 @@
 import { LucideIcon } from 'lucide-react'
 
-interface CustomIconProps {
+interface CustomIconProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: LucideIcon
   size?: number
   color?: string
@@ -15,10 +15,11 @@ const CustomIcon: React.FC<CustomIconProps> = ({
   color = 'white',
   backgroundColor = '', //#e0e0e0
   borderRadius = '0px',
-  strokeWidth = 1
+  strokeWidth = 1,
+  ...props
 }) => {
   return (
-    <div className={``} style={{ backgroundColor, borderRadius }}>
+    <div style={{ backgroundColor, borderRadius }} {...props}>
       <Icon size={size} color={color} strokeWidth={strokeWidth} />
     </div>
   )

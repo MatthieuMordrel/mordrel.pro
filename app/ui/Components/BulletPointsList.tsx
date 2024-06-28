@@ -1,4 +1,4 @@
-import { CheckMarkLucid } from '@/app/components/MainPageComponents/Excel Pane/Carousel/CarouselComponents'
+import { CheckMarkLucid } from '@/app/data/Icons'
 import { FontTextPanes } from '../Fonts/FontTextPanes'
 
 interface BulletPointsListtProps {
@@ -6,15 +6,16 @@ interface BulletPointsListtProps {
   className?: string
 }
 
-//Export list in Carousel
 export const BulletPointsList: React.FC<BulletPointsListtProps> = ({ items, className }) => {
   return (
-    <ul className={`mt-2 flex flex-col ${className}`}>
-      <FontTextPanes className="flex flex-1 flex-col gap-y-2">
+    <ul className={`mt-2 ${className}`}>
+      <FontTextPanes>
         {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-x-2">
-            <CheckMarkLucid />
-            {item}
+          <li key={index} className="mb-2 flex items-center">
+            <span>
+              <CheckMarkLucid />
+            </span>
+            <span className="ml-2">{item}</span>
           </li>
         ))}
       </FontTextPanes>

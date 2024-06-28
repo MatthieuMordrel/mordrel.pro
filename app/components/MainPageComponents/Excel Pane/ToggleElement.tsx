@@ -16,12 +16,12 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
 
   //Instead of using a useEffect hook to update the animation class, we update only the index and as the props update it automatically rerenders.
   return (
-    <>
+    <div className="">
       <ButtonsList
-        classButton="px-4 py-2"
+        classButton="p-[clamp(0.25rem,1vw,0.75rem)]"
         onActiveIndexChange={setActiveIndex}
         items={items.map((item) => item.title)}
-        className="mt-2 flex gap-x-2"
+        className="flex justify-center gap-x-1 sm:gap-x-2 md:gap-x-4"
       />
       <div className="mt-3 h-full w-full rounded-lg border-gray-500">
         <div
@@ -31,7 +31,7 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
           <div className="relative h-[60vh]">{items[activeIndex].component}</div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

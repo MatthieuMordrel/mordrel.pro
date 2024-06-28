@@ -1,51 +1,52 @@
-import MainVideo from './components/MainPageComponents/MainVideo'
-import MainDiv from './components/MainPageComponents/Main Pane/MainPane'
-import StyledWrapper from './ui/Effects/StyledWrapper'
-import ApiIntegrationShowcase from './components/MainPageComponents/API Pane/_PaneAPI'
-import _PaneValue from './components/MainPageComponents/Main Pane/PaneValue'
-import PaneDataViz from './components/MainPageComponents/Data VIz Pane/_PaneDataViz'
-import ExcelProposition from './components/MainPageComponents/Excel Pane/_PaneExcel'
-import { TypewriterEffectSmoothDemo } from './components/MainPageComponents/Link To Contact form/LinkToContactForm'
+import MainVideo from '@components/MainPageComponents/MainVideo'
+import MainDiv from '@components/MainPageComponents/Main Pane/MainPane'
+import ApiIntegrationShowcase from '@components/MainPageComponents/API Pane/_PaneAPI'
+import PaneValue from '@components/MainPageComponents/Main Pane/NewPane'
+import { PaneDataViz } from '@components/MainPageComponents/Data VIz Pane/_PaneDataViz'
+import ExcelProposition from '@components/MainPageComponents/Excel Pane/_PaneExcel'
+import { TypewriterEffectSmoothDemo } from '@components/MainPageComponents/Link To Contact form/LinkToContactForm'
 import { Pane } from '@/app/ui/Effects/Pane'
-import AutomationPane from './components/MainPageComponents/Automation Pane/AutomationPane'
-import Examples from './components/MainPageComponents/Examples/Examples'
+import AutomationPane from '@components/MainPageComponents/Automation Pane/AutomationPane'
+import Examples from '@components/MainPageComponents/Examples/Examples'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center bg-techGrey">
+    <main className="flex min-h-screen flex-col items-center gap-y-16 bg-techGrey">
       <div className="min-h-screen">
         <MainVideo src="/PurpleVideo.mp4" />
-        {/* Using relative to make the title appear in front of the absolutely positioned background */}
-        <div className="relative w-[95vw] md:w-[75vw] 3xl:w-[60vw]">
+        {/* Using relative to make the title appear in front of the absolutely positioned background */}{' '}
+        <div className="relative w-[90vw] md:w-[75vw] 3xl:w-[60vw]">
           <MainDiv />
         </div>
-        <div className="relative w-[95vw] md:w-[75vw] 3xl:w-[60vw]">
-          <_PaneValue />
+        <div className="relative w-[90vw] md:w-[75vw] 3xl:w-[60vw]">
+          <PaneValue />
         </div>
       </div>
 
-      <section className="flex w-[95vw] flex-col items-center gap-y-28 md:w-[80vw] 3xl:w-[60vw]">
-        {/* <div>
-            <ScrollTriggered>
-              <div>Test</div>
-            </ScrollTriggered>
-          </div> */}
-        <Pane className="relative flex h-[75vh] w-full flex-col justify-center overflow-hidden">
+      <section className="flex w-[90vw] flex-col items-center gap-y-8 md:w-[80vw] 3xl:w-[60vw]">
+        <Pane className="h-[30rem] w-full md:h-[37.5rem]">
           <AutomationPane />
         </Pane>
 
-        <Pane id="api-block" className="w-full scroll-mt-28">
-          <ApiIntegrationShowcase />
-        </Pane>
+        <div id="api-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
+          <Pane className="h-full">
+            <ApiIntegrationShowcase />
+          </Pane>
+        </div>
 
-        <Pane id="visu-block" className="w-full scroll-mt-28">
-          <PaneDataViz />
-        </Pane>
+        <div id="visu-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
+          <Pane className="h-full">
+            <PaneDataViz />
+          </Pane>
+        </div>
 
-        <div className="w-full">
+        <div id="excel-block" className="w-full scroll-mt-28">
           <ExcelProposition />
         </div>
-        <Examples />
+
+        <div id="exemples-block" className="w-full scroll-mt-28">
+          <Examples />
+        </div>
 
         <TypewriterEffectSmoothDemo />
       </section>

@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react'
 import react, { SVGProps } from 'react'
 
 export const MailIconPerso = ({
@@ -658,3 +659,9 @@ export function VariableIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGEle
     </svg>
   )
 }
+
+export const CheckMarkLucid = () => (
+  <>
+    <Check strokeWidth={1} size={19} />
+  </>
+)

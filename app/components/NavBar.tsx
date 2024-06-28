@@ -57,16 +57,20 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 h-16 border-b-2 border-borderGrey bg-techGrey text-white">
-      <div className="relative flex h-full w-full items-center justify-between">
-        <div className="flex h-full w-1/3 ">
-          <div className="flex h-full w-full items-center gap-x-4">
-            <div className="relative h-full w-16">
-              <Image src="/M5.png" alt="LogoIcon" fill={true} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="p-2" />
-            </div>
-            <div className=""></div>
+      <div className="relative grid h-full w-full grid-cols-[auto_auto_auto] items-center sm:grid-cols-3">
+        <div className="flex h-full w-full items-center gap-x-4">
+          <div className="relative h-full w-16">
+            <Image
+              src="/M5.png"
+              alt="LogoIcon"
+              fill={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="p-2"
+            />
           </div>
+          <div className=""></div>
         </div>
-        <div className="flex w-full items-center justify-center gap-14">
+        <div className="flex w-full items-center justify-center gap-4 sm:gap-14">
           {/* Dropdown menu container with event handlers for mouse enter and leave. This div refers to the dropdownRef*/}
           <div ref={dropdownRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div>
@@ -82,6 +86,12 @@ const Navbar = () => {
                 <Link href="/#visu-block" className="block px-4 py-1 hover:text-techBlue">
                   Visualisations
                 </Link>
+                <Link href="/#excel-block" className="block px-4 py-1 hover:text-techBlue">
+                  Excel Services
+                </Link>
+                <Link href="/#exemples-block" className="block px-4 py-1 hover:text-techBlue">
+                  Exemples
+                </Link>
               </div>
             )}
           </div>
@@ -89,11 +99,14 @@ const Navbar = () => {
             About
           </Link>
           <Link href="/pricing" className="font-semibold hover:text-techBlue">
-            Pricing
+            Process
           </Link>
         </div>
-        <div className="flex h-full w-1/3 items-center justify-end">
-          <Link href="/contact" className="mr-4 rounded bg-techGreen px-4 py-2 font-medium hover:text-black md:block">
+        <div className="flex h-full w-full items-center justify-end">
+          <Link
+            href="/contact"
+            className="mr-4 rounded bg-techGreen p-2 font-medium hover:text-black md:block md:px-4 md:py-2"
+          >
             Contact
           </Link>
         </div>

@@ -4,22 +4,24 @@ import ButtonsList from '@/app/ui/Components/ButtonsList'
 import { LineChartIcon, BarChartIcon, AreaChartIcon } from 'lucide-react'
 import CustomIcon from '@/app/ui/Components/LucideIcons'
 
-const ButtonsCharts: React.FC<{ onChartTypeChange: (type: string) => void }> = ({
-  onChartTypeChange
-}) => {
+interface ButtonsChartsProps extends React.HTMLAttributes<HTMLDivElement> {
+  onChartTypeChange: (type: string) => void
+}
+
+const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ onChartTypeChange, ...props }) => {
   const chartTypes = [
-    { label: 'Line', icon: <CustomIcon icon={LineChartIcon} size={20} /> },
-    { label: 'Area', icon: <CustomIcon icon={AreaChartIcon} size={20} /> },
-    { label: 'Bar', icon: <CustomIcon icon={BarChartIcon} size={20} /> }
+    { label: 'Line', icon: <CustomIcon icon={LineChartIcon} size={15} /> },
+    { label: 'Area', icon: <CustomIcon icon={AreaChartIcon} size={15} /> },
+    { label: 'Bar', icon: <CustomIcon icon={BarChartIcon} size={15} /> }
   ]
 
   return (
     <ButtonsList
-      className="flex gap-x-4"
-      classButton=""
+      classButton="p-2"
       items={chartTypes.map((type) => type.label)}
       buttonDisplay={chartTypes.map((type) => type.icon)}
       onActiveIndexChange={(index) => onChartTypeChange(chartTypes[index].label.toLowerCase())}
+      {...props}
     />
   )
 }

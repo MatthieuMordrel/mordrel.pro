@@ -47,24 +47,19 @@ const ApiIntegrationShowcase = () => {
   const highlightedCode = hljs.highlight(codeSnippet, { language: 'python' }).value
 
   return (
-    <div className="relative flex max-h-full flex-row flex-wrap justify-between gap-4 overflow-hidden md:p-6">
-      <div className="flex min-w-[35%] max-w-[50%] flex-[1_1_0] flex-col justify-between p-4">
-        <div className="">
-          <TextHighlight className="mb-2 text-2xl md:text-3xl lg:text-4xl">
-            Improve your Data Management
-          </TextHighlight>
-          <HighlightedSentenceContent
-            HighlightedSentence="Let the machine do the work for you."
-            MainContent="Harness the power of APIs to integrate and automate your business processes
-              efficiently.
-              We specialize in creating seamless integrations that save time and reduce errors,
-              allowing you to focus on what's important."
-          />
-        </div>
-        <BulletPointsList items={listItems} className="" />
+    <div className="relative grid h-full grid-cols-1 grid-rows-[auto_auto] overflow-hidden p-8 sm:grid-rows-[auto_1fr_auto] sm:gap-4 md:p-6 lg:grid-cols-2">
+      <div className="row-start-1 flex h-full flex-col">
+        <TextHighlight className="mb-2 text-2xl md:text-3xl lg:text-4xl">
+          Improve your Data Management
+        </TextHighlight>
+        <HighlightedSentenceContent
+          HighlightedSentence="Let the machine do the work for you."
+          MainContent="Harness the power of APIs to integrate and automate your business processes efficiently. We specialize in creating seamless integrations that save time and reduce errors, allowing you to focus on what's important."
+        />
       </div>
-      <div className="flex-[0_0_1/2] p-4">
-        <pre className="max-h-full max-w-full overflow-auto border-borderGrey bg-techGrey font-mono text-xs">
+      <BulletPointsList items={listItems} className="self-end text-xs sm:row-start-3 md:mt-4" />
+      <div className="row-span-1 row-start-2 hidden overflow-auto sm:block lg:col-start-2 lg:row-span-full lg:row-start-1 lg:self-center">
+        <pre className="border-borderGrey bg-techGrey font-mono text-xs">
           <code
             className="language-python"
             dangerouslySetInnerHTML={{ __html: highlightedCode }}
@@ -74,5 +69,4 @@ const ApiIntegrationShowcase = () => {
     </div>
   )
 }
-
 export default ApiIntegrationShowcase

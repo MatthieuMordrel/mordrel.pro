@@ -33,10 +33,11 @@ const skills = [
 const ExcelProposition = () => {
   return (
     <>
-      <div className="flex w-[80vw] flex-col items-center gap-y-2 overflow-hidden border-blue-200 pb-20 text-white">
+      <div className="grid w-full grid-cols-1 justify-items-center gap-y-2 overflow-hidden border-blue-200 pb-20 text-white">
         <TextHighlight className="title-responsive">Maximize the power of Excel</TextHighlight>
-        <p>
-          We know Excel can stay an important part of any business, ensure you are maximizing its power and minimizing the trouble of your employees
+        <p className="mb-2 text-center text-[clamp(0.75rem,2vw,1rem)]">
+          We know Excel can stay an important part of any business. We provide expert advices for
+          managing your Excel work and ensure maximum productivity.
         </p>
         <ToggleComponent items={skills} />
       </div>

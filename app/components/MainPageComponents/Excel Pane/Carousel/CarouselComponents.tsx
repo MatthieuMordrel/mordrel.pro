@@ -4,26 +4,9 @@ import { Check } from 'lucide-react'
 import Image from 'next/image'
 import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
 
-//Export icons for list
-export const CheckMarkLucid = () => (
-  <>
-    <Check strokeWidth={1} size={19} />
-  </>
-)
-
 interface TopDivProps {
   title: string
   description: string
-}
-
-//Export the TopDiv in the carousel component
-export const TopDiv: React.FC<TopDivProps> = ({ title, description }) => {
-  return (
-    <div className="h-1/4 w-full px-6">
-      <h2 className="mb-4 text-xl font-bold">{title}</h2>
-      <FontTextPanes className="font-bold">{description}</FontTextPanes>
-    </div>
-  )
 }
 
 interface CarouselComponentProps {
@@ -32,6 +15,20 @@ interface CarouselComponentProps {
   items: string[]
   imageSrc: string
   imageAlt: string
+}
+
+//Export the TopDiv in the carousel component
+export const TopDiv: React.FC<TopDivProps & React.HTMLAttributes<HTMLDivElement>> = ({
+  title,
+  description,
+  ...props
+}) => {
+  return (
+    <div className="w-full" {...props}>
+      <h2 className="mb-4 text-xl font-bold">{title}</h2>
+      <FontTextPanes className="font-bold">{description}</FontTextPanes>
+    </div>
+  )
 }
 
 //export the full carouselcomponent for each skill
@@ -43,24 +40,29 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({
   imageAlt
 }) => {
   return (
-    <div className="flex h-full gap-x-4">
-      <div className="relative flex-1">
+    <div className="grid h-full w-full grid-rows-[auto_1fr_auto] gap-4 md:grid-cols-[1fr_1fr] md:grid-rows-2 xl:grid-cols-[2fr_1fr]">
+      <TopDiv
+        title={title}
+        description={description}
+        className="md:col-start-2 md:px-[clamp(0rem,1vw,1.25rem)]"
+      />
+      <div className="relative md:row-span-2 md:row-start-1">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill={true}
           sizes="100vw"
-          className="rounded-xl object-cover p-1"
+          className="rounded-xl object-cover object-[top_center]"
           quality={100}
         />
       </div>
-      <div className="flex h-full max-w-[30%] flex-initial flex-col items-center justify-between gap-y-6">
-        <TopDiv title={title} description={description} />
-        <Pane includeBorderBeam={false} className="flex h-[50%] w-full flex-col p-6">
-          <h2 className="mb-4 text-center text-xl font-bold">Let us help ! </h2>
-          <BulletPointsList items={items} />
-        </Pane>
-      </div>
+      <Pane
+        includeBorderBeam={false}
+        className="row-span-2 flex h-auto w-full flex-col justify-around p-[clamp(0.25rem,1.5vw,1.25rem)] md:row-span-1"
+      >
+        <h2 className="text-center text-xl font-bold">Let us help ! </h2>
+        <BulletPointsList items={items} />
+      </Pane>
     </div>
   )
 }

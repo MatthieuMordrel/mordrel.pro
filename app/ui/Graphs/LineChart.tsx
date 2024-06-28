@@ -1,7 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { findMaxRevenue, formatData, formatCurrency } from './utils'
 import { colors } from './types'
-import { GraphTooltip } from './GraphComp'
 
 interface LineChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   data: number[]
@@ -13,7 +12,7 @@ export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [
   return (
     <div className="h-full w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={formattedData} margin={{ top: 0, right: 30, left: 20, bottom: 0 }}>
+        <LineChart data={formattedData} margin={{ top: 15, right: 10, left: 20, bottom: 0 }}>
           <XAxis dataKey="Date" tickMargin={10} />
           <YAxis
             type="number"
@@ -33,7 +32,7 @@ export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [
             itemStyle={{ color: colors.techGrey }}
             labelStyle={{ color: colors.techGrey, fontWeight: 'bold' }}
           />
-          <Legend />
+          <Legend align="center" verticalAlign={'bottom'} />
           <Line type="monotone" dataKey="Revenue" stroke={colors.techPurple} />
           <Line type="monotone" dataKey="EBITDA" stroke={colors.techBlue} />
         </LineChart>
