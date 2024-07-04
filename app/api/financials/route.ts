@@ -9,7 +9,9 @@ export async function POST(req: NextRequest) {
   // console.log('request URL: ', url)
   const response = await fetch(url, { next: { revalidate: 24 * 3600 } })
   // console.log('Response Headers:', JSON.stringify(Array.from(response.headers.entries())))
+
   const data = await response.json()
+
   // const data = mockData
   const jsonResponse = NextResponse.json(data)
   // console.log('NextResponse:', jsonResponse)

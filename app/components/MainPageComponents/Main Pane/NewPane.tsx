@@ -1,9 +1,5 @@
-import { PlayrightIcon } from '../../../data/Sotftware'
-import HoverBox from './HoverBox'
-import Image from 'next/image'
-import IconAndText from '@/app/components/MainPageComponents/Main Pane/IconAndText'
-import { BarChart, HandCoins, MonitorCheck } from 'lucide-react'
 import { Pane } from '@/app/ui/Effects/Pane'
+import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 
 const PaneValue = () => {
   const paneData = [
@@ -25,13 +21,15 @@ const PaneValue = () => {
   ]
 
   return (
-    <div className="flex flex-col justify-center space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+    <div className="grid grid-cols-1 grid-rows-[1fr_1fr_1fr] gap-8 lg:grid-cols-3 lg:grid-rows-1">
       {paneData.map((pane, index) => (
-        <div key={index} className="w-full md:w-1/3">
-          <Pane includeBorderBeam={false} className="h-full p-4">
-            <h1 className="mb-7 font-bold">{pane.title}</h1>
-            <p>{pane.description}</p>
-          </Pane>
+        <div key={index} className="w-full">
+          <FadeInEffect delay={0.3 + index * 0.2} animationStyle="fadeUp" className="h-full">
+            <Pane includeBorderBeam={false} className="h-full p-4">
+              <h1 className="mb-2 font-bold lg:mb-5">{pane.title}</h1>
+              <p className="text-[clamp(0.5rem,0.5rem+1vw,1rem)]">{pane.description}</p>
+            </Pane>
+          </FadeInEffect>
         </div>
       ))}
     </div>

@@ -2,6 +2,7 @@
 import React, { ReactElement, useState } from 'react'
 import 'animate.css/animate.min.css'
 import { Icon } from 'next/dist/lib/metadata/types/metadata-types'
+import { motion } from 'framer-motion'
 
 interface ToggleButtonsList {
   items: string[]
@@ -9,6 +10,11 @@ interface ToggleButtonsList {
   className?: string
   buttonDisplay?: any
   classButton?: string
+}
+
+const childVariant = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0 }
 }
 
 const ButtonsList: React.FC<ToggleButtonsList> = ({
@@ -34,7 +40,8 @@ const ButtonsList: React.FC<ToggleButtonsList> = ({
   return (
     <div className={`relative ${className}`}>
       {items.map((item, index) => (
-        <button
+        <motion.button
+          variants={childVariant}
           type="button"
           key={item}
           className={`rounded-lg border-2 text-sm font-medium ${classButton} ${
@@ -45,7 +52,7 @@ const ButtonsList: React.FC<ToggleButtonsList> = ({
           onClick={() => handleClick(index)}
         >
           {buttonDisplay ? buttonDisplay[index] : item}
-        </button>
+        </motion.button>
       ))}
     </div>
   )

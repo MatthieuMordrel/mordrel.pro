@@ -1,5 +1,7 @@
 import { SVGProps } from 'react'
 import { Pane } from '../Effects/Pane'
+import FadeInEffect from '../Effects/AdvancedFadeIn'
+import { motion, Variants } from 'framer-motion'
 
 interface ProcessCardProps {
   icon: React.ComponentType<SVGProps<SVGSVGElement>>
@@ -8,13 +10,21 @@ interface ProcessCardProps {
   borderColor: string
 }
 
+const childVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+}
+
 export const ProcessCard: React.FC<ProcessCardProps> = ({
   icon: Icon,
   title,
   description,
   borderColor
 }) => (
-  <div className="group relative rounded-lg bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-paneGrey">
+  <motion.div
+    variants={childVariant}
+    className="group relative rounded-lg bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-paneGrey"
+  >
     <div className="flex items-start">
       <div className="flex-shrink-0 items-center self-stretch">
         <div
@@ -31,7 +41,7 @@ export const ProcessCard: React.FC<ProcessCardProps> = ({
     <div
       className={`absolute inset-0 rounded-lg border-2 ${borderColor} opacity-0 group-hover:opacity-100`}
     />
-  </div>
+  </motion.div>
 )
 
 interface Step {

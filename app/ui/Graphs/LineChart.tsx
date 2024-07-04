@@ -3,7 +3,7 @@ import { findMaxRevenue, formatData, formatCurrency } from './utils'
 import { colors } from './types'
 
 interface LineChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
-  data: number[]
+  data: (number | string)[]
 }
 
 export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [] }) => {
@@ -33,8 +33,8 @@ export const LineChartComponent: React.FC<LineChartComponentProps> = ({ data = [
             labelStyle={{ color: colors.techGrey, fontWeight: 'bold' }}
           />
           <Legend align="center" verticalAlign={'bottom'} />
-          <Line type="monotone" dataKey="Revenue" stroke={colors.techPurple} />
-          <Line type="monotone" dataKey="EBITDA" stroke={colors.techBlue} />
+          <Line type="monotone" dataKey="totalRevenue" name="Revenue" stroke={colors.techPurple} />
+          <Line type="monotone" dataKey="ebitda" name="EBITDA" stroke={colors.techBlue} />
         </LineChart>
       </ResponsiveContainer>
     </div>

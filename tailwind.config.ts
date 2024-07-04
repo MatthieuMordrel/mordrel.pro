@@ -40,7 +40,8 @@ const config: Config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         orbit: 'orbit calc(var(--duration)*1s) linear infinite',
-        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
+        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+        'sliding-in': 'keyframe-sliding-in '
       },
       keyframes: {
         'keyframe-border-spin': {

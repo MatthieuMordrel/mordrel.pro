@@ -4,7 +4,7 @@ import { findMaxRevenue, formatData, formatCurrency } from './utils'
 import { colors } from './types'
 
 interface AreaChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
-  data: number[]
+  data: (number | string)[]
 }
 
 export const AreaChartComponent: React.FC<AreaChartComponentProps> = ({ data = [] }) => {
@@ -35,14 +35,16 @@ export const AreaChartComponent: React.FC<AreaChartComponentProps> = ({ data = [
           <Legend />
           <Area
             type="monotone"
-            dataKey="Revenue"
+            dataKey="totalRevenue"
+            name="Revenue"
             fill={colors.techPurple}
             stroke={colors.techPurple}
             fillOpacity={0.6}
           />
           <Area
             type="monotone"
-            dataKey="EBITDA"
+            dataKey="ebitda"
+            name="EBITDA"
             fill={colors.techBlue}
             stroke={colors.techBlue}
             fillOpacity={0.6}

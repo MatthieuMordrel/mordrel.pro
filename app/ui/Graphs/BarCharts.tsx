@@ -4,10 +4,10 @@ import { findMaxRevenue, formatData, formatCurrency } from './utils'
 import { colors } from './types'
 
 interface BarChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
-  data: number[]
+  data: (number | string)[]
 }
 
-export const BarChartComponent: React.FC<BarChartComponentProps> = ({ data = [] }) => {
+export const BarChartComponent: React.FC<BarChartComponentProps> = ({ data }) => {
   const maxYAxis = findMaxRevenue(data)
   const formattedData = formatData(data)
   return (
@@ -33,8 +33,8 @@ export const BarChartComponent: React.FC<BarChartComponentProps> = ({ data = [] 
             labelStyle={{ color: colors.techGrey, fontWeight: 'bold' }}
           />
           <Legend />
-          <Bar dataKey="Revenue" fill={colors.techPurple} />
-          <Bar dataKey="EBITDA" fill={colors.techBlue} />
+          <Bar dataKey="totalRevenue" name="Revenue" fill={colors.techPurple} />
+          <Bar dataKey="ebitda" name="EBITDA" fill={colors.techBlue} />
         </BarChart>
       </ResponsiveContainer>
     </div>

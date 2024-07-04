@@ -15,6 +15,7 @@ import {
   ShareIcon
 } from 'lucide-react'
 import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 
 const processTitles = ['Automation Solutions', 'Data Visualization', 'Custom Development']
 
@@ -114,27 +115,30 @@ export default function Examples() {
   return (
     <div>
       <TextHighlight className="title-responsive mb-8 text-center">
-        In need of inspiration ?
+        Simply, what do we do ?
       </TextHighlight>
-      <div className="mx-auto w-full max-w-3xl p-6 pt-0 sm:p-10 sm:pt-0">
-        <ButtonsList
-          classButton="px-4 py-2"
-          items={processTitles}
-          onActiveIndexChange={setShowAutomation}
-          className="flex justify-center gap-x-2"
-        />
-        <div className="mb-6 mt-4 flex items-center justify-between">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              {processTitles[showAutomation]}
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400">
-              {processDescriptions[showAutomation]}
-            </p>
+      <FadeInEffect>
+        <div className="mx-auto w-full max-w-3xl p-6 pt-0 sm:p-10 sm:pt-0">
+          <ButtonsList
+            classButton="px-4 py-2"
+            items={processTitles}
+            onActiveIndexChange={setShowAutomation}
+            className="flex justify-center gap-x-2"
+          />
+
+          <div className="mb-6 mt-4 flex items-center justify-between">
+            <div className="space-y-2">
+              <h2 className="block text-2xl font-bold tracking-tight sm:text-3xl">
+                {processTitles[showAutomation]}
+              </h2>
+              <p className="text-gray-500 dark:text-gray-400">
+                {processDescriptions[showAutomation]}
+              </p>
+            </div>
           </div>
+          {<Process steps={processSteps[showAutomation]} />}
         </div>
-        {<Process steps={processSteps[showAutomation]} />}
-      </div>
+      </FadeInEffect>
     </div>
   )
 }

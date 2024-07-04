@@ -7,10 +7,18 @@ import { LineChartFinancials } from './LineChartFinancials'
 import { HighlightedSentenceContent } from '@/app/ui/Components/ContentPaneHighlightedSentence'
 import ButtonsCharts from './ButtonsCharts'
 import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
+import ButtonsPeriod from './ButtonsPeriod'
 
 export const PaneDataViz = () => {
-  const [financialData, setFinancialData] = useState<any[]>([])
+  const [financialData, setFinancialData] = useState<{
+    annualReports: (number | string)[]
+    quarterlyReports: (number | string)[]
+  }>({ annualReports: [], quarterlyReports: [] })
   const [chartType, setChartType] = useState<string>('line')
+  const [dataFrequency, setDataFrequency] = useState<'annualReports' | 'quarterlyReports'>(
+    'annualReports'
+  )
+
   return (
     <div className="grid h-full w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-x-4 p-8 md:p-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr_1fr_auto]">
       <div className="grid grid-rows-[auto_auto_1fr] lg:col-start-2 lg:row-span-full">
@@ -22,21 +30,26 @@ export const PaneDataViz = () => {
           HighlightedSentence="Don't let your data sleep."
           MainContent="Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics."
         />
-        <BulletPoints className="hidden lg:block lg:self-end" />
+        <BulletPoints className="ml-3 hidden text-xs lg:block lg:self-end" />
       </div>
       <ButtonsCharts
         onChartTypeChange={setChartType}
         className="z-10 flex gap-x-2 justify-self-end lg:col-start-1 lg:row-start-1 lg:mt-3 lg:self-start"
       />
+
       <LineChartFinancials
-        data={financialData}
+        data={financialData[dataFrequency]}
         className="h-full min-h-10 w-full lg:col-start-1 lg:row-span-3 lg:row-start-1"
         chartType={chartType}
       />
-      <ButtonsStocks
-        onFetchComplete={setFinancialData}
-        className="flex gap-x-4 justify-self-start pt-2 lg:col-start-1 lg:row-start-4"
-      />
+      <div className="ml-1 text-[0.5rem] italic text-gray-500 lg:col-start-1 lg:row-start-3 lg:self-end">
+        Data provided by Alpha Vantage
+      </div>
+
+      <div className="flex items-center justify-between lg:col-start-1 lg:row-start-4">
+        <ButtonsStocks onFetchComplete={setFinancialData} className="flex gap-x-4 pt-2" />
+        <ButtonsPeriod onButtonChange={setDataFrequency} className="z-10 hidden gap-x-2 md:flex" />
+      </div>
     </div>
   )
 }
