@@ -1,0 +1,23 @@
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1c1c; /* techGrey background of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #434343;
+  border-radius: 6px; /* roundness of the scrollbar */
+  border: 3px solid #1c1c1c; /* techGrey border around the scrollbar */
+}
+
+/* Optional: style for hover effect on the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5c5c5c;
+}
+
+html {
+  scroll-behavior: smooth;
+}

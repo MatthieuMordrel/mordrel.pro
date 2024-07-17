@@ -13,7 +13,7 @@ export const formatCurrency = (value: number) => {
 export function findMaxRevenue(data: any[]): number {
   //Spread operator is used to spread the revenue from an array to a list of numbers (see Math.max function for more details)
   //The spread is done after that map has transformed the data in an array of revenue
-  console.log('Data in utils:', data)
+  // console.log('Data in utils:', data)
   const maxRevenue = Math.max(...data.map((item) => item.totalRevenue))
   const magnitude = Math.pow(10, Math.floor(Math.log10(maxRevenue)))
   return Math.ceil(maxRevenue / magnitude) * magnitude

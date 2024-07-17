@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base  */
+@layer base {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Remove Opera Lucid Mode */
+  #detach-button-host {
+    display: none;
+  }
+}
+
+/* Standard classes to use sparingly */
+@layer components {
+  .pane {
+    @apply rounded-xl bg-gradient-to-b from-paneGrey to-paneGrey; /* Example uses Tailwind default colors */
+  }
+  .title-responsive {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  .card-wrapper::before {
+    @apply absolute h-[800%] w-[200%] animate-smooth-spin content-[''];
+    background: transparent; /* Default background */
+  }
+  .card-wrapper:hover::before {
+    background: conic-gradient(
+      rgba(159, 130, 156, 0.4) 90deg,
+      rgba(159, 215, 202, 0.4) 180deg,
+      rgba(159, 130, 156, 0.4) 270deg,
+      transparent 360deg
+    ); /* Gradient appears on hover */
+  }
+}

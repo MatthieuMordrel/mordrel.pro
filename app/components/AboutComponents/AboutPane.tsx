@@ -1,17 +1,19 @@
+import GradualSpacing from '@/app/ui/Effects/GradualSpacing'
+import RotatingText from '@/app/ui/Effects/RotatingText'
+import WordRotate from '@/app/ui/Effects/word-rotate'
+import styles from '@styles/test.module.css'
+import { ArrowDownWideNarrow } from 'lucide-react'
+
 // AboutComponent.jsx or AboutComponent.tsx if you are using TypeScript
-const AboutPane = () => {
+const AboutPane: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className="bg-techGrey p-8 text-white">
-      <div className="mx-auto max-w-2xl">
-        <h2 className="text-sm uppercase tracking-widest text-techBlue">SO...WHO AM I?</h2>
-        <h1 className="my-2 text-5xl font-bold">About Matthieu Mordrel</h1>
-        <p className="mt-8 text-lg">
-          I&apos;m a freelance consultant that has deep interests in all technologies, and like to
-          try around all about the new software, system and tools available.
-          <br />
-          <br />I also worked in finance which helped me understand the business problematics.
-        </p>
-      </div>
+    <div className={`flex flex-col ${className}`}>
+      <p className="">
+        I&apos;m a french<span className="text-techBlue"> independent freelancer</span> in Belgium,
+        <br />
+        with a passion in many technologies.
+      </p>
+      {/* <button className={`btn randomCSSClass ${styles.btnPrimary}`}>Test</button> */}
     </div>
   )
 }

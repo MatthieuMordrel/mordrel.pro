@@ -23,14 +23,14 @@ const PowerBISkillsCard = () => {
   ]
 
   return (
-    <div className=" text-white ">
-      <h2 className="text-lg font-semibold text-white">PowerBI Proficiency</h2>
+    <div className="">
+      <h2 className="text-lg font-semibold">PowerBI Proficiency</h2>
       <ul>
         {skills.map((skill, index) => (
           <li key={index} className="mb-2 flex items-center gap-2">
             <span className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-textGrey"></span>
             <div>
-              <h3 className="font-semibold text-white">{skill.name}</h3>
+              <h3 className="font-semibold">{skill.name}</h3>
               <p className="text-sm text-textGrey">
                 <FontTextPanes> {skill.description}</FontTextPanes>
               </p>

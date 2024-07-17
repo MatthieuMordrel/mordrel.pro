@@ -15,21 +15,11 @@ const childVariant = {
   visible: { opacity: 1, y: 0 }
 }
 
-export const ProcessCard: React.FC<ProcessCardProps> = ({
-  icon: Icon,
-  title,
-  description,
-  borderColor
-}) => (
-  <motion.div
-    variants={childVariant}
-    className="group relative rounded-lg bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-paneGrey"
-  >
+export const ProcessCard: React.FC<ProcessCardProps> = ({ icon: Icon, title, description, borderColor }) => (
+  <motion.div variants={childVariant} className="group relative rounded-lg bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-paneGrey">
     <div className="flex items-start">
       <div className="flex-shrink-0 items-center self-stretch">
-        <div
-          className={`flex h-10 w-10 items-center justify-center rounded-full ${borderColor} text-white`}
-        >
+        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${borderColor} `}>
           <Icon className="h-6 w-6" />
         </div>
       </div>
@@ -38,9 +28,7 @@ export const ProcessCard: React.FC<ProcessCardProps> = ({
         <p className="mt-2 text-gray-500 dark:text-gray-400">{description}</p>
       </div>
     </div>
-    <div
-      className={`absolute inset-0 rounded-lg border-2 ${borderColor} opacity-0 group-hover:opacity-100`}
-    />
+    <div className={`absolute inset-0 rounded-lg border-2 ${borderColor} opacity-0 group-hover:opacity-100`} />
   </motion.div>
 )
 
@@ -50,12 +38,7 @@ interface Step {
   description: string
 }
 
-const borderColors = [
-  'border-[#9FD7CA]',
-  'border-[#77C1C7]',
-  'border-[#5CA8C4]',
-  'border-[#598DBB]'
-]
+const borderColors = ['border-[#9FD7CA]', 'border-[#77C1C7]', 'border-[#5CA8C4]', 'border-[#598DBB]']
 
 export const Process = ({ steps }: { steps: Step[] }) => (
   <div className="space-y-6">

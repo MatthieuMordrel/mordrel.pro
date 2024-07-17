@@ -1,15 +1,13 @@
 import React from 'react'
+import { MailIconAnimated } from './IconMail'
 
-const ContactText = ({ ...props }) => {
+const ContactText = ({ className = '', ...props }) => {
   return (
-    <div className="text-white" {...props}>
-      <h1 className="mb-4 text-[clamp(1.5rem,2vw+1rem,2.5rem)] font-extrabold text-white">
-        Let&apos;s build something great together !
-      </h1>
-      <p className="text-md text-white">
-        Fill the form below or send a mail directly and we&apos;ll get back to you as soon as
-        possible
-      </p>
+    <div className={`flex flex-col items-center ${className}`} {...props}>
+      <div className="relative flex items-center">
+        <h1 className="text-[clamp(1.5rem,2vw+1rem,2.5rem)] font-extrabold text-white">Let&apos;s build something great !</h1>
+        <MailIconAnimated className="-right-[clamp(4.5rem,5vw,4.5rem)] hidden h-[clamp(4.5rem,10vw,6rem)] sm:block" />
+      </div>
     </div>
   )
 }

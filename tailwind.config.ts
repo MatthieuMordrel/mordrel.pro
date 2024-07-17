@@ -1,11 +1,9 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+import type { PluginAPI } from 'tailwindcss/types/config'
 
 const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}'
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       backgroundImage: {
@@ -14,6 +12,7 @@ const config: Config = {
       },
       colors: {
         techGrey: '#1C1C1C',
+        primaryText: 'rgb(236, 236, 236)',
         techBlue: '#9fd7ca',
         techGreen: '#3ecf8e ',
         techOrange: '#EDB183',
@@ -41,7 +40,8 @@ const config: Config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         orbit: 'orbit calc(var(--duration)*1s) linear infinite',
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-        'sliding-in': 'keyframe-sliding-in '
+        'sliding-in': 'keyframe-sliding-in ',
+        bounce1: 'bounceWithDelay 1s infinite'
       },
       keyframes: {
         'keyframe-border-spin': {
@@ -98,10 +98,54 @@ const config: Config = {
           '100%': {
             'offset-distance': '100%'
           }
+        },
+        bounceWithDelay: {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-25%)'
+          }
         }
+      },
+      fontFamily: {
+        bitter: ['var(--font-bitter)', 'serif'],
+        inter: ['var(--font-inter)', 'sans-serif']
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addComponents }: PluginAPI) {
+      addComponents({
+        '.btn': {
+          padding: '.5rem 1rem',
+          borderRadius: '.25rem',
+          fontWeight: '600',
+          backgroundColor: '#1E40AF', // example additional styling
+          color: '#fff'
+        },
+        '.textMedium': {
+          fontSize: 'clamp(1rem, 0.464rem + 1.429vw, 1.625rem)',
+          // textWrap: 'normal',
+          fontStretch: '100%',
+          lineHeight: '2rem',
+          // fontWeight: '400',
+          fontFamily: 'var(--font-bitter)'
+          // color: 'rgb(15, 27, 97)',
+          // backgroundColor: 'rgb(248,252,252)'
+        },
+        '.textSmall': {
+          fontSize: 'clamp(0.75rem, 0.464rem + 1.429vw, 1.2rem)',
+          // textWrap: 'normal',
+          fontStretch: '100%',
+          lineHeight: '2rem'
+          // fontWeight: '400',
+          // fontFamily: 'var(--font-bitter)'
+          // color: 'rgb(15, 27, 97)',
+          // backgroundColor: 'rgb(248,252,252)'
+        }
+      })
+    })
+  ]
 }
 export default config

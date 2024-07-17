@@ -8,7 +8,7 @@ function MainVideo({ src }: { src: string }) {
         muted
         playsInline
         disablePictureInPicture
-        className="absolute left-0 top-0 h-full w-full object-cover opacity-25"
+        className="absolute left-0 top-0 h-full w-full object-cover opacity-10"
       />
       <div className="absolute bottom-0 left-0 h-28 w-full bg-gradient-to-b from-transparent to-techGrey"></div>
     </>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tooltip } from 'recharts'
 import { formatCurrency } from './utils'
-import { colors } from './types'
+import { colors } from './colors'
 
 interface GraphTooltipProps {
   value: number

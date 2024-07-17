@@ -1,14 +1,15 @@
 'use client'
-
-import { cn } from '../../lib/utils'
-import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { cn } from '@lib/utils'
+import { AnimatePresence, HTMLMotionProps, motion, useInView } from 'framer-motion'
 
 interface WordRotateProps {
   words: string[]
   duration?: number
-  framerProps?: HTMLMotionProps<'h1'>
+  framerProps?: HTMLMotionProps<'p'>
   className?: string
+  animate?: boolean
+  keep?: boolean
 }
 
 export default function WordRotate({
@@ -20,26 +21,43 @@ export default function WordRotate({
     exit: { opacity: 0, y: 50 },
     transition: { duration: 0.25, ease: 'easeOut' }
   },
-  className
+  className,
+  keep = false,
+  animate = true
 }: WordRotateProps) {
   const [index, setIndex] = useState(0)
+  const [completed, setCompleted] = useState(false)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
+  // useEffect(() => {
+  //   console.log(isInView)
+  // }, [isInView])
 
   useEffect(() => {
+    if (!animate || (completed && keep) || !isInView) return
+
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length)
+      setIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % words.length
+        if (newIndex === 0 && keep) {
+          setCompleted(true)
+          clearInterval(interval)
+          return words.length - 1 // Keep the last word
+        }
+        return newIndex
+      })
     }, duration)
 
-    // Clean up interval on unmount
+    // Clean up interval on unmount or when animation should stop
     return () => clearInterval(interval)
-  }, [words, duration])
+  }, [words, duration, animate, keep, completed, isInView])
 
   return (
-    <div className="">
-      <AnimatePresence mode="wait">
-        <motion.h1 key={words[index]} className={cn(className, 'uppercase')} {...framerProps}>
-          {words[index]}
-        </motion.h1>
-      </AnimatePresence>
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.p ref={ref} key={words[index]} className={cn(className)} {...(animate ? framerProps : {})}>
+        {words[index]}
+      </motion.p>
+    </AnimatePresence>
   )
 }

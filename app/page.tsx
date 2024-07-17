@@ -28,21 +28,15 @@ export default function Home() {
         <Examples />
       </div>
       <section className="flex w-[90vw] flex-col items-center gap-y-8 md:w-[80vw] md:gap-y-28 3xl:w-[60vw]">
-        <FadeInEffect animationStyle="zoom">
-          <Pane className="h-[30rem] w-full md:h-[37.5rem]">
-            <AutomationPane />
-          </Pane>
-        </FadeInEffect>
-
         <div id="api-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
-          <FadeInEffect animationStyle="zoom" className="h-full">
+          <FadeInEffect animationStyle="fadeRight" className="h-full">
             <Pane className="h-full">
               <ApiIntegrationShowcase />
             </Pane>
           </FadeInEffect>
         </div>
         <div id="visu-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
-          <FadeInEffect animationStyle="zoom" className="h-full">
+          <FadeInEffect animationStyle="fadeLeft" className="h-full">
             <Pane className="h-full">
               <PaneDataViz />
             </Pane>
@@ -51,6 +45,11 @@ export default function Home() {
         <div id="excel-block" className="w-full scroll-mt-28">
           <ExcelProposition />
         </div>
+        <FadeInEffect animationStyle="zoom">
+          <Pane className="h-[30rem] w-full md:h-[37.5rem]">
+            <AutomationPane />
+          </Pane>
+        </FadeInEffect>
 
         <TypewriterEffectSmoothDemo />
       </section>

@@ -24,7 +24,8 @@
       "@ui/*": ["app/ui/*"],
       "@lib/*": ["app/lib/*"],
       "@data/*": ["app/data/*"],
-      "@components/*": ["app/components/*"]
+      "@components/*": ["app/components/*"],
+      "@styles/*": ["app/styles/*"]
     }
   },
   "typeRoots": ["./node_modules/@types", "./"],

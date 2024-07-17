@@ -35,7 +35,7 @@ const steps = [
 
 const ConsultingProcess = () => {
   return (
-    <div className="bg-techGrey px-4  text-white">
+    <div className="bg-techGrey px-4">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-10 text-center text-2xl font-bold">Process and Pricing</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

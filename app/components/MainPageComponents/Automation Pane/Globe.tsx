@@ -1,12 +1,29 @@
 'use client'
-import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
+import { motion, useInView } from 'framer-motion'
+import { Suspense, useRef } from 'react'
+// import { World } from '@/app/ui/Components/globe'
+
+// const World = dynamic(
+//   () =>
+//     new Promise((resolve) => {
+//       setTimeout(() => {
+//         import('@/app/ui/Components/globe').then((m) => resolve(m.World))
+//       }, 1500)
+//     }),
+//   {
+//     ssr: false
+//   }
+// )
 
 const World = dynamic(() => import('@/app/ui/Components/globe').then((m) => m.World), {
   ssr: false
 })
 
 export function GlobeDemo() {
+  //Use the myRef and isInView hook to lazy load the component when it enters the viewport
+  const myRef = useRef(null)
+  // const isInView = useInView(myRef, { once: true })
   const globeConfig = {
     pointSize: 4,
     globeColor: '#062056',
@@ -394,28 +411,15 @@ export function GlobeDemo() {
   ]
   //Overflow-hidden ensure that the page is not moved to the right when the borderbeam comes to the edge
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center md:flex-row">
+    <div ref={myRef} className="relative flex h-full w-full flex-col items-center justify-center md:flex-row">
       <div className="relative h-full w-full overflow-hidden md:h-96 lg:h-full">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20
-          }}
-          animate={{
-            opacity: 1,
-            y: 0
-          }}
-          transition={{
-            duration: 1
-          }}
-          className="div"
-        >
-          {/* <h2 className=""></h2>
-          <p className=""></p> */}
-        </motion.div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-40 w-full select-none bg-gradient-to-b from-transparent to-white dark:to-paneGrey" />
         <div className="absolute z-10 w-full md:h-full">
-          <World data={sampleArcs} globeConfig={globeConfig} />;
+          {/* {isInView ? ( */}
+          {/* // <Suspense fallback={<></>}> */}
+          <World data={sampleArcs} globeConfig={globeConfig} />
+          {/* ) : // </Suspense> */}
+          {/* null} */}
         </div>
       </div>
     </div>

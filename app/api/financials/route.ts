@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server'
 
 export async function POST(req: NextRequest) {
-  console.log('Entered the route handler')
+  // console.log('Entered the route handler')
   const label = await req.json()
   // console.log(label.label)
   const api_key = process.env.ALPHAVINTAGE_API_KEY

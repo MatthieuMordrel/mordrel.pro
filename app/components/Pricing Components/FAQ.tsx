@@ -1,17 +1,11 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@/app/ui/Components/AccordionComp'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/app/ui/Components/Shadcn/AccordionComp'
 
 export default function FAQ({ className }: { className?: string }) {
   const faqData = [
     {
       id: 'item-1',
       question: 'Which services do you provide?',
-      answer:
-        'We provide automation, data visualisation and other custom services aimed at empowering businesses. '
+      answer: 'We provide automation, data visualisation and other custom services aimed at empowering businesses. '
     },
     {
       id: 'item-2',

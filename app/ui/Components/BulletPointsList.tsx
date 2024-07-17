@@ -1,5 +1,6 @@
 import { CheckMarkLucid } from '@/app/data/Icons'
 import { FontTextPanes } from '../Fonts/FontTextPanes'
+import GradualSpacing from '../Effects/GradualSpacing'
 
 interface BulletPointsListtProps {
   items: string[]
@@ -11,7 +12,7 @@ export const BulletPointsList: React.FC<BulletPointsListtProps> = ({ items, clas
     <ul className={`mt-2 ${className}`}>
       <FontTextPanes>
         {items.map((item, index) => (
-          <li key={index} className="mb-2 flex items-center">
+          <li key={index} className="mb-2 flex items-center text-[clamp(0.75rem,1.5vw,1rem)]">
             <span>
               <CheckMarkLucid />
             </span>

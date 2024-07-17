@@ -1,5 +1,6 @@
 import FAQ from '@/app/components/Pricing Components/FAQ'
 import Timeline from '@/app/components/Pricing Components/Timeline'
+import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 import React from 'react'
 
 const Pricing = () => {
@@ -7,9 +8,13 @@ const Pricing = () => {
     <div className="flex min-h-screen flex-col space-y-12 bg-techGrey">
       {/* <ConsultingProcess /> */}
       {/* <Timeline /> */}
-      <Timeline />
+      <FadeInEffect>
+        <Timeline />
+      </FadeInEffect>
       {/* <ComponentOriginal /> */}
-      <FAQ className="w-[50%] self-center" />
+      <FadeInEffect className="w-[50%] self-center">
+        <FAQ />
+      </FadeInEffect>
     </div>
   )
 }

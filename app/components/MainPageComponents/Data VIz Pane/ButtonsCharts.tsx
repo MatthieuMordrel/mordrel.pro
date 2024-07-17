@@ -3,9 +3,10 @@ import React, { useState } from 'react'
 import ButtonsList from '@/app/ui/Components/ButtonsList'
 import { LineChartIcon, BarChartIcon, AreaChartIcon } from 'lucide-react'
 import CustomIcon from '@/app/ui/Components/LucideIcons'
+import { ChartType } from '@lib/types'
 
 interface ButtonsChartsProps extends React.HTMLAttributes<HTMLDivElement> {
-  onChartTypeChange: (type: string) => void
+  onChartTypeChange: (type: ChartType) => void
 }
 
 const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ onChartTypeChange, ...props }) => {
@@ -20,7 +21,7 @@ const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ onChartTypeChange, ...pro
       classButton="p-2 bg-paneGrey"
       items={chartTypes.map((type) => type.label)}
       buttonDisplay={chartTypes.map((type) => type.icon)}
-      onActiveIndexChange={(index) => onChartTypeChange(chartTypes[index].label.toLowerCase())}
+      onActiveIndexChange={(index) => onChartTypeChange(chartTypes[index].label.toLowerCase() as ChartType)}
       {...props}
     />
   )

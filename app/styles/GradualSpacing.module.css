@@ -1,8 +1,7 @@
 .gradient-text {
   background: linear-gradient(180deg, #fff, #adadad);
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   line-height: 1.2; /* Adjust based on your design */
-  display: inline-block;
-  vertical-align: middle; /* Ensures vertical alignment */
 }

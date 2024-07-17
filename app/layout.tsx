@@ -1,19 +1,34 @@
 import type { Metadata } from 'next'
-import { Inter, Roboto_Flex } from 'next/font/google'
-import './globals.css'
-import Navbar from './components/NavBar'
+import { Inter, Roboto_Flex, Bitter } from 'next/font/google'
+import './styles/globals.css'
+import './styles/variables.css'
+import './styles/scrollbar.css'
+import './styles/animation.css'
+
+import Navbar from '@components/MainLayout/NavBar'
 import Footer from './components/Footer'
 
+// Font Import: When you import a font using next/font/google, it generates a CSS class with the necessary font-face declarations.
+// ClassName Property: The returned object includes a className property, which is a string representing the generated CSS class.
 const inter = Inter({
+  weight: '400',
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter'
 })
 
-const main_font = Roboto_Flex({
+const roboto = Roboto_Flex({
   weight: '400',
   subsets: ['latin'],
-  display: 'swap'
+  display: 'swap',
+  variable: '--font-roboto'
+})
+
+const bitter = Bitter({
+  weight: '400',
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-bitter'
 })
 
 // export const fetchCache = 'default-cache'
@@ -33,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-techGrey text-primaryText`}>
         <Navbar />
         {children}
         <Footer />

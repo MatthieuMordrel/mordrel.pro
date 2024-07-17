@@ -1,5 +1,13 @@
 import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../tailwind.config'
+import config from '../../tailwind.config'
 
-const fullConfig = resolveConfig(tailwindConfig)
-export const colors = fullConfig.theme.colors
+const fullConfig = resolveConfig(config)
+
+interface ExtendedColors {
+  techGrey: string
+  techPurple: string
+  techBlue: string
+  // Add other color properties as needed
+}
+
+export const colors: ExtendedColors = fullConfig.theme.colors as unknown as ExtendedColors

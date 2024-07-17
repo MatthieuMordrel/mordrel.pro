@@ -22,7 +22,7 @@ const ExcelSkillsCard = () => {
   ]
 
   return (
-    <div className="rounded-lg bg-paneGrey p-6 text-white shadow-lg">
+    <div className="rounded-lg bg-paneGrey p-6 shadow-lg">
       <h2 className="mb-4 text-lg font-semibold">Excel Mastery</h2>
       <ul>
         {skills.map((skill, index) => (
@@ -30,7 +30,7 @@ const ExcelSkillsCard = () => {
             <span className="h-6 w-6 flex-shrink-0 rounded-full bg-techGreen"></span>
             <div>
               <h3 className="font-semibold">{skill.name}</h3>
-              <p className="text-sm text-white">{skill.description}</p>
+              <p className="text-sm">{skill.description}</p>
             </div>
           </li>
         ))}

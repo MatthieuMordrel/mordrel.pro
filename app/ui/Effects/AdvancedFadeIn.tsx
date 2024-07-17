@@ -1,13 +1,13 @@
 'use client'
 import React, { ReactNode } from 'react'
-import { motion, Variants, Easing } from 'framer-motion'
+import { motion, Variants, Easing, MotionProps } from 'framer-motion'
 
-interface FadeInEffectProps {
+interface FadeInEffectProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode
   duration?: number
   delay?: number
   easing?: Easing
-  animationStyle?: 'fadeUp' | 'fadeDown' | 'fadeLeft' | 'fadeRight' | 'zoom' | 'bounce'
+  animationStyle?: 'fadeUp' | 'fadeDown' | 'fadeLeft' | 'fadeRight' | 'zoom' | 'bounce' | 'fade'
   customAnimation?: {
     initial: Record<string, number>
     animate: Record<string, number>
@@ -23,24 +23,28 @@ const easings = {
 
 const defaultAnimationVariants: Record<string, Variants> = {
   fadeUp: {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, transform: 'translateY(20px)' },
+    visible: { opacity: 1, transform: 'translateY(0)' }
   },
   fadeDown: {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, transform: 'translateY(-20px)' },
+    visible: { opacity: 1, transform: 'translateY(0)' }
   },
   fadeLeft: {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 }
+    hidden: { opacity: 0, transform: 'translateX(-20px)' },
+    visible: { opacity: 1, transform: 'translateX(0)' }
   },
   fadeRight: {
-    hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0 }
+    hidden: { opacity: 0, transform: 'translateX(20px)' },
+    visible: { opacity: 1, transform: 'translateX(0)' }
   },
   zoom: {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1 }
+    hidden: { opacity: 0, transform: 'scale(0.9)' },
+    visible: { opacity: 1, transform: 'scale(1)' }
+  },
+  fade: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
   },
   bounce: {
     hidden: { opacity: 0, y: 20 },
@@ -58,12 +62,13 @@ const defaultAnimationVariants: Record<string, Variants> = {
 
 export const FadeInEffect: React.FC<FadeInEffectProps> = ({
   children,
-  duration = 0.5,
+  duration = 0.8,
   delay = 0.1,
   easing = easings.easeOutQuint,
   animationStyle = 'fadeUp',
   customAnimation,
-  className
+  className = '',
+  ...props
 }) => {
   const variants = customAnimation
     ? {
@@ -79,8 +84,9 @@ export const FadeInEffect: React.FC<FadeInEffectProps> = ({
       viewport={{ once: true, amount: 0.3 }}
       variants={variants}
       transition={{ duration, delay, ease: easing, staggerChildren: 0.1 }}
-      className={`${className}`}
+      className={`fadeInDiv ${className}`}
       layout
+      {...(props as MotionProps)}
     >
       {children}
     </motion.div>

@@ -8,7 +8,7 @@ interface ToggleButtonsList {
   items: string[]
   onActiveIndexChange?: (index: number) => void
   className?: string
-  buttonDisplay?: any
+  buttonDisplay?: any[]
   classButton?: string
 }
 
@@ -17,13 +17,7 @@ const childVariant = {
   visible: { opacity: 1, x: 0 }
 }
 
-const ButtonsList: React.FC<ToggleButtonsList> = ({
-  items,
-  onActiveIndexChange,
-  className,
-  buttonDisplay,
-  classButton
-}) => {
+const ButtonsList: React.FC<ToggleButtonsList> = ({ items, onActiveIndexChange, className, buttonDisplay, classButton }) => {
   if (items.length === 0) {
     throw new Error('Items array must not be empty')
   }
@@ -44,10 +38,8 @@ const ButtonsList: React.FC<ToggleButtonsList> = ({
           variants={childVariant}
           type="button"
           key={item}
-          className={`rounded-lg border-2 text-sm font-medium ${classButton} ${
-            activeIndex === index
-              ? 'border-techBlue bg-paneGrey text-techBlue'
-              : 'border-borderGrey text-white hover:bg-activeBorderGrey hover:text-techBlue'
+          className={`rounded-lg border-2 ${classButton} ${
+            activeIndex === index ? 'border-techBlue text-techBlue' : 'border-borderGrey hover:bg-activeBorderGrey hover:text-techBlue'
           }`}
           onClick={() => handleClick(index)}
         >

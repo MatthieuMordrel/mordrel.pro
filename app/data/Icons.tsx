@@ -1,10 +1,7 @@
 import { Check } from 'lucide-react'
 import react, { SVGProps } from 'react'
 
-export const MailIconPerso = ({
-  className,
-  ...props
-}: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement> & { className?: string }) => (
+export const MailIconPerso = ({ className, ...props }: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement> & { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" {...props} className={className}>
     <path
       d="M141.5 158.12C64.6 203 60 354.53 169.38 351.63c48.91-1.3 63.2-52.59 107.34-70.59 41.44-16.91 77.17 17 119-21.4 49.29-45.2 56.37-155.75-16.89-163.14-31.9-3.22-44.2 28.63-72.07 35.68-56.5 14.3-108.12-7.39-165.26 25.94Z"

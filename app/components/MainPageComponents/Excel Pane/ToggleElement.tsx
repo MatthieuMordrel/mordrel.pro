@@ -24,10 +24,7 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
         className="flex justify-center gap-x-1 sm:gap-x-2 md:gap-x-4"
       />
       <div className="mt-3 h-full w-full rounded-lg border-gray-500">
-        <div
-          key={activeIndex}
-          className="animate__animated animate__fadeInRight animate__faster p-3"
-        >
+        <div key={activeIndex} className="animate__animated animate__fadeInRight animate__faster p-3">
           <div className="relative h-[60vh]">{items[activeIndex].component}</div>
         </div>
       </div>
