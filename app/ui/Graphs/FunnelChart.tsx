@@ -1,7 +1,7 @@
 import React from 'react'
 import { ResponsiveContainer, FunnelChart, Funnel, LabelList, Tooltip } from 'recharts'
 import { formatCurrency } from './utils'
-import { colors } from './colors'
+import { colors } from '@lib/colors'
 
 interface LineChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   data: number[]
