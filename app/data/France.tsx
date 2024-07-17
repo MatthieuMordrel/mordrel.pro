@@ -35,7 +35,7 @@ export const CountryVisual: React.FC<SvgComponentProps> = ({ color = colors.tech
       setTimeout(() => {
         animateRef.current?.beginElement()
         hasEnteredViewport.current = true
-      }, 1500)
+      }, 2000)
     }
   }
 
