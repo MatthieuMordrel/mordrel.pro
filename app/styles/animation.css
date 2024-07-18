@@ -1,21 +1,25 @@
 /* Keyframes and animation for SVGs */
 
+/* Contact mail animation */
 svg#freepik_stories-mail-sent:not(.animated) .animable {
   opacity: 0;
 }
 
 svg#freepik_stories-mail-sent.animated #freepik--Shadow--inject-3 {
+  opacity: 0;
   animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) lightSpeedRight;
-  animation-delay: 0s;
+  animation-delay: 1s;
 }
 
 svg#freepik_stories-mail-sent.animated #freepik--Mail--inject-3 {
+  opacity: 0;
   animation:
     1.1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) lightSpeedRight,
     1.5s infinite linear wind;
-  animation-delay: 0s, 1.1s;
+  animation-delay: 1s, 3.1s;
 }
 
+/* Contact mail Keyframes */
 @keyframes lightSpeedRight {
   from {
     transform: translate3d(50%, 0, 0) skewX(-20deg);
@@ -51,6 +55,7 @@ svg#freepik_stories-mail-sent.animated #freepik--Mail--inject-3 {
   }
 }
 
+/* Rotating software animation */
 svg#freepik_stories-meditation:not(.animated) .animable {
   opacity: 0;
 }
@@ -71,6 +76,7 @@ svg#freepik_stories-meditation.animated #freepik--Character--inject-2 {
   display: none;
 }
 
+/* Rotating software keyframes */
 @keyframes slideUp {
   0% {
     opacity: 0;

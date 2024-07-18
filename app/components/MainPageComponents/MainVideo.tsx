@@ -7,6 +7,7 @@ function MainVideo({ src }: { src: string }) {
         loop
         muted
         playsInline
+        preload="auto"
         disablePictureInPicture
         className="absolute left-0 top-0 h-full w-full object-cover opacity-10"
       />

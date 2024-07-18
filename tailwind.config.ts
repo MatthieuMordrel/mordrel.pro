@@ -17,7 +17,6 @@ const config: Config = {
         techGreen: '#3ecf8e ',
         techOrange: '#EDB183',
         techPurple: '#9E829C',
-        //techPurple: '#9E829C',
         techYellow: '#FFD93D',
         borderGrey: '#262626',
         paneGrey: '#232323',
@@ -143,6 +142,12 @@ const config: Config = {
           // fontFamily: 'var(--font-bitter)'
           // color: 'rgb(15, 27, 97)',
           // backgroundColor: 'rgb(248,252,252)'
+        },
+        '.svgTextStyling': {
+          fontWeight: '600',
+          fontFamily: 'var(--font-bitter)',
+          letterSpacing: '1px',
+          pointerEvents: 'none'
         }
       })
     })

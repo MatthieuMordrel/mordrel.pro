@@ -16,9 +16,17 @@ import { Suspense, useRef } from 'react'
 //   }
 // )
 
-const World = dynamic(() => import('@/app/ui/Components/globe').then((m) => m.World), {
-  ssr: false
-})
+const World = dynamic(
+  () =>
+    new Promise<{ default: typeof import('@/app/ui/Components/globe').World }>((resolve) => {
+      setTimeout(() => {
+        import('@/app/ui/Components/globe').then((m) => resolve({ default: m.World }))
+      }, 3000)
+    }),
+  {
+    ssr: false
+  }
+)
 
 export function GlobeDemo() {
   //Use the myRef and isInView hook to lazy load the component when it enters the viewport

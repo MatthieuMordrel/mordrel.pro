@@ -6,18 +6,20 @@ import { RGBA_ASTC_10x10_Format } from 'three'
 import { motion, Easing } from 'framer-motion'
 import { useRef, useState } from 'react'
 
-interface SvgComponentProps extends React.SVGProps<SVGSVGElement> {
-  color?: string
-}
-
-export const CountryVisual: React.FC<SvgComponentProps> = ({ color = colors.techBlue, ...props }) => {
+export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...props }) => {
+  const color = 'rgba(147, 194, 183,0.4)'
   const scaleFrance = 0.8
   const scaleBelgium = 0.3
   const xFrance = 0
   const xBelgium = 400
   const yFrance = 200
   const yBelgium = 100
+
   const fontSize = 16
+  const colorCitiesText = '#000302'
+  // 3498db
+  const colorCities = colors.techBlue
+  const colorGlowCities = color
 
   const propCountries = {
     layout: true,
@@ -75,16 +77,9 @@ export const CountryVisual: React.FC<SvgComponentProps> = ({ color = colors.tech
           d="m361.225 302.404-.36 3.68 3.42.7.69 2 4.71-1.76 3.13 1.49 1.22-1.23.75 1 1.18-.59-.19 1.73 1.06.14 4.04-1.77 1.37-6.58 2.2-.08 1.88 1.77 2.67-1.57 2.07 1.7.79-2.13 1.77-.31 1.28 1.65-1.29 1.18 2.35 1.53-.69 2.31 1.62 1.34.89-.25 6.69-20.51.4 1.06 1.39-.84 3.01 1.85 4.56-1.2.05-.91 1.59.81 1.22 2.86 3.26.7-.64 1.99 3.23 1.85-.66.72 1.76 3.58.85-2.24.53 1.95 1.59-.01-.06 3.07 2.71-.25 4.32-4.56.15 1.23 2.79.89.48 2.9 5.99-.23 8.11-9.06 4.37 2.95-2.81 4.91.93 2.04-5.99 2.06-.64 1.2 1.25.9-1.54 3.17 3.92-1.4 3.17.72 6.93-5.1.59-1.85-2.03.28-.53-3.12-1.14-.5 1.33-2.89 11.07-5.82 6.77.14 5.73 1.65-2.05 4.3 3.9 4.46-2.52 4.58-.29 3.95 4.21.78-.95 4.55 2.45-.97 4.26 6.58.27 1.85-1.98 3.06-3.46 1.86-3.85.23-.55 6.61 4.49 4.38 3.51.7-.95 3.07.96 4.9 2.26.61-.22 1.32 2.1.15.61 2.15 3.02 1.61-3.2 4.62 1.03 4.21-2.71 2.6-2.84-.49-2.33 2.97-2.18.08-.01 1.86-1.83.56-3.37-1.9-5.67 2.91-2.19-.87-1.51 1.41-1.3-.56-1.25.96.26 2.22-1.48.18-3.58-1.07-1.31-3.11-1.63.89-2.01-.73-1.71 6.12 4.96 1.02-.05 2.63 1.47.85-.1 4.94-2.67-1.11-1.83 1.28-4.71-.72-3.22 2.82-1.61-1.14-2.83 1.8 1.28 1.36-1.21 1.23-2.84.82-2.32-.76-1.17 3.09 1.31.93-1.7 2.15-1.67-.5-.84 1.34-3.57-.74.2 2.32-2.11 3.94 2.78 2.41-1.47.13-.6 1.66-6.48-1.61.27 2.98 1.39.61-.87 1.03-2.4-.34.47 2.91 2.61 2.15 1.17-.76 1.1 1.19 3.38-.19-.88 1.58 1.19.32.44 1.95h1.64l-.01 4.09-1.79 1.42 1.64.46-.17.99-1.96-.24.35-1-1.57-1.36-2.5 3.39-3.59.77-.81-1.87-2.18-.2.08-2.6-1.23-.81-2.37.42-2.03-1.4-.81 1.16-3.22-1.2.61-4.8-.66.31-1.76 1.85-2.02-1.74-10 4.63-1.26-4.96-5.73-.97-.05 3.44-5.98-4.23-2.16.31-.63 3.19-1.76-.42-.15-3.24-2.73.47-2.87 4.24-5.29-4.14-3.4 1.02-.32-4.18 1.18-.81-3.35-3.87-1.48-5.72-2.06-1.37-1.73-8.71 2.58-1.42 1.07-3.4 1.62.89-.24-1.24.73.76 1.17-.8.27-2.26 5.06-.05 2.83-5.27 3.69-.58-.72-2.71 3.46-1.01-1.37-2.34 1.02-1.75 1.14.08v-.53l-1.04-1.75 2.03.44.53 1.55.9-.53-.41-2.45 1.79-3.65-2.27-3.06-2 1.09-1.6-1.09.9-1.58-1.63-.96 1.49-1.09-1.36-1.88-2.59.6-1.62-1.83-2.27-.21-1.39.51.37 1.13-3.01.39-.42 1.32-2.09-.78-.1 1.25-1.36-2.58-1.56-.25-1.8 2.47-.63-3.59 3.08-2.4.89-3.53-2.12-4.87-4.57-3.16-1.95-3.53.15-1.99-3.81-3.93 1.39-1.33-.29-3.36 1.63-.95-2.56-2.62.32-2.34 3.59-.22 1.8-1.54-1.07-3.23.67-2.1-1.18-1.39.65-3.05-1.69-4.56 4.82-2.08.36-.05.32-.03zm42.64 109.76-.32.17-.36.64-1.51 2.73.65 2.61 4.05.68 1.51-3.92 1.98-.93-.03-.34-2.91-1.77-.5-.58-.43-.05-.17-.44-1.28 1.03-.68.17z"
         />
         <g id="marseille" transform="translate(370, 460)">
-          <circle cx="26" cy="13" r={6 / scaleFrance} fill="#3498db" filter="url(#glow)" />
-          <text
-            className="font-bold"
-            dx="0"
-            dy="-20"
-            font-family="Arial, sans-serif"
-            font-size={fontSize / scaleFrance}
-            fill="#34495e"
-            text-anchor="middle"
-          >
+          <use href="#PointMarseille" filter="url(#modernGlow)" x="28" y="11" />
+
+          <text className="svgTextStyling" dx="0" dy="-15" font-size={fontSize / scaleFrance} fill={colorCitiesText} text-anchor="middle">
             Marseille
             <tspan dx={5} dy={-4}>
               🚤
@@ -120,37 +115,61 @@ export const CountryVisual: React.FC<SvgComponentProps> = ({ color = colors.tech
           d="m474.474 144.592 5.58-1.42 2.59 5.98 3.99-1.42 2.74 3.05 4.9-2.78-.64-7.13 7.39-.93 7.84 7.9-5.5 2.68-.41-2.65-2.14 1.08 1.75 7.25-8.87 3.51-.64 7.92-6.58 5.36 4.28 7.94 2.51-1.45 2.65 3.82 4.03-2.28 3.97-1.51.6 2.55 6.11-.15 3.68 3.05-1.81 8.18-4.32-.58-3.56 9.38-1.19 10.32 2.98 1.63 1.38.06-8.29 6.94 1.3 6.87-1.62 2.09-1.21 4.81 3.52 1.81-3.75 8.12-6.05.61-4.96-5.24.49-4.84-5.16-3.16-7.29-6.07-11.05 8.25-3.64-2.02.02-5.83h-1.48l-12.27 1.75-.04-3.93-4.42-.28-4.16-6.63-6.11-2.55-6.87 1.41-1.85 4.02-.78-2.09-3.64 1.96-9.76-3.01-1.01 8.22 3.5 5.12-4.12 3.99-5.89.46-1.67-6.99-4.05 5.18-9.53 2.45-.14 3.46-6.36-4.51.18-4.02-23.46 8.19v3.83l-4.18-.09-3.25-5.33-2.02 1.9 2.04 3.59-4.07-1.07-1.56 6.31h-8.62l-2.9 3.22-7.72-6-5.51.61-4.77-7.26-10.68 7.29-2.76-1.72v-.71l-5.04 6.31-1.71-2.21-17.37 3.86h-1.3l-8.27-.64-4.26-5.82 1.15-6.93 3.54.86 1.71.09 5.64-.95-3.89-8.12 3.35-5.34 7.18 3.16 2.43-3.8 3.31 2.52 9.06-6.14 1.3-13.85-5.39-1.17 8.36-11.62 1.11-4.06-2.72-3.2 4.63-2.86-.95-7.23 8.58 4.52 4.63-4.4-.99-2.28-2.59-8.81 3.05-6.5 5.23 1.91 2.1-.06 6.73-5.61-2.12-4.04 2.82-1.2.72-5.74 7.96-1.76 12.88 5-.64 3.24 7.12-4.35-1.42 5.06 3.19 1.05 1.11 4.66 11.22-3.11 5.21 4.35 2.04-5.27 7.76 4.87 3.93-3.64 6.36 4.16 3.15-.65 1.17-5.4 15.29-4.41 4.49 3.18-1.93 4.87 7-8.42 5.39.49 5.99-4.41 5.06 8.57 15.62-3.27 6.32-4.66h.91l6.05-2.68 3.05 3.41zm-124.49 40.67-1.25.28-2.78 1.97-1.07.62-3.35 3.11-3.27 4.83.51 9.43-5 .25-.56 2.76-1.96 2.55.12.37.49-.49 6.59 3.32 4.53-1.35 5.43 11.36 9.88 3.31 15.21-7.09 2.53-1.07 2.76-.25-3.7-3.99-3.09-.34-.76-2.18 4.75-3.04-2.94-9-7.26-4.83 2.86-3.44-1.38-5.2-1.4-1.97-1.98-1.35-2.53-1.85-4.14 4.61-7.24-1.33zM160.684 41.332l3.1 10.59-4.9 5.93 3.32 4.04-1.73 1.21 2.72 7.19 3.15 11.63-6.02 2.94 3.42 7.62-4.69 3.44 4.96 1.7 4.9 7.98-7.08 13.46-8.34 5.56 20.25 13.89 2.1 2.04-2.76 2.56h-1.17l5.08 10.18-4.98 7.67 3.38 4.69-5.85 2.77 9.06 4.28-4.16.68 2.45 3.32-5.02.03 1.5 3.73-3.45 4.09 3.21 2.15 5.26-3.07 3.67 3.13-5.05 9.2 11.55 9.95-2.43 3.44 4.28 5.68-12.06 11.76-5 4.48v1.19l-5.41.8-9.03 11.28-6.86-3.68-3.64-10.36-8.5 1.07-8.25-4.38-8.25 3.12-5.29-10.39-4.78 1.1-2.71-2.3-5.52 6.66-4.55-2.43-5.08 3.38-2.78-1.32 2.04-2.15-4.06-.86 1.2-6.17-2.8-2.33-12.39 5.19 4.61 6.07-7.8 2.79.12 2.34-5.16 1.25-3.36-2.67-.06 2.21-1.71-1.68-5.2 3 1.85 2.98-2.04 1.68 5.62 6.9-1.36 1.77-3.06-4.75-5.64 2.15-5.48-3.34-1.79-7.51-10.88-12.79-.23-5.41-8.77-1.01-1.79-2.58-6.48 2.95-3.77-10.97-3.18-.46 2.46-4.76-.65-10.15-.44-4.7-3.17-1.94 8.09-8.53-4.81-13.22-6.49-3.79-5.84-26.72 42.87-23.99 60.46-42.02 20.93-9.03-2.74-6.55 3.25-3.61-2.32 2.55 3.04 3.79 2.76-1.77-3.4 4.29 1.96-1.62.31 3.39 1.34-3.82 1.91 1.27-1.3-2.11 3.26.84-1.4-4.72-1.49.96 2.33-2.18-4.59-1.12 4.82 1.19.98 6.02z"
         />
         <g id="brussels">
-          <circle cx="360" cy="200" r={6 / scaleBelgium} fill="#3498db" filter="url(#glow)" />
-          <text
-            className="font-bold"
-            x="360"
-            y="170"
-            font-family="Arial, sans-serif"
-            font-size={fontSize / scaleBelgium}
-            fill="#34495e"
-            text-anchor="middle"
-          >
+          <use href="#PointBrussels" x="360" y="200" filter="url(#modernGlow)" />
+
+          <text className="svgTextStyling" x="360" y="145" font-size={fontSize / scaleBelgium} fill={colorCitiesText} text-anchor="middle">
             Brussels
-            <tspan dx={5} dy={-4}>
+            <tspan dx="5" dy="-3">
               🍟
             </tspan>
           </text>
         </g>
       </motion.g>
       <path id="animatedPath" d="M400,300 Q500,200 600,100" />
-      {/* <!-- Cities --> */}
+
+      {/* <!-- Cities Filter --> */}
       <defs>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+        {/* <radialGradient id="pointGradient">
+          <stop offset="0%" stop-color={colorCities} />
+          <stop offset="100%" stop-color={colorCities} />
+        </radialGradient> */}
+
+        <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+          <feFlood flood-color={colorGlowCities} result="glowColor" />
+          <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow" />
           <feMerge>
-            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="softGlow" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
+
+        <g id="PointBrussels">
+          <circle r={10 / scaleBelgium} fill={colorCities} opacity="0.3">
+            <animate attributeName="r" values={`${10 / scaleBelgium};${12 / scaleBelgium};${10 / scaleBelgium}`} dur="1s" repeatCount="indefinite" />
+          </circle>
+          <circle r={7 / scaleBelgium} fill={colorCities} opacity="0.6">
+            <animate attributeName="r" values={`${7 / scaleBelgium};${9 / scaleBelgium};${7 / scaleBelgium}`} dur="1s" repeatCount="indefinite" />
+          </circle>
+          <circle r={4 / scaleBelgium} fill={colorCities} opacity="1">
+            <animate attributeName="r" values={`${4 / scaleBelgium};${6 / scaleBelgium};${4 / scaleBelgium}`} dur="1s" repeatCount="indefinite" />
+          </circle>
+        </g>
+        <g id="PointMarseille">
+          <circle r={10 / scaleFrance} fill={colorCities} opacity="0.3">
+            <animate attributeName="r" values={`${10 / scaleFrance};${12 / scaleFrance};${10 / scaleFrance}`} dur="1s" repeatCount="indefinite" />
+          </circle>
+          <circle r={7 / scaleFrance} fill={colorCities} opacity="0.6">
+            <animate attributeName="r" values={`${7 / scaleFrance};${9 / scaleFrance};${7 / scaleFrance}`} dur="1s" repeatCount="indefinite" />
+          </circle>
+          <circle r={4 / scaleFrance} fill={colorCities} opacity="1">
+            <animate attributeName="r" values={`${4 / scaleFrance};${6 / scaleFrance};${4 / scaleFrance}`} dur="1s" repeatCount="indefinite" />
+          </circle>
+        </g>
       </defs>
 
       <motion.g {...propCountries} transition={{ ...propCountries.transition, delay: 2 }} id="animated-path" onViewportEnter={handleViewportEnter}>
-        <path d="M319 577 Q600 400, 508 157" fill="none" stroke="#3498db" strokeWidth="3">
+        <path d="M319 577 Q600 400, 508 157" fill="none" stroke={colorCities} strokeWidth="1">
           <animate ref={animateRef} attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" begin="indefinite" repeatCount="indefinite" />
         </path>
         {/* <circle cx="600" cy="400" r="5" fill="red" /> */}

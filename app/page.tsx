@@ -16,7 +16,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center gap-y-16 bg-techGrey">
       <div className="flex min-h-[90vh] flex-col">
         <MainVideo src="/PurpleVideo.mp4" />
-        {/* Using relative to make the title appear in front of the absolutely positioned background */}{' '}
         <div className="relative w-[90vw] md:w-[75vw] lg:mt-16 3xl:w-[60vw]">
           <MainDiv />
         </div>
