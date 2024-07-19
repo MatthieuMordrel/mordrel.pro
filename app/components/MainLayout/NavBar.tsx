@@ -1,6 +1,8 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import BorderMagicButton from '@/app/ui/Components/Aceternity/BorderMagic'
+import ShimmerButton from '@/app/ui/Components/Aceternity/ShimmerButton'
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
@@ -70,8 +72,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex h-full w-full items-center justify-end">
-          <Link href="/contact" className="mr-4 rounded bg-techGreen p-2 font-medium hover:text-black md:block md:px-4 md:py-2">
-            Contact
+          <Link href="/contact" className="mr-4 font-medium hover:text-black md:block">
+            <ShimmerButton label={'Contact'} className="" />
           </Link>
         </div>
       </div>

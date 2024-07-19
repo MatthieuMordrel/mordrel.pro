@@ -40,7 +40,8 @@ const config: Config = {
         orbit: 'orbit calc(var(--duration)*1s) linear infinite',
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
         'sliding-in': 'keyframe-sliding-in ',
-        bounce1: 'bounceWithDelay 1s infinite'
+        bounce1: 'bounceWithDelay 1s infinite',
+        shimmer: 'shimmer 2s linear infinite'
       },
       keyframes: {
         'keyframe-border-spin': {
@@ -104,6 +105,14 @@ const config: Config = {
           },
           '50%': {
             transform: 'translateY(-25%)'
+          }
+        },
+        shimmer: {
+          from: {
+            backgroundPosition: '0 0'
+          },
+          to: {
+            backgroundPosition: '-200% 0'
           }
         }
       },

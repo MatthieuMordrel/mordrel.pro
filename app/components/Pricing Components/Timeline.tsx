@@ -1,18 +1,7 @@
 'use client'
 
 import { Process } from '../../ui/Components/ProcessCard'
-import {
-  FileIcon,
-  ClipboardCheckIcon,
-  PowerIcon,
-  CheckIcon,
-  RefreshCwIcon,
-  BarChartIcon,
-  NotebookPen,
-  LineChartIcon,
-  PieChartIcon,
-  ShareIcon
-} from 'lucide-react'
+import { FileIcon, CheckIcon, RefreshCwIcon, NotebookPen, ShareIcon } from 'lucide-react'
 
 const processTitles = 'General Process'
 

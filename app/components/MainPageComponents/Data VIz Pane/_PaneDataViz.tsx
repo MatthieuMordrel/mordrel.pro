@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, Profiler, useRef } from 'react'
+import React, { useState } from 'react'
 import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
 import ButtonsStocks from './ButtonsStocks'
 import { LineChartFinancials } from './LineChartFinancials'
@@ -8,7 +8,6 @@ import { HighlightedSentenceContent } from '@/app/ui/Components/ContentPaneHighl
 import ButtonsCharts from './ButtonsCharts'
 import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
 import ButtonsPeriod from './ButtonsPeriod'
-import { onRenderCallback } from '@/app/lib/utils'
 import { ChartType } from '@lib/types'
 
 export const PaneDataViz = () => {
@@ -20,7 +19,7 @@ export const PaneDataViz = () => {
   const [dataFrequency, setDataFrequency] = useState<'annualReports' | 'quarterlyReports'>('annualReports')
 
   return (
-    <div className="grid h-full w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-x-4 p-8 md:p-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr_1fr_auto]">
+    <section className="grid h-full w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-x-4 p-8 md:p-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr_1fr_auto]">
       <div className="grid grid-rows-[auto_auto_1fr] lg:col-start-2 lg:row-span-full">
         <TextHighlight className="row-start-1 text-2xl sm:mb-2 md:text-3xl lg:text-4xl">Get insights from your data</TextHighlight>
         <HighlightedSentenceContent
@@ -47,7 +46,7 @@ export const PaneDataViz = () => {
         <ButtonsStocks onFetchComplete={setFinancialData} className="flex gap-x-4 pt-2" />
         <ButtonsPeriod onButtonChange={setDataFrequency} className="z-10 hidden gap-x-2 md:flex" />
       </div>
-    </div>
+    </section>
   )
 }
 

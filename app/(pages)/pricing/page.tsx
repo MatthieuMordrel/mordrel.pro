@@ -6,12 +6,9 @@ import React from 'react'
 const Pricing = () => {
   return (
     <div className="flex min-h-screen flex-col space-y-12 bg-techGrey">
-      {/* <ConsultingProcess /> */}
-      {/* <Timeline /> */}
       <FadeInEffect>
         <Timeline />
       </FadeInEffect>
-      {/* <ComponentOriginal /> */}
       <FadeInEffect className="w-[50%] self-center">
         <FAQ />
       </FadeInEffect>

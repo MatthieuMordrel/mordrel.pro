@@ -43,7 +43,7 @@ const ApiIntegrationShowcase = () => {
   const highlightedCode = hljs.highlight(codeSnippet, { language: 'python' }).value
 
   return (
-    <div className="relative grid h-full grid-cols-1 grid-rows-[auto_auto] overflow-hidden p-8 sm:grid-rows-[auto_1fr_auto] sm:gap-4 md:p-6 lg:grid-cols-2">
+    <section className="relative grid h-full grid-cols-1 grid-rows-[auto_auto] overflow-hidden p-8 sm:grid-rows-[auto_1fr_auto] sm:gap-4 md:p-6 lg:grid-cols-2">
       <div className="row-start-1 flex h-full flex-col">
         <TextHighlight className="mb-2 text-2xl md:text-3xl lg:text-4xl">Improve your Data Management</TextHighlight>
         <HighlightedSentenceContent
@@ -57,7 +57,7 @@ const ApiIntegrationShowcase = () => {
           <code className="language-python" dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
         </pre>
       </div>
-    </div>
+    </section>
   )
 }
 export default ApiIntegrationShowcase

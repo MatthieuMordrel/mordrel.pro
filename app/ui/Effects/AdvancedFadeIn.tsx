@@ -1,8 +1,13 @@
 'use client'
-import React, { ReactNode } from 'react'
+import React, { HTMLAttributes, ReactNode } from 'react'
 import { motion, Variants, Easing, MotionProps } from 'framer-motion'
 
-interface FadeInEffectProps extends React.HTMLAttributes<HTMLDivElement> {
+// Creating a MergedProps to pass both the properties of framer motion MotionProps and an html div elements
+//We also resolve the conflict of the property onAnimationStart which is on both properties type
+//You could also use type assertion when spreading the props to assert which props to use, and resolve the conflict
+type MergedProps = Omit<HTMLAttributes<HTMLDivElement>, 'onAnimationStart'> & MotionProps
+
+interface FadeInEffectProps extends MergedProps {
   children: ReactNode
   duration?: number
   delay?: number
@@ -86,7 +91,7 @@ export const FadeInEffect: React.FC<FadeInEffectProps> = ({
       transition={{ duration, delay, ease: easing, staggerChildren: 0.1 }}
       className={`fadeInDiv ${className}`}
       layout
-      {...(props as MotionProps)}
+      {...props}
     >
       {children}
     </motion.div>

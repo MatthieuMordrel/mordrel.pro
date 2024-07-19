@@ -126,13 +126,8 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
         </g>
       </motion.g>
 
-      {/* <!-- Cities Filter --> */}
       <defs>
-        {/* <radialGradient id="pointGradient">
-          <stop offset="0%" stop-color={colorCities} />
-          <stop offset="100%" stop-color={colorCities} />
-        </radialGradient> */}
-
+        {/* Useless glowing for cities */}
         <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3" result="coloredBlur" />
           <feFlood flood-color={colorGlowCities} result="glowColor" />
@@ -143,6 +138,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
           </feMerge>
         </filter>
 
+        {/* Dyanmic cities pulsating */}
         <g id="PointBrussels">
           <circle r={10 / scaleBelgium} fill={colorCities} opacity="0.3">
             <animate attributeName="r" values={`${10 / scaleBelgium};${12 / scaleBelgium};${10 / scaleBelgium}`} dur="1s" repeatCount="indefinite" />

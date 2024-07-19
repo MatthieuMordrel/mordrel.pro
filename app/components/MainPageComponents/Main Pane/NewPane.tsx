@@ -1,7 +1,6 @@
 'use client'
 import { Pane } from '@/app/ui/Effects/Pane'
-import { motion, useAnimationControls } from 'framer-motion'
-import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const containerVariants = {
   hidden: {},
@@ -25,7 +24,7 @@ const itemVariants = {
   }
 }
 
-const PaneValue = () => {
+const PaneValue = ({ className }: { className?: string }) => {
   const paneData = [
     {
       title: 'Client-oriented approach',
@@ -44,7 +43,7 @@ const PaneValue = () => {
   return (
     <motion.div
       onUpdate={(latest) => console.log('Animation update:', latest)}
-      className="grid grid-cols-1 grid-rows-[1fr_1fr_1fr] gap-8 lg:grid-cols-3 lg:grid-rows-1"
+      className={`grid grid-cols-1 grid-rows-[1fr_1fr_1fr] gap-8 lg:grid-cols-3 lg:grid-rows-1 ${className}`}
       variants={containerVariants}
       initial="hidden"
       animate="visible"
