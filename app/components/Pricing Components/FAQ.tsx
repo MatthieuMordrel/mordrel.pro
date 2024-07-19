@@ -23,7 +23,7 @@ export default function FAQ({ className }: { className?: string }) {
       id: 'item-4',
       question: 'Which data visualisation tools do you work with?',
       answer:
-        'We ideally work with PowerBI to ensure the best quality/delivery time tradoff, however we can create custom visualisations using various tools and framework in JavaScript or Python when necessary.'
+        'We ideally work with PowerBI to ensure the best quality/delivery time tradeoff, however we can create custom visualisations using various tools and framework in JavaScript or Python if necessary.'
     }
   ]
   return (

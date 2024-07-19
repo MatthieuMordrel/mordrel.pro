@@ -26,18 +26,18 @@ export default function Home() {
       <div id="exemples-block" className="w-full scroll-mt-28">
         <Examples />
       </div>
-      <section className="flex w-[90vw] flex-col items-center gap-y-8 md:w-[80vw] md:gap-y-28 3xl:w-[60vw]">
-        <div id="api-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
-          <FadeInEffect animationStyle="fadeRight" className="h-full">
-            <Pane className="h-full">
-              <ApiIntegrationShowcase />
-            </Pane>
-          </FadeInEffect>
-        </div>
+      <section className="flex w-[90vw] flex-col items-center gap-y-16 md:w-[80vw] md:gap-y-28 3xl:w-[60vw]">
         <div id="visu-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
           <FadeInEffect animationStyle="fadeLeft" className="h-full">
             <Pane className="h-full">
               <PaneDataViz />
+            </Pane>
+          </FadeInEffect>
+        </div>
+        <div id="api-block" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
+          <FadeInEffect animationStyle="fadeRight" className="h-full">
+            <Pane className="h-full">
+              <ApiIntegrationShowcase />
             </Pane>
           </FadeInEffect>
         </div>

@@ -6,7 +6,7 @@ import './styles/scrollbar.css'
 import './styles/animation.css'
 
 import Navbar from '@components/MainLayout/NavBar'
-import Footer from './components/Footer'
+import Footer from '@components/MainLayout/Footer'
 
 // Font Import: When you import a font using next/font/google, it generates a CSS class with the necessary font-face declarations.
 // ClassName Property: The returned object includes a className property, which is a string representing the generated CSS class.

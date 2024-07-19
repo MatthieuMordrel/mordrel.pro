@@ -125,7 +125,6 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
           </text>
         </g>
       </motion.g>
-      <path id="animatedPath" d="M400,300 Q500,200 600,100" />
 
       {/* <!-- Cities Filter --> */}
       <defs>

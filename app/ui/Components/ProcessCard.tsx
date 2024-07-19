@@ -1,3 +1,5 @@
+'use client'
+
 import { SVGProps } from 'react'
 import { Pane } from '../Effects/Pane'
 import FadeInEffect from '../Effects/AdvancedFadeIn'
@@ -33,22 +35,24 @@ export const ProcessCard: React.FC<ProcessCardProps> = ({ icon: Icon, title, des
 )
 
 interface Step {
-  icon: React.ElementType
+  // Type representing a React component that takes SVG props and returns an SVG element
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   title: string
   description: string
+  borderColor?: string
 }
 
-const borderColors = ['border-[#9FD7CA]', 'border-[#77C1C7]', 'border-[#5CA8C4]', 'border-[#598DBB]']
+const defaultBorderColors = ['border-[#9FD7CA]', 'border-[#81B9B6]', 'border-[#689CA0]', 'border-[#527F89]', 'border-[#406371]']
 
 export const Process = ({ steps }: { steps: Step[] }) => (
   <div className="space-y-6">
     {steps.map((step, index) => (
       <ProcessCard
         key={index}
-        icon={step.icon as React.ComponentType<React.SVGProps<SVGSVGElement>>}
+        icon={step.icon}
         title={step.title}
         description={step.description}
-        borderColor={borderColors[index % borderColors.length]}
+        borderColor={step.borderColor || defaultBorderColors[index % defaultBorderColors.length]}
       />
     ))}
   </div>
