@@ -33,7 +33,7 @@ const Navbar = () => {
   }, [])
 
   const links = [
-    { href: '/#exemples-block', text: 'Exemples' },
+    { href: '/#exemples-block', text: 'Examples' },
     { href: '/#api-block', text: 'API Integration' },
     { href: '/#visu-block', text: 'Visualisations' },
     { href: '/#excel-block', text: 'Excel Services' }

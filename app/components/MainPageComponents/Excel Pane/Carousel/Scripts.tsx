@@ -14,8 +14,8 @@ const ScriptContent = () => {
       title="Automated Scripts"
       description="Run office scripts to automate various Excel tasks."
       items={listContent}
-      imageSrc="/Excel Images/Scripts.jpg"
-      imageAlt="PowerQueryImage"
+      imageSrc="/Excel Images/Scripts.JPG"
+      imageAlt="ExcelScriptsImage"
     />
   )
 }
