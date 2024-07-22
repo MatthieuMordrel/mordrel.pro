@@ -1,0 +1,19 @@
+function MainVideo({ src }: { src: string }) {
+  return (
+    <>
+      <video
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        className="absolute left-0 top-0 h-full w-full object-cover opacity-10"
+      />
+      <div className="absolute bottom-0 left-0 h-28 w-full bg-gradient-to-b from-transparent to-techGrey"></div>
+    </>
+  )
+}
+
+export default MainVideo

@@ -1,0 +1,17 @@
+.button {
+  background-image: linear-gradient(
+    to right top,
+    #9fd7ca,
+    #94ccc2,
+    #89c1bb,
+    #7eb6b3,
+    #74abab,
+    #6ca1a4,
+    #64979d,
+    #5d8d95,
+    #55828c,
+    #4e7883,
+    #476d7a,
+    #406371
+  );
+}
