@@ -7,7 +7,7 @@ export const FirstSection = () => (
   <section className="grid h-[calc(100vh-4.5rem)] grid-cols-1 items-center md:grid-cols-2 md:grid-rows-1">
     <div className="row-start-1 max-w-[42rem] text-pretty md:col-start-1">
       <FadeInEffect animationStyle={'fadeUp'} className={`font-bitter text-[clamp(2.75rem,1.143rem+4.286vw,5rem)]`}>
-        Hi, my name is Matthieu
+        <h1>Hi, my name is Matthieu</h1>
         <hr className="my-8 border-t-2 md:w-1/2" />
       </FadeInEffect>
       <FadeInEffect animationStyle="fadeUp" delay={0.75} className="">

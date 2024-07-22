@@ -5,10 +5,13 @@ import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 
 const MainPane = ({ className }: { className?: string }) => {
   return (
-    <div className={`flex min-h-60 flex-col space-y-10 p-10 text-center ${className}`}>
-      <div className="flex max-w-[90vw] flex-col space-y-2 md:max-w-[70vw]">
-        <AutomateOnce className="-ml-10 self-center text-2xl font-semibold uppercase sm:text-4xl lg:text-6xl" />
-      </div>
+    <section className={`flex min-h-60 flex-col space-y-10 p-10 text-center ${className}`}>
+      <header>
+        {' '}
+        <h1 className="flex max-w-[90vw] flex-col space-y-2 md:max-w-[70vw]">
+          <AutomateOnce className="-ml-10 self-center text-2xl font-semibold uppercase sm:text-4xl lg:text-6xl" />
+        </h1>
+      </header>
       <FadeInEffect animationStyle="zoom" delay={1}>
         <p className="space-y-2">
           <span className="block">Streamline your workflows, make data-driven decisions, and elevate your business</span>
@@ -17,7 +20,7 @@ const MainPane = ({ className }: { className?: string }) => {
           </span>
         </p>
       </FadeInEffect>
-    </div>
+    </section>
   )
 }
 

@@ -41,7 +41,7 @@ const PaneValue = ({ className }: { className?: string }) => {
   ]
 
   return (
-    <motion.div
+    <motion.section
       onUpdate={(latest) => console.log('Animation update:', latest)}
       className={`grid grid-cols-1 grid-rows-[1fr_1fr_1fr] gap-8 lg:grid-cols-3 lg:grid-rows-1 ${className}`}
       variants={containerVariants}
@@ -49,19 +49,19 @@ const PaneValue = ({ className }: { className?: string }) => {
       animate="visible"
     >
       {paneData.map((pane, index) => (
-        <motion.div
+        <motion.article
           key={index}
           className="h-full w-full"
           variants={itemVariants}
           // onUpdate={(latest) => console.log('Animation update:', latest)}
         >
           <Pane includeBorderBeam={false} className="h-full p-4">
-            <h1 className="mb-2 font-bold lg:mb-5">{pane.title}</h1>
+            <h2 className="mb-2 font-bold lg:mb-5">{pane.title}</h2>
             <p className="text-[clamp(0.5rem,0.5rem+1vw,1rem)]">{pane.description}</p>
           </Pane>
-        </motion.div>
+        </motion.article>
       ))}
-    </motion.div>
+    </motion.section>
   )
 }
 

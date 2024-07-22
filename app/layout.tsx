@@ -35,10 +35,10 @@ const bitter = Bitter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Automation Services - Matthieu Mordrel', // the % is replaced with the specific page title
-    default: 'Automation Services'
+    default: 'Automation Services',
+    template: '%s | Automation Services'
   },
-  description: 'Consulting services provided by Matthieu Mordrel'
+  description: 'Automation, data visualisation and custom services provided for your business.'
 }
 
 export default function RootLayout({

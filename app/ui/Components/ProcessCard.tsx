@@ -18,20 +18,20 @@ const childVariant = {
 }
 
 export const ProcessCard: React.FC<ProcessCardProps> = ({ icon: Icon, title, description, borderColor }) => (
-  <motion.div variants={childVariant} className="group relative rounded-lg bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-paneGrey">
-    <div className="flex items-start">
-      <div className="flex-shrink-0 items-center self-stretch">
-        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${borderColor} `}>
-          <Icon className="h-6 w-6" />
-        </div>
-      </div>
-      <div className="ml-4">
-        <h3 className="text-lg font-medium">{title}</h3>
-        <p className="mt-2 text-gray-500 dark:text-gray-400">{description}</p>
-      </div>
+  <motion.article
+    variants={childVariant}
+    className={`group relative flex items-start rounded-lg bg-white p-6 shadow-sm outline-2 hover:outline dark:border-gray-800 dark:bg-paneGrey ${borderColor}`}
+  >
+    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full">
+      <Icon className="h-6 w-6" />
+    </span>
+    <div className="ml-4">
+      <h4 className="text-lg font-medium">{title}</h4>
+      <p className="mt-2 text-gray-500 dark:text-gray-400">{description}</p>
     </div>
-    <div className={`absolute inset-0 rounded-lg border-2 ${borderColor} opacity-0 group-hover:opacity-100`} />
-  </motion.div>
+    {/* Solution below allows to create border, which appears when the element with group class is hovered */}
+    {/* <div className={`absolute inset-0 rounded-lg border-2 opacity-0 group-hover:opacity-100 ${borderColor}`} /> */}
+  </motion.article>
 )
 
 interface Step {
@@ -42,10 +42,10 @@ interface Step {
   borderColor?: string
 }
 
-const defaultBorderColors = ['border-[#9FD7CA]', 'border-[#81B9B6]', 'border-[#689CA0]', 'border-[#527F89]', 'border-[#406371]']
+const defaultBorderColors = ['outline-[#9FD7CA]', 'outline-[#81B9B6]', 'outline-[#689CA0]', 'outline-[#527F89]', 'outline-[#406371]']
 
 export const Process = ({ steps }: { steps: Step[] }) => (
-  <div className="space-y-6">
+  <section className="space-y-6">
     {steps.map((step, index) => (
       <ProcessCard
         key={index}
@@ -55,5 +55,5 @@ export const Process = ({ steps }: { steps: Step[] }) => (
         borderColor={step.borderColor || defaultBorderColors[index % defaultBorderColors.length]}
       />
     ))}
-  </div>
+  </section>
 )

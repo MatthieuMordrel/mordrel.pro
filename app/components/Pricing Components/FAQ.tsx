@@ -27,7 +27,7 @@ export default function FAQ({ className }: { className?: string }) {
     }
   ]
   return (
-    <div className={className}>
+    <section className={className}>
       <h2 className="py-4 text-center text-2xl font-bold">Frequently Asked Questions</h2>
       <Accordion type="single" collapsible className="w-full">
         {faqData.map((item) => (
@@ -37,6 +37,6 @@ export default function FAQ({ className }: { className?: string }) {
           </AccordionItem>
         ))}
       </Accordion>
-    </div>
+    </section>
   )
 }
