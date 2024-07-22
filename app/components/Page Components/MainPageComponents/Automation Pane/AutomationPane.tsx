@@ -16,7 +16,7 @@ const AutomationPane = () => (
 
       <AnimateTextDiv className="col-span-1 row-start-2 w-full pt-4 md:py-4" />
 
-      <div className="col-span-1 row-span-1 row-start-3 md:col-start-2 md:row-start-2">
+      <div className="col-span-1 row-span-1 row-start-3 hidden md:col-start-2 md:row-start-2 md:block">
         {/* <Profiler id="GlobeDemo" onRender={onRenderCallback}> */}
         <GlobeDemo />
         {/* </Profiler> */}

@@ -15,14 +15,14 @@ export const SecondSection = () => (
         <PaneDataViz />
       </Pane>
     </FadeInEffect>
-    <FadeInEffect id="api-block" animationStyle="fadeRight" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
+    <FadeInEffect id="api-block" animationStyle="fadeRight" className="min-h-[25rem] w-full scroll-mt-28 md:h-[37.5rem]">
       <Pane className="h-full">
         <ApiIntegrationShowcase />
       </Pane>
     </FadeInEffect>
     <ExcelProposition id="excel-block" className="w-full scroll-mt-28" />
     <FadeInEffect animationStyle="zoom">
-      <Pane className="h-[30rem] w-full md:h-[37.5rem]">
+      <Pane className="min-h-[20rem] w-full md:h-[37.5rem]">
         <AutomationPane />
       </Pane>
     </FadeInEffect>
