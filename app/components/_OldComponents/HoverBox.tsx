@@ -1,6 +1,5 @@
+import GradientBorder from '@/app/ui/Effects/GradientBorder'
 import React from 'react'
-
-import GradientBorder from '../../../ui/Effects/GradientBorder'
 
 const HoverBox = ({ topContent, bottomContent }: { topContent: JSX.Element; bottomContent?: JSX.Element }) => {
   return (

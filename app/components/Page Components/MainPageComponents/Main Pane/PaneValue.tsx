@@ -1,15 +1,15 @@
-import { PlayrightIcon } from '../../../data/Sotftware'
-import HoverBox from './HoverBox'
+import HoverBox from '../../../_OldComponents/HoverBox'
 import Image from 'next/image'
-import IconAndText from '@/app/components/MainPageComponents/Main Pane/IconAndText'
 import { BarChart, CircleDollarSign, HandCoins, MonitorCheck, PackageCheck, Speech } from 'lucide-react'
+import { PlayrightIcon } from '@/app/data/Sotftware'
+import IconAndText from './IconAndText'
 
 const widthIcon = 64
 const heightIcon = 64
 
 const PaneValue = () => {
   return (
-    <div className="flex justify-center space-x-8 ">
+    <div className="flex justify-center space-x-8">
       <div className="basis-1/3">
         <HoverBox
           topContent={
