@@ -13,7 +13,7 @@ export function TypewriterEffectSmoothDemo() {
     }
   ]
   return (
-    <div className="mt-10 flex flex-col items-center justify-center">
+    <div className="mt-10 flex flex-col items-center justify-center p-6">
       <div className="rounded-3xl border p-4 shadow-2xl">
         <HeartHandShake className="h-16 w-16 border-techPurple" />
       </div>

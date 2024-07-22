@@ -1,9 +1,8 @@
 'use client'
 import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
-import { AnimateTextDiv } from '@/app/components/MainPageComponents/Automation Pane/AnimatedTextDiv'
-import { GlobeDemo } from '@/app/components/MainPageComponents/Automation Pane/Globe'
-import React, { Profiler } from 'react'
-import { onRenderCallback } from '@/app/lib/utils'
+import React from 'react'
+import { AnimateTextDiv } from './AnimatedTextDiv'
+import { GlobeDemo } from './Globe'
 
 const AutomationPane = () => (
   <>

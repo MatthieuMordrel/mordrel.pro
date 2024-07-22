@@ -1,5 +1,5 @@
-import FAQ from '@/app/components/Pricing Components/FAQ'
-import Timeline from '@/app/components/Pricing Components/Timeline'
+import FAQ from '@/app/components/Page Components/Pricing Components/FAQ'
+import Timeline from '@/app/components/Page Components/Pricing Components/Timeline'
 import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 import React from 'react'
 import { Metadata } from 'next'

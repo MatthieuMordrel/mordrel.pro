@@ -1,6 +1,6 @@
 import React from 'react'
-import { FirstSection } from '@components/MainPageComponents/Main Sections/FirstSection'
-import { SecondSection } from './components/MainPageComponents/Main Sections/SecondSection'
+import { SecondSection } from '@components/Page Components/MainPageComponents/Main Sections/SecondSection'
+import { FirstSection } from './components/Page Components/MainPageComponents/Main Sections/FirstSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center gap-y-16 bg-techGrey">
+    <main className="flex min-h-screen flex-col items-center gap-y-16">
       <FirstSection />
       <SecondSection />
     </main>

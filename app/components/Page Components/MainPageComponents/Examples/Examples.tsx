@@ -29,16 +29,20 @@ const processSteps = [
       description: 'Generate beautiful periodic financial reports by extracting and formatting data from various sources.'
     },
     {
-      icon: Axe,
-      title: 'Competitive analysis',
-      description:
-        'Gather product pricing, stock levels, or real estate listings from competitor websites to provide data for analysis or investment decisions.'
+      icon: MonitorCheck,
+      title: 'HR Onboarding',
+      description: 'Automate the creation of employee records in HR systems and send welcome emails or required documentation to new hires.'
     },
     {
-      icon: MonitorCheck,
-      title: 'Simplify your Excel files',
-      description: 'Retrieve the control over your Excel files by optimizing formula and data management.'
+      icon: UserRoundCheck,
+      title: 'Customer Service Automation',
+      description: 'Automate the handling of customer emails by reading, categorizing, and responding. Update data accodingly in your CRM.'
     }
+    // {
+    //   icon: MonitorCheck,
+    //   title: 'Simplify your Excel files',
+    //   description: 'Retrieve the control over your Excel files by optimizing formula and data management.'
+    // }
   ],
   //Data Visualisation
   [
@@ -67,11 +71,6 @@ const processSteps = [
   //Custom Development
   [
     {
-      icon: UserRoundCheck,
-      title: 'User simulation',
-      description: 'Create custom scripts to perform testing on your website to ensure correct service across different browsers and devices.'
-    },
-    {
       icon: ScrollText,
       title: 'API integration',
       description: 'Remove manual work by using programatic language to retrieve data from your software.'
@@ -80,7 +79,18 @@ const processSteps = [
       icon: CircleGauge,
       title: 'Excel and PowerBI performance',
       description: 'Minimize refresh time for your PowerBI and Excel files through improved M code or file structure.'
+    },
+    {
+      icon: Axe,
+      title: 'Competitive analysis',
+      description:
+        'Gather product pricing, stock levels, or real estate listings from competitor websites to provide data for analysis or investment decisions.'
     }
+    // {
+    //   icon: UserRoundCheck,
+    //   title: 'User simulation',
+    //   description: 'Create custom scripts to perform testing on your website to ensure correct service across different browsers and devices.'
+    // }
     // {
     //   icon: ShareIcon,
     //   title: 'AI finetuning',
