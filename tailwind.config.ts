@@ -125,32 +125,15 @@ const config: Config = {
   plugins: [
     plugin(function ({ addComponents }: PluginAPI) {
       addComponents({
-        '.btn': {
-          padding: '.5rem 1rem',
-          borderRadius: '.25rem',
-          fontWeight: '600',
-          backgroundColor: '#1E40AF', // example additional styling
-          color: '#fff'
+        '.textSmall': {
+          fontSize: 'clamp(0.75rem, 0.464rem + 1.429vw, 1.2rem)',
+          fontStretch: '100%',
+          lineHeight: '2rem'
         },
         '.textMedium': {
           fontSize: 'clamp(1rem, 0.464rem + 1.429vw, 1.625rem)',
-          // textWrap: 'normal',
-          fontStretch: '100%',
-          lineHeight: '2rem',
-          // fontWeight: '400',
-          fontFamily: 'var(--font-bitter)'
-          // color: 'rgb(15, 27, 97)',
-          // backgroundColor: 'rgb(248,252,252)'
-        },
-        '.textSmall': {
-          fontSize: 'clamp(0.75rem, 0.464rem + 1.429vw, 1.2rem)',
-          // textWrap: 'normal',
           fontStretch: '100%',
           lineHeight: '2rem'
-          // fontWeight: '400',
-          // fontFamily: 'var(--font-bitter)'
-          // color: 'rgb(15, 27, 97)',
-          // backgroundColor: 'rgb(248,252,252)'
         },
         '.svgTextStyling': {
           fontWeight: '600',

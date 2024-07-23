@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="min-h-screen justify-center px-[clamp(0.1rem,7vw,12rem)]">
+    <main className="min-h-screen justify-center px-[clamp(0.1rem,7vw,12rem)] font-bitter">
       <FirstSection />
       <SecondSection />
     </main>

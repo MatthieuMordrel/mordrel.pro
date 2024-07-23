@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { OribitingSoftware } from '../OrbitingSoftware'
 
 export const SecondSection = () => (
-  <section className="grid grid-rows-[repeat(6,calc(50vh-2rem))] place-items-center gap-8 overflow-hidden font-bitter md:grid-cols-2 md:grid-rows-[repeat(3,100vh)]">
+  <section className="grid grid-rows-[repeat(6,calc(50vh-2rem))] place-items-center gap-8 overflow-hidden md:grid-cols-2 md:grid-rows-[repeat(3,100vh)]">
     <CountryVisual className="col-start-1 row-start-2 mb-28 h-full w-full md:row-start-1 md:mb-0" />
 
     <FadeInEffect id="FirstDiv" delay={2.5} className="textSmall row-start-1 h-full place-content-center md:col-start-2">
@@ -21,7 +21,7 @@ export const SecondSection = () => (
       delay={3}
       className="col-start-1 row-span-1 row-start-2 self-end justify-self-start md:col-start-2 md:row-start-1 md:pb-16"
     >
-      <ScrollButton id="SecondDiv" delay={3} />
+      <ScrollButton id="SecondDiv" customOffset={15} delay={3} />
     </FadeInEffect>
 
     <FadeInEffect id="SecondDiv" className="textSmall col-start-1 h-full place-content-center md:row-start-2">
@@ -41,7 +41,7 @@ export const SecondSection = () => (
       delay={1.5}
       className="col-start-1 row-span-1 row-start-4 self-end justify-self-start md:row-start-2 md:pb-4"
     >
-      <ScrollButton id="ThirdDiv" delay={1.5} />
+      <ScrollButton id="ThirdDiv" customOffset={15} delay={1.5} />
     </FadeInEffect>
 
     <FadeInEffect className="col-start-1 w-full">
