@@ -119,6 +119,9 @@ const config: Config = {
       fontFamily: {
         bitter: ['var(--font-bitter)', 'serif'],
         inter: ['var(--font-inter)', 'sans-serif']
+      },
+      height: {
+        'screen-dynamic': 'calc(var(--app-height) - 4.5rem)'
       }
     }
   },
