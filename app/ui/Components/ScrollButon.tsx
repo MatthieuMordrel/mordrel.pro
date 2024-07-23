@@ -2,16 +2,16 @@
 import { ArrowDownWideNarrow } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 interface ScrollButtonProps {
   customOffset?: number
   id: string
   delay?: number
+  mobileOffset?: number
 }
 
-import { useEffect, useState } from 'react'
-
-export const ScrollButton: React.FC<ScrollButtonProps> = ({ id, customOffset = 0, delay = 0 }) => {
+export const ScrollButton: React.FC<ScrollButtonProps> = ({ id, customOffset = 0, delay = 0, mobileOffset = 0 }) => {
   const [isBouncing, setIsBouncing] = useState(false)
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const ScrollButton: React.FC<ScrollButtonProps> = ({ id, customOffset = 0
         const element = document.getElementById(id)
         if (element) {
           const elementPosition = element.getBoundingClientRect().top + window.scrollY
-          const offsetPosition = elementPosition - customOffset
+          const offsetPosition = elementPosition - (window.innerWidth < 768 ? mobileOffset : customOffset)
 
           window.scrollTo({
             top: offsetPosition,
