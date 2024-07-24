@@ -37,7 +37,7 @@ const processSteps = [
 
 export default function Timeline() {
   return (
-    <section className="mx-auto w-full max-w-3xl p-6 sm:p-10">
+    <section className="mx-auto w-full max-w-3xl py-6 sm:p-10">
       <header className="mb-6 mt-4 space-y-2">
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{processTitles}</h1>
         <p className="text-gray-500 dark:text-gray-400">{processDescriptions}</p>

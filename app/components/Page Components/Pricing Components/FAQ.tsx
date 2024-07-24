@@ -31,7 +31,7 @@ export default function FAQ({ className }: { className?: string }) {
       <h2 className="py-4 text-center text-2xl font-bold">Frequently Asked Questions</h2>
       <Accordion type="single" collapsible className="w-full">
         {faqData.map((item) => (
-          <AccordionItem value={item.id} className="border-b border-paneGrey" key={item.id}>
+          <AccordionItem value={item.id} className="whitespace-pre-line border-b border-paneGrey" key={item.id}>
             <AccordionTrigger>{item.question}</AccordionTrigger>
             <AccordionContent>{item.answer}</AccordionContent>
           </AccordionItem>
