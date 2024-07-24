@@ -139,7 +139,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
         </filter> */}
 
         {/* Dyanmic cities pulsating */}
-        <g id="PointBrussels">
+        {/* <g id="PointBrussels">
           <circle r={10 / scaleBelgium} fill={colorCities} opacity="0.3">
             <animate attributeName="r" values={`${10 / scaleBelgium};${12 / scaleBelgium};${10 / scaleBelgium}`} dur="1s" repeatCount="indefinite" />
           </circle>
@@ -160,15 +160,15 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
           <circle r={4 / scaleFrance} fill={colorCities} opacity="1">
             <animate attributeName="r" values={`${4 / scaleFrance};${6 / scaleFrance};${4 / scaleFrance}`} dur="1s" repeatCount="indefinite" />
           </circle>
-        </g>
+        </g> */}
       </defs>
 
-      <motion.g {...propCountries} transition={{ ...propCountries.transition, delay: 2 }} id="animated-path" onViewportEnter={handleViewportEnter}>
+      {/* <motion.g {...propCountries} transition={{ ...propCountries.transition, delay: 2 }} id="animated-path" onViewportEnter={handleViewportEnter}>
         <path d="M319 577 Q600 400, 508 157" fill="none" stroke={colorCities} strokeWidth="1">
           <animate ref={animateRef} attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" begin="indefinite" repeatCount="indefinite" />
-        </path>
-        {/* <circle cx="600" cy="400" r="5" fill="red" /> */}
-      </motion.g>
+        </path> */}
+      {/* <circle cx="600" cy="400" r="5" fill="red" /> */}
+      {/* </motion.g> */}
     </svg>
   )
 }

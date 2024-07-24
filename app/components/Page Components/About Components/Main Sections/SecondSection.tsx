@@ -26,7 +26,7 @@ export const SecondSection = () => (
       <ScrollButton id="SecondDiv" customOffset={15} mobileOffset={70} delay={3} />
     </FadeInEffect>
 
-    <div id="SecondDiv" className="col-start-1 scroll-mt-40 place-content-center md:row-start-2 md:h-full md:scroll-mt-0">
+    <div id="SecondDiv" className="col-start-1 place-content-center md:row-start-2 md:h-full">
       <FadeInEffect className="textSmall">
         <p className="font-bold">The Learning process</p>
         Following my departure I started building{' '}
@@ -45,7 +45,7 @@ export const SecondSection = () => (
       delay={1.5}
       className="col-start-1 row-span-1 row-start-4 mb-6 self-end justify-self-start md:row-start-2 md:pb-4"
     >
-      <ScrollButton id="ThirdDiv" customOffset={15} mobileOffset={15} delay={1.5} />
+      <ScrollButton id="ThirdDiv" customOffset={15} mobileOffset={-20} delay={1.5} />
     </FadeInEffect>
 
     <FadeInEffect className="col-start-1 w-full">
