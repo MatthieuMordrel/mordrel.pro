@@ -7,7 +7,7 @@ import { OribitingSoftware } from '../OrbitingSoftware'
 
 export const SecondSection = () => (
   <section className="grid grid-rows-[repeat(6,calc(50vh-2rem))] place-items-center gap-4 overflow-hidden leading-7 md:grid-cols-2 md:grid-rows-[repeat(3,100vh)]">
-    <CountryVisual className="col-start-1 row-start-2 mb-28 h-full w-full md:row-start-1 md:mb-0" />
+    <CountryVisual className="col-start-1 row-start-2 mb-28 h-full w-full pb-8 md:row-start-1 md:mb-0" />
 
     <div id="FirstDiv" className="row-start-1 h-full place-content-center md:col-start-2">
       <FadeInEffect delay={2.5} className="textSmall">
@@ -21,7 +21,7 @@ export const SecondSection = () => (
     <FadeInEffect
       animationStyle="fadeLeft"
       delay={3}
-      className="col-start-1 row-span-1 row-start-2 self-end justify-self-start md:col-start-2 md:row-start-1 md:pb-16"
+      className="col-start-1 row-span-1 row-start-2 self-end justify-self-start pb-20 md:col-start-2 md:row-start-1"
     >
       <ScrollButton id="SecondDiv" customOffset={15} mobileOffset={70} delay={3} />
     </FadeInEffect>
