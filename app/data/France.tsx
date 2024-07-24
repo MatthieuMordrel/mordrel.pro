@@ -128,7 +128,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
 
       <defs>
         {/* Useless glowing for cities */}
-        <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
+        {/* <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3" result="coloredBlur" />
           <feFlood floodColor={colorGlowCities} result="glowColor" />
           <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow" />
@@ -136,7 +136,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
             <feMergeNode in="softGlow" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
-        </filter>
+        </filter> */}
 
         {/* Dyanmic cities pulsating */}
         <g id="PointBrussels">

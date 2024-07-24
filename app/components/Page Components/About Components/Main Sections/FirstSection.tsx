@@ -4,9 +4,9 @@ import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 import AboutPane from '../AboutPane'
 
 export const FirstSection = () => (
-  <section className="grid h-[calc(100vh-10rem)] grid-cols-1 items-start md:h-[calc(100vh-4.5rem)] md:grid-cols-2 md:grid-rows-1">
+  <section className="grid h-[calc(100vh-10rem)] grid-cols-1 items-start md:h-[calc(100vh-4.5rem)] md:grid-cols-2 md:grid-rows-1 md:items-center">
     <div className="row-start-1 max-w-[42rem] text-pretty md:col-start-1">
-      <FadeInEffect animationStyle={'fadeUp'} className={`font-bitter text-[clamp(2.75rem,1.143rem+4.286vw,5rem)]`}>
+      <FadeInEffect animationStyle={'fadeUp'} className={`pt-4 font-bitter text-[clamp(2.75rem,1.143rem+4.286vw,5rem)] md:pt-0`}>
         <h1>Hi, my name is Matthieu</h1>
         <hr className="my-2 border-t-2 md:my-8 md:w-1/2" />
       </FadeInEffect>
