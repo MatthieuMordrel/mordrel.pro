@@ -168,7 +168,7 @@ export const CountryVisualMobile: React.FC<React.SVGProps<SVGSVGElement>> = ({ .
         //   onViewportEnter={handleViewportEnter}
       >
         <path d="M319 577 Q600 400, 508 157" fill="none" stroke={colorCities} strokeWidth="1">
-          <animate ref={animateRef} attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" begin="indefinite" repeatCount="indefinite" />
+          <animate ref={animateRef} attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" begin="0s" repeatCount="indefinite" />
         </path>
         {/* <circle cx="600" cy="400" r="5" fill="red" /> */}
       </g>

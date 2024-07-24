@@ -19,7 +19,7 @@ export const FirstSection = () => (
       <MatthieuIcon className="mx-auto max-h-[17rem] sm:max-h-[25rem] md:max-h-full" />
     </FadeInEffect>
     <FadeInEffect animationStyle="fadeLeft" delay={2.25} className="pb-6 md:col-start-1 md:row-span-1 md:row-start-1 md:self-end md:pb-4">
-      <ScrollButton id="FirstDiv" customOffset={15} mobileOffset={-18} delay={2.25} />
+      <ScrollButton id="FirstDiv" customOffset={15} mobileOffset={-10} delay={2.25} />
     </FadeInEffect>
   </section>
 )
