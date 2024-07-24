@@ -87,7 +87,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
           </text>
         </g>
       </motion.g>
-      <motion.g
+      {/* <motion.g
         {...propCountries}
         transition={{ ...propCountries.transition, delay: 1.25 }}
         id="belgium"
@@ -124,11 +124,11 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
             </tspan>
           </text>
         </g>
-      </motion.g>
+      </motion.g> */}
 
-      <defs>
-        {/* Useless glowing for cities */}
-        {/* <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
+      {/* <defs> */}
+      {/* Useless glowing for cities */}
+      {/* <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3" result="coloredBlur" />
           <feFlood floodColor={colorGlowCities} result="glowColor" />
           <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow" />
@@ -138,8 +138,8 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
           </feMerge>
         </filter> */}
 
-        {/* Dyanmic cities pulsating */}
-        {/* <g id="PointBrussels">
+      {/* Dyanmic cities pulsating */}
+      {/* <g id="PointBrussels">
           <circle r={10 / scaleBelgium} fill={colorCities} opacity="0.3">
             <animate attributeName="r" values={`${10 / scaleBelgium};${12 / scaleBelgium};${10 / scaleBelgium}`} dur="1s" repeatCount="indefinite" />
           </circle>
@@ -161,7 +161,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
             <animate attributeName="r" values={`${4 / scaleFrance};${6 / scaleFrance};${4 / scaleFrance}`} dur="1s" repeatCount="indefinite" />
           </circle>
         </g> */}
-      </defs>
+      {/* </defs> */}
 
       {/* <motion.g {...propCountries} transition={{ ...propCountries.transition, delay: 2 }} id="animated-path" onViewportEnter={handleViewportEnter}>
         <path d="M319 577 Q600 400, 508 157" fill="none" stroke={colorCities} strokeWidth="1">
