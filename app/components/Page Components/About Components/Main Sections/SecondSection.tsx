@@ -6,12 +6,13 @@ import Link from 'next/link'
 import { OribitingSoftware } from '../OrbitingSoftware'
 
 export const SecondSection = () => (
-  <section className="grid grid-rows-[repeat(6,calc(50vh-2rem))] place-items-center gap-4 overflow-hidden md:grid-cols-2 md:grid-rows-[repeat(3,100vh)]">
+  <section className="grid grid-rows-[repeat(6,calc(50vh-2rem))] place-items-center gap-4 overflow-hidden leading-7 md:grid-cols-2 md:grid-rows-[repeat(3,100vh)]">
     <CountryVisual className="col-start-1 row-start-2 mb-28 h-full w-full md:row-start-1 md:mb-0" />
 
     <FadeInEffect id="FirstDiv" delay={2.5} className="textSmall row-start-1 h-full place-content-center md:col-start-2">
       <p className="font-bold">The Introduction</p>
-      Currently living in Belgium, I&apos;m originally from France, which I left to pursue studies in Business Engineering. <br />
+      Currently living in Brussels, Belgium, I&apos;m originally from Marseille, France, which I left to pursue studies in Business Engineering.{' '}
+      <br />
       After getting my degree, I worked in Finance where I realized I was looking for something where <span className="text-techBlue">
         freedom
       </span>, <span className="text-techBlue">creativity</span> and <span className="text-techBlue">independence</span> feel more rewarding.
@@ -41,7 +42,7 @@ export const SecondSection = () => (
       delay={1.5}
       className="col-start-1 row-span-1 row-start-4 mb-6 self-end justify-self-start md:row-start-2 md:pb-4"
     >
-      <ScrollButton id="ThirdDiv" customOffset={15} mobileOffset={40} delay={1.5} />
+      <ScrollButton id="ThirdDiv" customOffset={15} mobileOffset={0} delay={1.5} />
     </FadeInEffect>
 
     <FadeInEffect className="col-start-1 w-full">

@@ -16,13 +16,7 @@ interface TitleAndTextProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({ className = '', children, ...props }) => {
   return (
-    <div className={`flex flex-col overflow-hidden sm:flex-row md:flex md:flex-col md:gap-y-12 ${className}`} {...props}>
-      {/* <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
->
-      Test Framer motion
-      </motion.div> */}
+    <section className={`flex flex-col gap-x-2 overflow-hidden sm:flex-row md:flex md:flex-col md:gap-y-12 ${className}`} {...props}>
       <TitleAndText
         title="Simplify your life"
         delayMultiple={0.04}
@@ -44,20 +38,20 @@ export const AnimateTextDiv: React.FC<AnimateTextdivProps> = ({ className = '', 
         icon={<CustomIcon icon={Target} />}
         className=""
       />
-    </div>
+    </section>
   )
 }
 
 export const TitleAndText: React.FC<TitleAndTextProps> = ({ className = '', children, title, TextContentString, delayMultiple, icon, ...props }) => {
   return (
-    <div className={`flex flex-col items-center gap-y-2 sm:items-start md:pl-8 ${className}`} {...props}>
-      <div className="flex items-center gap-x-3 md:mb-2">
+    <article className={`flex flex-col items-center gap-y-2 sm:items-start md:pl-8 ${className}`} {...props}>
+      <header className="flex items-center gap-x-3 md:mb-2">
         {icon}
         <GradualSpacing delayMultiple={delayMultiple} className="text-xs font-bold sm:text-xs md:text-sm lg:text-base xl:text-lg">
           {title}
         </GradualSpacing>
-      </div>
+      </header>
       <FontTextPanes className="text-center text-xs sm:text-start sm:text-xs md:text-sm lg:text-base xl:text-lg">{TextContentString}</FontTextPanes>
-    </div>
+    </article>
   )
 }

@@ -45,7 +45,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 h-16 border-b-2 border-borderGrey bg-techGrey">
       <div className="relative grid h-full w-full grid-cols-[auto_auto_auto] items-center sm:grid-cols-3">
         <div className="flex h-full w-full items-center gap-x-4">
-          <div className=""></div>
+          <div className="">{/* Logo */}</div>
         </div>
         <div className="flex w-full items-center justify-center gap-4 sm:gap-14">
           <div ref={dropdownRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

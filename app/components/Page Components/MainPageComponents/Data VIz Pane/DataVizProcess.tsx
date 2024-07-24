@@ -11,10 +11,7 @@ interface DataVizBestPracticesProps {
   onPracticeClick?: (index: number) => void
 }
 
-const DataVizBestPractices: React.FC<DataVizBestPracticesProps> = ({
-  customPractices,
-  onPracticeClick
-}) => {
+const DataVizBestPractices: React.FC<DataVizBestPracticesProps> = ({ customPractices, onPracticeClick }) => {
   return (
     <div className="rounded-lg py-6">
       <ul className="space-y-3">

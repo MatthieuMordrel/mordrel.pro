@@ -57,7 +57,7 @@ const PaneValue = ({ className }: { className?: string }) => {
         >
           <Pane includeBorderBeam={false} className="h-full p-4">
             <h2 className="mb-2 font-bold lg:mb-5">{pane.title}</h2>
-            <p className="text-[clamp(0.5rem,0.5rem+1vw,1rem)]">{pane.description}</p>
+            <p className="textSmall">{pane.description}</p>
           </Pane>
         </motion.article>
       ))}

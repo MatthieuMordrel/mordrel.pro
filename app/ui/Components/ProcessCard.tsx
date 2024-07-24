@@ -20,14 +20,14 @@ const childVariant = {
 export const ProcessCard: React.FC<ProcessCardProps> = ({ icon: Icon, title, description, borderColor }) => (
   <motion.article
     variants={childVariant}
-    className={`group relative flex items-start rounded-lg bg-paneGrey p-6 shadow-sm outline-2 hover:outline dark:border-gray-800 ${borderColor}`}
+    className={`group relative flex items-start rounded-lg border-gray-800 bg-paneGrey p-6 shadow-sm outline-2 hover:outline ${borderColor}`}
   >
     <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full">
       <Icon className="h-6 w-6" />
     </span>
     <div className="ml-4">
       <h4 className="text-lg font-medium">{title}</h4>
-      <p className="textSmall mt-2 text-gray-500 dark:text-gray-400">{description}</p>
+      <p className="textSmall mt-2 text-gray-400">{description}</p>
     </div>
     {/* Solution below allows to create border, which appears when the element with group class is hovered */}
     {/* <div className={`absolute inset-0 rounded-lg border-2 opacity-0 group-hover:opacity-100 ${borderColor}`} /> */}

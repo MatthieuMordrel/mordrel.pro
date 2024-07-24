@@ -1,3 +1,6 @@
+import { colors } from '@lib/colors'
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+
 export const formatCurrency = (value: number) => {
   if (value >= 1e9) {
     return `$${(value / 1e9).toFixed(1)}b`
@@ -29,4 +32,23 @@ export function formatData(data: any[]): any[] {
       Date: `Q${quarter} ${year}`
     }
   })
+}
+
+export const lineChartProps = {
+  dataKey: 'Date',
+  tickMargin: 10,
+  stroke: colors.primaryText
+}
+
+export const tooltipProps = {
+  formatter: (value: number, name: string) => [formatCurrency(value), name.charAt(0).toUpperCase() + name.slice(1)],
+  contentStyle: { backgroundColor: '#f5f5f5', border: '1px solid #ccc' },
+  itemStyle: { color: colors.techGrey },
+  labelStyle: { color: colors.techGrey, fontWeight: 'bold' }
+}
+
+export const yAxisProps = {
+  tickCount: 5,
+  tickMargin: 5,
+  stroke: colors.primaryText
 }

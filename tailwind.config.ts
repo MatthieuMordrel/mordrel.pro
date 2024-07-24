@@ -8,7 +8,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-techGrey': 'linear-gradient(180deg, #1c1c1c, #2a2a2a)'
       },
       colors: {
         techGrey: '#1C1C1C',
@@ -129,9 +130,8 @@ const config: Config = {
     plugin(function ({ addComponents }: PluginAPI) {
       addComponents({
         '.textSmall': {
-          fontSize: 'clamp(0.75rem, 0.464rem + 1.429vw, 1.2rem)',
-          fontStretch: '100%',
-          lineHeight: '2rem'
+          fontSize: 'clamp(0.75rem, 0.464rem + 1.429vw, 1rem)',
+          fontStretch: '100%'
         },
         '.textMedium': {
           fontSize: 'clamp(1rem, 0.464rem + 1.429vw, 1.625rem)',

@@ -11,7 +11,7 @@ export const SecondSection = () => (
   <section className="flex w-[90vw] flex-col items-center gap-y-16 md:w-[80vw] md:gap-y-28 3xl:w-[60vw]">
     <Examples className="w-full scroll-mt-28" id="exemples-block" />
     <FadeInEffect id="visu-block" animationStyle="fadeLeft" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
-      <Pane className="h-full">
+      <Pane className="h-full" includeBorderBeam={false}>
         <PaneDataViz />
       </Pane>
     </FadeInEffect>
@@ -22,7 +22,7 @@ export const SecondSection = () => (
     </FadeInEffect>
     <ExcelProposition id="excel-block" className="w-full scroll-mt-28" />
     <FadeInEffect animationStyle="zoom">
-      <Pane className="min-h-[20rem] w-full md:h-[37.5rem]">
+      <Pane className="flex min-h-[20rem] w-full flex-col md:h-[37.5rem]">
         <AutomationPane />
       </Pane>
     </FadeInEffect>

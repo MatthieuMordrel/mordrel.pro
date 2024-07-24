@@ -421,7 +421,7 @@ export function GlobeDemo() {
   return (
     <div ref={myRef} className="relative flex h-full w-full flex-col items-center justify-center md:flex-row">
       <div className="relative h-full w-full overflow-hidden md:h-96 lg:h-full">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-40 w-full select-none bg-gradient-to-b from-transparent to-white dark:to-paneGrey" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-40 w-full select-none bg-gradient-to-b from-transparent to-paneGrey" />
         <div className="absolute z-10 w-full md:h-full">
           {/* {isInView ? ( */}
           {/* // <Suspense fallback={<></>}> */}

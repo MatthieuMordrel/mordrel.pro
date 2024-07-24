@@ -38,7 +38,7 @@ const ButtonsList: React.FC<ToggleButtonsList> = ({ items, onActiveIndexChange, 
           variants={childVariant}
           type="button"
           key={item}
-          className={`rounded-lg border-2 ${classButton} ${
+          className={`textSmall rounded-lg border-2 ${classButton} ${
             activeIndex === index ? 'border-techBlue text-techBlue' : 'border-borderGrey hover:bg-activeBorderGrey hover:text-techBlue'
           }`}
           onClick={() => handleClick(index)}

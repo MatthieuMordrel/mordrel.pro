@@ -107,11 +107,16 @@ export default function Examples({ className, ...props }: HTMLAttributes<HTMLEle
     <section className={className} {...props}>
       <TextHighlight className="title-responsive mb-8 text-center">Simply, what do we do ?</TextHighlight>
       <FadeInEffect className="mx-auto w-full max-w-3xl p-6 pt-0 sm:p-10 sm:pt-0">
-        <ButtonsList classButton="px-4 py-2" items={processTitles} onActiveIndexChange={setShowAutomation} className="flex justify-center gap-x-2" />
+        <ButtonsList
+          classButton="px-2 md:px-4 py-2 md:py-3 "
+          items={processTitles}
+          onActiveIndexChange={setShowAutomation}
+          className="flex justify-center gap-x-2"
+        />
 
         <div className="mb-6 mt-4 space-y-2">
           <h3 className="block text-2xl font-bold tracking-tight sm:text-3xl">{processTitles[showAutomation]}</h3>
-          <p className="text-gray-500 dark:text-gray-400">{processDescriptions[showAutomation]}</p>
+          <p className="text-gray-400">{processDescriptions[showAutomation]}</p>
         </div>
         <Process steps={processSteps[showAutomation]} />
       </FadeInEffect>

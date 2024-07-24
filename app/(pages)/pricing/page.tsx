@@ -15,7 +15,7 @@ const Pricing = () => {
       <FadeInEffect>
         <Timeline />
       </FadeInEffect>
-      <FadeInEffect className="w-[50%] self-center">
+      <FadeInEffect className="mx-auto sm:w-[clamp(15rem,7.105rem+42.105vw,45rem)]">
         <FAQ />
       </FadeInEffect>
     </main>
