@@ -163,17 +163,12 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
         </g>
       </defs>
 
-      <g
-        {...propCountries}
-        // transition={{ ...propCountries.transition, delay: 2 }}
-        id="animated-path"
-        // onViewportEnter={handleViewportEnter}
-      >
+      <motion.g {...propCountries} transition={{ ...propCountries.transition, delay: 2 }} id="animated-path" onViewportEnter={handleViewportEnter}>
         <path d="M319 577 Q600 400, 508 157" fill="none" stroke={colorCities} strokeWidth="1">
           <animate ref={animateRef} attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" begin="indefinite" repeatCount="indefinite" />
         </path>
         {/* <circle cx="600" cy="400" r="5" fill="red" /> */}
-      </g>
+      </motion.g>
     </svg>
   )
 }
