@@ -42,7 +42,7 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
   }
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox={`${xFrance} 90 660 600`} {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox={`${xFrance} 90 660 600`} width={500} {...props}>
       <motion.g {...propCountries} id="france" transform={`translate(${xFrance}, ${yFrance}) scale(${scaleFrance})`}>
         <path
           fill={color}
