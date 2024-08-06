@@ -16,17 +16,17 @@ const processSteps = [
   {
     icon: NotebookPen,
     title: 'Review and Approval',
-    description: 'Your request will be reviewed and we will contact you to gather more details about the project.'
+    description: 'Your request will be reviewed and you will be contacted to gather more details about the project.'
   },
   {
     icon: CheckIcon,
     title: 'Agreement',
-    description: 'Once an aggreement is reached about the objective, the timeline and the pricing, we get to work.'
+    description: 'Once an aggreement is reached about the objective, the timeline and the pricing, the project begins.'
   },
   {
     icon: RefreshCwIcon,
     title: 'Deployment',
-    description: 'The automation, visualisation or service is developed, set up and deployed to your systems where we ensure smooth functioning.'
+    description: 'The automation, visualisation or service is developed, set up and deployed to your systems where smooth functioning is ensured.'
   },
   {
     icon: ShareIcon,
