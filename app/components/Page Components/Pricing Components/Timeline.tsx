@@ -16,7 +16,7 @@ const processSteps = [
   {
     icon: NotebookPen,
     title: 'Review and Approval',
-    description: 'Your request will be reviewed by our team and we will contact you to gather more details about the project.'
+    description: 'Your request will be reviewed and we will contact you to gather more details about the project.'
   },
   {
     icon: CheckIcon,

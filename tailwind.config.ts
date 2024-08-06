@@ -143,6 +143,10 @@ const config: Config = {
           fontFamily: 'var(--font-bitter)',
           letterSpacing: '1px',
           pointerEvents: 'none'
+        },
+        '.reportClass': {
+          width: '600px',
+          height: '600px'
         }
       })
     })
