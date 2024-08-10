@@ -50,7 +50,7 @@ export function PowerBIReport({ accessToken }: { accessToken?: string }) {
       }
       cssClassName={'reportClass'}
       getEmbeddedComponent={(embeddedReport) => {
-        window.report = embeddedReport
+        // window.report = embeddedReport
       }}
     />
   )

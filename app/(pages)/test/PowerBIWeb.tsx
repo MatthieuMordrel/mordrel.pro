@@ -9,7 +9,7 @@ interface PowerBIReportWebProps {
 }
 
 const PowerBIReportweb = ({ title, width, height, src, className }: PowerBIReportWebProps) => {
-  return <iframe title={title} width={width} height={height} src={src} frameBorder="0" allowFullScreen={true} className={`${className}`} />
+  return <iframe title={title} width={width} height={height} src={src} allowFullScreen={true} className={`${className}`} />
 }
 
 export default PowerBIReportweb
