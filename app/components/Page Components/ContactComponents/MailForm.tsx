@@ -16,7 +16,7 @@ const MailForm = ({ className }: { className?: string }) => {
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setStatus('Sending...')
-    const res = await fetch('http://localhost:3000/api/mail', {
+    const res = await fetch('api/mail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
