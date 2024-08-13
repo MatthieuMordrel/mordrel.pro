@@ -28,7 +28,7 @@ export const PaneDataViz = () => {
           HighlightedSentence="Don't let your data sleep."
           MainContent="Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics."
         />
-        <BulletPoints className="ml-3 hidden lg:block lg:self-end" />
+        <BulletPoints className="ml-3 hidden lg:self-end" />
       </div>
       <ButtonsCharts
         onChartTypeChange={setChartType}
@@ -41,13 +41,13 @@ export const PaneDataViz = () => {
         chartType={chartType}
       />
 
-      <div className="ml-1 text-[0.5rem] italic text-gray-500 lg:col-start-1 lg:row-start-3 lg:self-end">Data provided by Alpha Vantage</div>
+      <div className="ml-1 text-[0.5rem] italic text-gray-500 lg:col-start-1 lg:row-start-4 lg:self-end">Data provided by Alpha Vantage</div>
 
-      <div className="col-start-1 row-start-5 flex items-center justify-between lg:col-start-1 lg:row-start-4">
+      <div className="col-start-1 row-start-5 flex items-center justify-between lg:col-start-1 lg:row-start-5">
         <ButtonsStocks onFetchComplete={setFinancialData} className="flex gap-x-4 pt-2" />
-        <ButtonsPeriod onButtonChange={setDataFrequency} className="z-10 hidden gap-x-2 md:flex" />
+        <ButtonsPeriod onButtonChange={setDataFrequency} className="z-10 hidden gap-x-2 lg:flex" />
       </div>
-      <div className="col-start-1 row-start-5 flex items-center justify-self-end text-gray-400 hover:text-techBlue lg:col-start-2 lg:row-start-4">
+      <div className="col-start-1 row-start-5 hidden items-center justify-self-end text-gray-400 hover:text-techBlue md:flex lg:col-start-2 lg:row-start-5">
         <Link href="/powerbivisuals" className="">
           Browse more visuals
         </Link>

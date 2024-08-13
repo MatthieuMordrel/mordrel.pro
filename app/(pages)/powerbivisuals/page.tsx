@@ -8,10 +8,10 @@ const PowerbiPage = () => {
 
   useEffect(() => {
     // Set the initial reportWidth after the component mounts on the client
-    setReportWidth(Math.max(window.innerWidth * 0.65, 400)) // Use Math.max instead of min
+    setReportWidth(Math.min(window.innerWidth * 0.9, 1000)) // Use Math.max instead of min
 
     const handleResize = () => {
-      setReportWidth(Math.max(window.innerWidth * 0.65, 400)) // Use Math.max instead of min
+      setReportWidth(Math.min(window.innerWidth * 0.9, 1000)) // Use Math.max instead of min
     }
 
     window.addEventListener('resize', handleResize)
@@ -24,7 +24,10 @@ const PowerbiPage = () => {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <div className="mt-4 flex flex-col gap-y-4 text-center">
-        <TextHighlight className="textMedium">Evolution of Electricity capacity & generation (based on 2023 IRENA data)</TextHighlight>
+        <div>
+          <TextHighlight className="textMedium">Standard Dashboard </TextHighlight>
+          <p className="textSmall italic">Evolution of Electricity capacity & generation (based on 2023 IRENA data)</p>
+        </div>
         <PowerBIReportweb
           title="Draft File - Electricity"
           width={reportWidth}
