@@ -28,15 +28,15 @@ const PaneValue = ({ className }: { className?: string }) => {
   const paneData = [
     {
       title: 'Client-oriented approach',
-      description: 'We are a client-first company. We listen to your needs and tailor our solutions to meet them.'
+      description: 'Each client and request is different. We listen to your needs and tailor our solutions to meet them.'
     },
     {
       title: 'Tools agnostic',
-      description: 'We use and recommend tools based on the needs of each case, maximizing value for our customers.'
+      description: 'We use and recommend tools to maximize efficiency for each case, ensuring value for customers.'
     },
     {
       title: 'Best Practices focused',
-      description: 'Our team follows industry best practices to ensure the highest quality of our products and services.'
+      description: 'Industry best practices are followed to aim for the highest quality in our products and services.'
     }
   ]
 

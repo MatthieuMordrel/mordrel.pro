@@ -26,7 +26,7 @@ const processSteps = [
     {
       icon: RefreshCcw,
       title: 'Automate your reports',
-      description: 'Generate beautiful periodic financial reports by extracting and formatting data from various sources.'
+      description: 'Generate insightful financial reports by extracting, cleaning and formatting data from various sources.'
     },
     {
       icon: MonitorCheck,
