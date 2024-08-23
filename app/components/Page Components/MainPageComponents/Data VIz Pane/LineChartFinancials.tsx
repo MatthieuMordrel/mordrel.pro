@@ -1,31 +1,24 @@
+'use client'
+import { useData } from '@/app/lib/dataContext'
 import { AreaChartComponent } from '@/app/ui/Graphs/AreaChart'
 import { BarChartComponent } from '@/app/ui/Graphs/BarCharts'
 import { LineChartComponent } from '@/app/ui/Graphs/LineChart'
-import { useEffect, useRef } from 'react'
-import { ChartType } from '@lib/types'
 
 interface LineChartFinancialsProps {
   className?: string
-  data: any[]
-  chartType: ChartType
 }
 
-export const LineChartFinancials: React.FC<LineChartFinancialsProps> = ({ className, data, chartType }) => {
-  // const renderCount = useRef(0)
-  // renderCount.current += 1
-  // console.log('Chart was rendered at', new Date().toLocaleTimeString())
-  // console.log(`Component has rendered ${renderCount.current} times`)
-  // useEffect(() => {
-  //   console.log(`Component has rendered ${renderCount.current} times`)
-  // })
+export const LineChartFinancials: React.FC<LineChartFinancialsProps> = ({ className }) => {
+  const { financialData, chartType, dataFrequency } = useData()
+
   const renderChart = () => {
     switch (chartType) {
       case 'line':
-        return <LineChartComponent data={data} />
+        return <LineChartComponent data={financialData[dataFrequency]} />
       case 'area':
-        return <AreaChartComponent data={data} />
+        return <AreaChartComponent data={financialData[dataFrequency]} />
       case 'bar':
-        return <BarChartComponent data={data} />
+        return <BarChartComponent data={financialData[dataFrequency]} />
       default:
         return null
     }

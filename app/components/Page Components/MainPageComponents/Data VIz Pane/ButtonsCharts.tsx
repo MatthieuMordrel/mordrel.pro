@@ -1,15 +1,16 @@
 'use client'
-import React, { useState } from 'react'
+import { useData } from '@/app/lib/dataContext'
+import { ChartType } from '@/app/lib/types'
 import ButtonsList from '@/app/ui/Components/ButtonsList'
-import { LineChartIcon, BarChartIcon, AreaChartIcon } from 'lucide-react'
 import CustomIcon from '@/app/ui/Components/LucideIcons'
-import { ChartType } from '@lib/types'
+import { AreaChartIcon, BarChartIcon, LineChartIcon } from 'lucide-react'
+import React from 'react'
 
-interface ButtonsChartsProps extends React.HTMLAttributes<HTMLDivElement> {
-  onChartTypeChange: (type: ChartType) => void
-}
+interface ButtonsChartsProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ onChartTypeChange, ...props }) => {
+const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ ...props }) => {
+  const { setChartType } = useData()
+
   const chartTypes = [
     { label: 'Line', icon: <CustomIcon icon={LineChartIcon} size={15} /> },
     { label: 'Area', icon: <CustomIcon icon={AreaChartIcon} size={15} /> },
@@ -21,7 +22,7 @@ const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ onChartTypeChange, ...pro
       classButton="p-2 bg-paneGrey"
       items={chartTypes.map((type) => type.label)}
       buttonDisplay={chartTypes.map((type) => type.icon)}
-      onActiveIndexChange={(index) => onChartTypeChange(chartTypes[index].label.toLowerCase() as ChartType)}
+      onActiveIndexChange={(index) => setChartType(chartTypes[index].label.toLowerCase() as ChartType)}
       {...props}
     />
   )
