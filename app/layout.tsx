@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter, Roboto_Flex, Bitter } from 'next/font/google'
-import './styles/globals.css'
-import './styles/variables.css'
-import './styles/scrollbar.css'
-import './styles/animation.css'
+import { Bitter, Inter, Roboto_Flex } from 'next/font/google'
 import Footer from './components/Layout Components/Footer'
 import Navbar from './components/Layout Components/NavBar'
+import { DataProvider } from './lib/dataContext'
+import './styles/animation.css'
+import './styles/globals.css'
+import './styles/scrollbar.css'
+import './styles/variables.css'
+import { html } from 'd3'
 
 // Font Import: When you import a font using next/font/google, it generates a CSS class with the necessary font-face declarations.
 // ClassName Property: The returned object includes a className property, which is a string representing the generated CSS class.
@@ -48,9 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en" translate="no">
       <body className={`${inter.className} bg-techGrey text-primaryText`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <DataProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </DataProvider>
       </body>
     </html>
   )
