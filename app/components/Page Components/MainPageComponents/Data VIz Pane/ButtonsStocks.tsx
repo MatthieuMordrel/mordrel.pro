@@ -1,12 +1,9 @@
 'use client'
-import React, { useEffect } from 'react'
 import ButtonsList from '@/app/ui/Components/ButtonsList'
+import React, { useEffect } from 'react'
 
 interface ButtonsStocksProps {
-  onFetchComplete: (data: {
-    annualReports: (number | string)[]
-    quarterlyReports: (number | string)[]
-  }) => void
+  onFetchComplete: (data: { annualReports: (number | string)[]; quarterlyReports: (number | string)[] }) => void
   className?: string
 }
 
@@ -45,7 +42,7 @@ const ButtonsStocks: React.FC<ButtonsStocksProps> = ({ onFetchComplete, ...props
       console.error('There was a problem with the fetch operation:', error)
     }
   }
-
+  //fetch data on loading
   useEffect(() => {
     fetchData('MSFT')
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,13 +50,7 @@ const ButtonsStocks: React.FC<ButtonsStocksProps> = ({ onFetchComplete, ...props
 
   return (
     <>
-      <ButtonsList
-        classButton="p-1 sm:p-2"
-        className=""
-        items={stocks}
-        onActiveIndexChange={(index) => fetchData(stocks[index])}
-        {...props}
-      />
+      <ButtonsList classButton="p-1 sm:p-2" className="" items={stocks} onActiveIndexChange={(index) => fetchData(stocks[index])} {...props} />
       {/* <div>Data provided by alphavantage</div> */}
     </>
   )

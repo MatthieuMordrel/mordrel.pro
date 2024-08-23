@@ -1,7 +1,6 @@
 import { AreaChartComponent } from '@/app/ui/Graphs/AreaChart'
 import { BarChartComponent } from '@/app/ui/Graphs/BarCharts'
 import { LineChartComponent } from '@/app/ui/Graphs/LineChart'
-import { useEffect, useRef } from 'react'
 import { ChartType } from '@lib/types'
 
 interface LineChartFinancialsProps {

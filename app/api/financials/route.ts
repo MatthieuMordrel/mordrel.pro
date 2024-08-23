@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
   // console.log('Entered the route handler')
@@ -7,12 +7,13 @@ export async function POST(req: NextRequest) {
   const api_key = process.env.ALPHAVINTAGE_API_KEY
   const url = `https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol=${label.label}&apikey=${api_key}`
   // console.log('request URL: ', url)
-  const response = await fetch(url, { next: { revalidate: 24 * 3600 } })
+  const response = await fetch(url, { cache: 'force-cache', next: { revalidate: 24 * 3600 } })
   // console.log('Response Headers:', JSON.stringify(Array.from(response.headers.entries())))
 
   const data = await response.json()
 
   // const data = mockData
+  //send back the response by using the .json method of NextResponse which sends set the correct headers and automatically stringify the data and convert to json
   const jsonResponse = NextResponse.json(data)
   // console.log('NextResponse:', jsonResponse)
   return jsonResponse
