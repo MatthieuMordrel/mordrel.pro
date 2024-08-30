@@ -1,8 +1,7 @@
-import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
-import { Pane } from '@/app/ui/Effects/Pane'
-import { Check } from 'lucide-react'
-import Image from 'next/image'
 import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
+import { Pane } from '@/app/ui/Effects/Pane'
+import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
+import Image from 'next/image'
 
 interface TopDivProps {
   title: string
@@ -39,6 +38,7 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({ title, des
           fill={true}
           className="rounded-xl object-cover object-[top_center]"
           quality={100}
+          loading="eager"
           priority={true} // Added priority property
         />
       </div>

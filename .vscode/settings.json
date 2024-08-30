@@ -1,3 +1,6 @@
 {
-  "files.associations": { "*.css": "tailwindcss" }
+  "files.associations": {
+    "*.css": "tailwindcss" //Convert CSS files to Tailwind
+  },
+  "svg.preview.background": "custom" //Add SVG preview with the extension
 }

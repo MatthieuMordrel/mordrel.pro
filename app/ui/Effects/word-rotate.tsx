@@ -1,12 +1,12 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react'
 import { cn } from '@lib/utils'
 import { AnimatePresence, HTMLMotionProps, motion, useInView } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 interface WordRotateProps {
   words: string[]
   duration?: number
-  framerProps?: HTMLMotionProps<'p'>
+  framerProps?: HTMLMotionProps<'div'>
   className?: string
   animate?: boolean
   keep?: boolean
@@ -30,10 +30,6 @@ export default function WordRotate({
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
-  // useEffect(() => {
-  //   console.log(isInView)
-  // }, [isInView])
-
   useEffect(() => {
     if (!animate || (completed && keep) || !isInView) return
 
@@ -49,15 +45,18 @@ export default function WordRotate({
       })
     }, duration)
 
-    // Clean up interval on unmount or when animation should stop
     return () => clearInterval(interval)
   }, [words, duration, animate, keep, completed, isInView])
 
+  const currentWords = words[index].split(' ')
+
   return (
     <AnimatePresence mode="wait">
-      <motion.p ref={ref} key={words[index]} className={cn(className)} {...(animate ? framerProps : {})}>
-        {words[index]}
-      </motion.p>
+      <motion.div ref={ref} key={words[index]} className={cn(className, 'flex space-x-2')} {...(animate ? framerProps : {})}>
+        {currentWords.map((word, i) => (
+          <span key={i}>{word}</span>
+        ))}
+      </motion.div>
     </AnimatePresence>
   )
 }

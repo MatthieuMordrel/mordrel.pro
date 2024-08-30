@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
 import type { PluginAPI } from 'tailwindcss/types/config'
 
@@ -12,17 +13,17 @@ const config: Config = {
         'gradient-techGrey': 'linear-gradient(180deg, #1c1c1c, #2a2a2a)'
       },
       colors: {
-        techGrey: '#1C1C1C',
-        primaryText: 'rgb(236, 236, 236)',
-        techBlue: '#9fd7ca',
-        techGreen: '#3ecf8e ',
-        techOrange: '#EDB183',
-        techPurple: '#9E829C',
-        techYellow: '#FFD93D',
-        borderGrey: '#262626',
-        paneGrey: '#232323',
-        textGrey: '#676767',
-        activeBorderGrey: '#434343',
+        techGrey: 'hsl(0, 0%, 11%)',
+        primaryText: 'hsl(6, 0%, 83%)',
+        techBlue: 'hsl(170, 35%, 74%)',
+        techGreen: 'hsl(156, 68%, 53%)',
+        techOrange: 'hsl(24, 71%, 72%)',
+        techPurple: 'hsl(315, 12%, 57%)',
+        techYellow: 'hsl(49, 100%, 62%)',
+        borderGrey: 'hsl(0, 0%, 15%)',
+        paneGrey: 'hsl(0, 0%, 14%)',
+        textGrey: 'hsl(0, 0%, 40%)',
+        activeBorderGrey: 'hsl(0, 0%, 26%)',
         primary: {
           DEFAULT: 'hsl(222.2, 47.4%, 11.2%)', // Your primary color
           foreground: 'hsl(210, 40%, 98%)' // Your primary foreground color
@@ -119,7 +120,11 @@ const config: Config = {
       },
       fontFamily: {
         bitter: ['var(--font-bitter)', 'serif'],
-        inter: ['var(--font-inter)', 'sans-serif']
+        inter: ['var(--font-inter)', 'sans-serif', ...fontFamily.sans],
+        geist: ['var(--font-geist-sans)', ...fontFamily.sans]
+      },
+      boxShadow: {
+        neon: "0 0 2px theme('colors.blue.200'), 0 0 2px theme('colors.blue.700')"
       }
       // height: {
       //   'screen-dynamic': 'calc(var(--app-height) - 4.5rem)'
@@ -149,6 +154,25 @@ const config: Config = {
           height: '600px'
         }
       })
+    }),
+    plugin(({ theme, matchUtilities }) => {
+      const createNeonShadow = (value: string | Record<string, string>) => {
+        const color = typeof value === 'object' ? value[500] : value
+        const color2 = typeof value === 'object' ? value[700] : value
+        return {
+          boxShadow: `0 0 5px ${color}, 0 0 20px ${color2}`
+        }
+      }
+
+      const neonUtilities = {
+        neon: createNeonShadow
+      }
+
+      const neonOptions = {
+        values: theme('colors')
+      }
+
+      matchUtilities(neonUtilities, neonOptions)
     })
   ]
 }

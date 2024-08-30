@@ -1,16 +1,18 @@
+import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { Bitter, Inter, Roboto_Flex } from 'next/font/google'
 import Footer from './components/Layout Components/Footer'
 import Navbar from './components/Layout Components/NavBar'
 import { DataProvider } from './lib/dataContext'
+import { cn } from './lib/utils'
 import './styles/animation.css'
 import './styles/globals.css'
 import './styles/scrollbar.css'
 import './styles/variables.css'
-import { html } from 'd3'
 
 // Font Import: When you import a font using next/font/google, it generates a CSS class with the necessary font-face declarations.
 // ClassName Property: The returned object includes a className property, which is a string representing the generated CSS class.
+
 const inter = Inter({
   weight: '400',
   subsets: ['latin'],
@@ -49,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" translate="no">
-      <body className={`${inter.className} bg-techGrey text-primaryText`}>
+      <body className={cn('font-geist min-h-screen bg-techGrey text-primaryText', inter.variable, GeistSans.variable)}>
         <DataProvider>
           <Navbar />
           {children}

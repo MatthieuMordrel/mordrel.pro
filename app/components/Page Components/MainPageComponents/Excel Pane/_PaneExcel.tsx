@@ -1,13 +1,13 @@
-import ExcelContent from './Carousel/ExcelContent'
-import 'animate.css/animate.min.css'
+import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
-import ToggleComponent from './ToggleElement'
-import VBAContent from './Carousel/VBAContent'
-import ScriptContent from './Carousel/Scripts'
+import 'animate.css/animate.min.css'
+import { HTMLAttributes } from 'react'
+import ExcelContent from './Carousel/ExcelContent'
 import PowerPivotContent from './Carousel/PowerPivot'
 import PowerQueryContent from './Carousel/PowerQuery'
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
-import { HTMLAttributes } from 'react'
+import ScriptContent from './Carousel/Scripts'
+import VBAContent from './Carousel/VBAContent'
+import ToggleComponent from './ToggleElement'
 
 const skills = [
   {

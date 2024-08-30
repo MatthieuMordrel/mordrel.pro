@@ -1,10 +1,9 @@
 // Contact component
-import React from 'react'
-import MailForm from '../../components/Page Components/ContactComponents/MailForm'
-import ContactText from '../../components/Page Components/ContactComponents/ContactText'
-import { Mail } from 'lucide-react'
 import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
+import { Mail } from 'lucide-react'
 import { Metadata } from 'next'
+import ContactText from '../../components/Page Components/ContactComponents/ContactText'
+import MailForm from '../../components/Page Components/ContactComponents/MailForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -16,10 +15,10 @@ export default function ContactPage() {
   return (
     <main className="grid min-h-[100vh] grid-rows-[auto_auto_auto_auto_auto] gap-y-4 bg-techGrey px-5">
       <FadeInEffect>
-        <ContactText className="py-8 text-center" />
+        <ContactText className="pt-8 text-center" />
       </FadeInEffect>
       <FadeInEffect animationStyle="zoom">
-        <MailForm className="w-full max-w-[50rem]" />
+        <MailForm className="mb-3 w-full max-w-[50rem]" />
         <section className="flex items-center justify-center gap-x-2">
           <Mail className="h-6 w-6"> </Mail>
           <p className="text-[clamp(0.75rem,2vw,1rem)] font-normal">
