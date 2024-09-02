@@ -14,6 +14,7 @@ const MailForm = ({ className }: { className?: string }) => {
 
   useEffect(() => {
     if (submissionMessage?.message && !submissionMessage?.error) {
+      console.log(submissionMessage)
       // Reset the form by updating the key
       setKey((prevKey) => prevKey + 1)
     }
@@ -38,7 +39,7 @@ const MailForm = ({ className }: { className?: string }) => {
       />
       <ButtonSubmit />
       <div className="mt-4 h-6">
-        {submissionMessage?.message && <p className="text-center text-green-500">{submissionMessage.message}</p>}
+        {submissionMessage?.message && <p className="text-center text-green-400">{submissionMessage.message}</p>}
         {submissionMessage?.error && <p className="text-center text-red-500">{submissionMessage.error}</p>}
       </div>
     </form>

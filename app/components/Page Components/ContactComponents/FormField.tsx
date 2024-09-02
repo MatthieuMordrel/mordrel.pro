@@ -8,6 +8,7 @@ const fieldStyles = cva(
   [
     'neon-slate',
     'flex w-full rounded-md border bg-paneGrey px-3 text-sm ring-offset-background transition',
+    'focus:outline-none',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
   ],
   {
@@ -31,9 +32,12 @@ interface FormFieldProps extends VariantProps<typeof fieldStyles> {
 const FormField: React.FC<FormFieldProps> = ({ id, label, name, type = 'text', required = false, placeholder = '', className = '' }) => {
   const [value, setValue] = useState('')
   const [touched, setTouched] = useState(false)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setValue(e.target.value)
-  const handleBlur = () => setTouched(true)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setValue(e.target.value)
+    if (!touched && e.target.value.length === 1) {
+      setTouched(true)
+    }
+  }
 
   const InputComponent = type === 'textarea' ? 'textarea' : 'input'
 
@@ -48,8 +52,12 @@ const FormField: React.FC<FormFieldProps> = ({ id, label, name, type = 'text', r
         type={type !== 'textarea' ? type : undefined}
         value={value}
         onChange={handleChange}
-        onBlur={handleBlur}
+        // The onBlur event is no longer needed as we're setting touched on first input
         required={required}
+        //This works by applying the 'touched' variant if touched is true,
+        //and the 'hasValue' variant if value.length > 0.
+        //It also includes any additional classes passed via the className prop.
+        // For textareas, it applies extra padding.
         className={cn(fieldStyles({ touched, hasValue: value.length > 0, className }), type === 'textarea' ? 'pb-20 pt-2' : 'py-2')}
         placeholder={placeholder}
       />

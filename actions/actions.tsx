@@ -46,12 +46,12 @@ export async function sendEmail(prevState: any, formData: FormData) {
     console.log('Entered the try block')
     await sendgrid.send(msg)
     revalidatePath('/contact')
-    return { message: 'Message sent successfully !' }
+    return { message: 'Thank you! Your message has been sent successfully !' }
   } catch (error: unknown) {
     console.error('SendGrid error:', error)
     if (error instanceof Error && 'response' in error) {
       console.error((error as { response: { body: unknown } }).response.body)
     }
-    return { error: 'Error sending email' }
+    return { error: 'Sorry, there was an error sending your message. Please try again later or contact me at matthieu@mordrel.pro' }
   }
 }

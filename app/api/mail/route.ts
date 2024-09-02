@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     try {
       await sendgrid.send(msg) //await so vercel doesn't close serverless function
-      return NextResponse.json({ message: 'Message sent successfully' }, { status: 200 })
+      return NextResponse.json({ message: 'Message sent successfully!' }, { status: 200 })
     } catch (error) {
       console.error(error)
       return NextResponse.json({ error: 'Error sending email' }, { status: 500 })
