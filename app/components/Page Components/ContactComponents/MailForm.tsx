@@ -26,7 +26,7 @@ const MailForm = ({ className }: { className?: string }) => {
         <FormField id="lastName" label="Last Name" name="lastName" className="" />
       </div>
       <FormField id="company" label="Company" name="company" />
-      <FormField id="email" name="email" label="Email" type="email" required />
+      <FormField id="email" name="email" label="Email*" type="email" required />
       <FormField
         id="message"
         name="message"

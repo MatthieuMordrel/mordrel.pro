@@ -4,16 +4,20 @@ import styles from './MailForm.module.css'
 
 export default function ButtonSubmit() {
   const { pending } = useFormStatus()
-  console.log('Pending?:', pending)
+
   return (
     <button
       type="submit"
       className={cn(
         styles.button,
-        'mt-4 w-full rounded-lg border border-white/10 px-8 py-4 text-lg font-semibold transition-all duration-300 ease-out hover:shadow-[0_4px_12px_rgba(79,70,229,0.3)] focus:ring-1 focus:ring-indigo-100'
+        'mt-4 w-full rounded-lg px-8 py-4 text-lg font-semibold transition-all duration-300 ease-out',
+        'border border-white/20 bg-white/10 backdrop-blur-sm',
+        'hover:bg-white/20 hover:shadow-[0_8px_32px_rgba(31,38,135,0.37)]',
+        'focus:outline-none focus:ring-2 focus:ring-white/30',
+        'text-white'
       )}
     >
-      {pending ? 'Sending' : 'Send Message'}
+      {pending ? 'Sending...' : 'Send Message'}
     </button>
   )
 }

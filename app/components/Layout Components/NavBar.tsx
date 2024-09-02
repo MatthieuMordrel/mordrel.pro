@@ -1,8 +1,7 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
-import Link from 'next/link'
-import BorderMagicButton from '@/app/ui/Components/Aceternity/BorderMagic'
 import ShimmerButton from '@/app/ui/Components/Aceternity/ShimmerButton'
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
