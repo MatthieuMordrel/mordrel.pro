@@ -32,15 +32,7 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({ title, des
     <div className="grid h-full w-full grid-rows-[auto_1fr_auto] gap-4 md:grid-cols-[1fr_1fr] md:grid-rows-2 xl:grid-cols-[2fr_1fr]">
       <TopDiv title={title} description={description} className="md:col-start-2 md:px-[clamp(0rem,1vw,1.25rem)]" />
       <div className="relative md:row-span-2 md:row-start-1">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill={true}
-          className="rounded-xl object-cover object-[top_center]"
-          quality={100}
-          loading="eager"
-          priority={true} // Added priority property
-        />
+        <Image src={imageSrc} alt={imageAlt} fill={true} className="rounded-xl object-cover object-[top_center]" quality={100} />
       </div>
       <Pane
         includeBorderBeam={false}

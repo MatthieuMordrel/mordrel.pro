@@ -1,7 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import 'animate.css/animate.min.css'
 import ButtonsList from '@/app/ui/Components/ButtonsList'
+import useEmblaCarousel from 'embla-carousel-react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 interface ToggleComponentProps {
   items: { title: string; component: React.ReactNode }[]
@@ -13,19 +13,63 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
   }
 
   const [activeIndex, setActiveIndex] = useState(0)
+  // Initialize Embla Carousel
+  // The emblaApi object contains a lot of methods and properties to control the carousel
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start' })
 
-  //Instead of using a useEffect hook to update the animation class, we update only the index and as the props update it automatically rerenders.
+  // Callback to update activeIndex when carousel slides
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    //emblaApi.selectedScrollSnap() get the index of the currently selected slide.
+    //It then updates the activeIndex state with this value using setActiveIndex.
+    setActiveIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
+
+  //The useEffect hook is used to set up the event listener for the carousel slide changes
+  //It also set the activeIndex state on mount and when the select event is triggered
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on('select', onSelect)
+    // Clean up event listener on component unmount
+    return () => {
+      emblaApi.off('select', onSelect)
+    }
+  }, [emblaApi, onSelect])
+
+  // Function to programmatically scroll the carousel
+  // Passing it to a callback avoid the buttons to be rerender when and if the ToggleComponent is rerendered and recreate the function
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index)
+    },
+    [emblaApi]
+  )
+
   return (
     <>
+      {/* The buttons below control the state of the carousel */}
       <ButtonsList
         classButton="p-[clamp(0.25rem,1vw,0.75rem)] "
-        onActiveIndexChange={setActiveIndex}
+        onActiveIndexChange={(index) => {
+          setActiveIndex(index)
+          scrollTo(index)
+        }}
         items={items.map((item) => item.title)}
         className="flex justify-center gap-x-1 sm:gap-x-2 md:gap-x-4"
       />
       <div className="mt-3 h-full w-full rounded-lg border-gray-500">
-        <div key={activeIndex} className="animate__animated animate__fadeInRight animate__faster p-3">
-          <div className="relative h-[60vh]">{items[activeIndex].component}</div>
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {items.map((item, index) => (
+              <div key={index} className="min-w-0 flex-[0_0_100%]">
+                <div className="p-3">
+                  {/* Components are passed as children to the carousel */}
+                  <div className="relative h-[60vh]">{item.component}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

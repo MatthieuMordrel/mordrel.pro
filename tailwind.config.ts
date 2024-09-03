@@ -120,7 +120,6 @@ const config: Config = {
       },
       fontFamily: {
         bitter: ['var(--font-bitter)', 'serif'],
-        inter: ['var(--font-inter)', 'sans-serif', ...fontFamily.sans],
         geist: ['var(--font-geist-sans)', ...fontFamily.sans]
       },
       boxShadow: {

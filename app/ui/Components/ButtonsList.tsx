@@ -1,8 +1,7 @@
 'use client'
-import React, { ReactElement, useState } from 'react'
 import 'animate.css/animate.min.css'
-import { Icon } from 'next/dist/lib/metadata/types/metadata-types'
 import { motion } from 'framer-motion'
+import React, { useState } from 'react'
 
 interface ToggleButtonsList {
   items: string[]
