@@ -1,5 +1,6 @@
 'use client'
-import { useData } from '@/app/lib/dataContext'
+
+import { useData } from '@lib/dataContext'
 
 const ContextDebugger = () => {
   const context = useData()

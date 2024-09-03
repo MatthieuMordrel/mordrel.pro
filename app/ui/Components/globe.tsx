@@ -1,5 +1,5 @@
 'use client'
-import countries from '@/data/globe.json'
+import countries from '@data/globe.json'
 import { OrbitControls } from '@react-three/drei'
 import { Canvas, extend, Object3DNode, useFrame, useThree } from '@react-three/fiber'
 import { useCallback, useEffect, useMemo, useRef } from 'react'

@@ -1,9 +1,7 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { SVGProps } from 'react'
-import { Pane } from '../Effects/Pane'
-import FadeInEffect from '../Effects/AdvancedFadeIn'
-import { motion, Variants } from 'framer-motion'
 
 interface ProcessCardProps {
   icon: React.ComponentType<SVGProps<SVGSVGElement>>
