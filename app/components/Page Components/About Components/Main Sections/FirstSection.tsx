@@ -1,6 +1,6 @@
-import { MatthieuIcon } from '@/app/data/Matthieu'
-import { ScrollButton } from '@/app/ui/Components/ScrollButon'
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
+import { MatthieuIcon } from '@/data/Matthieu'
+import { ScrollButton } from '@ui/Components/ScrollButon'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import AboutPane from '../AboutPane'
 
 export const FirstSection = () => (

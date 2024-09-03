@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-import react, { SVGProps } from 'react'
+import { SVGProps } from 'react'
 
 export const MailIconPerso = ({ className, ...props }: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement> & { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" {...props} className={className}>

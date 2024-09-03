@@ -1,13 +1,13 @@
 'use client'
 
-import { useMediaQuery } from 'react-responsive'
-import { BusinessIcon } from '@data/BusinessIcon'
-import { CountryVisual } from '@data/France'
-import { ScrollButton } from '@/app/ui/Components/ScrollButon'
+import { BusinessIcon } from '@/data/BusinessIcon'
+import { CountryVisual } from '@/data/France'
+import { CountryVisualMobile } from '@/data/FranceMobile'
+import { ScrollButton } from '@ui/Components/ScrollButon'
 import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import Link from 'next/link'
+import { useMediaQuery } from 'react-responsive'
 import { OribitingSoftware } from '../OrbitingSoftware'
-import { CountryVisualMobile } from '@data/FranceMobile'
 
 export const SecondSection = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 })

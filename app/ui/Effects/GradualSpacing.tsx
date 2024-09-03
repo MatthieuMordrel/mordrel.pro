@@ -1,8 +1,8 @@
 'use client'
-import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { cn } from '../../lib/utils'
+import { cn } from '@lib/utils'
 import styles from '@styles/GradualSpacing.module.css'
+import { AnimatePresence, motion } from 'framer-motion'
+import React from 'react'
 
 interface GradualSpacingProps extends React.HTMLAttributes<HTMLDivElement> {
   duration?: number

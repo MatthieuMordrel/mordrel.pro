@@ -1,6 +1,5 @@
-import { CheckMarkLucid } from '@/app/data/Icons'
+import { CheckMarkLucid } from '@/data/Icons'
 import { FontTextPanes } from '../Fonts/FontTextPanes'
-import GradualSpacing from '../Effects/GradualSpacing'
 
 interface BulletPointsListtProps {
   items: string[]

@@ -1,10 +1,10 @@
 'use client'
-import { useEffect, useRef, useMemo, useCallback } from 'react'
-import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from 'three'
-import ThreeGlobe from 'three-globe'
-import { useThree, Object3DNode, Canvas, extend, useFrame } from '@react-three/fiber'
+import countries from '@/data/globe.json'
 import { OrbitControls } from '@react-three/drei'
-import countries from '@data/globe.json'
+import { Canvas, extend, Object3DNode, useFrame, useThree } from '@react-three/fiber'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { Color, Fog, PerspectiveCamera, Scene, Vector3 } from 'three'
+import ThreeGlobe from 'three-globe'
 
 declare module '@react-three/fiber' {
   interface ThreeElements {

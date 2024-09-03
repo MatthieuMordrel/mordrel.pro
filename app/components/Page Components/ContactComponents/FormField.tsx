@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/app/lib/utils'
+import { cn } from '@lib/utils'
 import { cva, VariantProps } from 'class-variance-authority'
 import React, { useState } from 'react'
 

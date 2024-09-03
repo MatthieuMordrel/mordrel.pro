@@ -1,8 +1,8 @@
 'use client'
-import { useData } from '@/app/lib/dataContext'
 import { AreaChartComponent } from '@/app/ui/Graphs/AreaChart'
 import { BarChartComponent } from '@/app/ui/Graphs/BarCharts'
 import { LineChartComponent } from '@/app/ui/Graphs/LineChart'
+import { useData } from '@lib/dataContext'
 
 interface LineChartFinancialsProps {
   className?: string

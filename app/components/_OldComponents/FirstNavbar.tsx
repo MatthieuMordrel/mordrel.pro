@@ -1,15 +1,14 @@
 'use client'
-import Link from 'next/link'
-import Image from 'next/image'
 import {
   NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
   NavigationMenuContent,
-  NavigationMenuLink
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger
 } from '@/app/ui/Components/Shadcn/NavBarShadCn'
 import { cn } from '@lib/utils'
+import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {

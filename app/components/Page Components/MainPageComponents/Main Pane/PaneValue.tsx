@@ -1,7 +1,7 @@
-import HoverBox from '../../../_OldComponents/HoverBox'
-import Image from 'next/image'
+import HoverBox from '@/app/components/_OldComponents/HoverBox'
+import { PlayrightIcon } from '@/data/Sotftware'
 import { BarChart, CircleDollarSign, HandCoins, MonitorCheck, PackageCheck, Speech } from 'lucide-react'
-import { PlayrightIcon } from '@/app/data/Sotftware'
+import Image from 'next/image'
 import IconAndText from './IconAndText'
 
 const widthIcon = 64

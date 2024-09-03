@@ -10,7 +10,7 @@ if (!apiKey) {
 sendgrid.setApiKey(apiKey)
 
 export async function sendEmail(prevState: any, formData: FormData) {
-  console.log(formData)
+  // console.log(formData)
   const firstName = formData.get('firstName') as string
   const lastName = formData.get('lastName') as string
   const email = formData.get('email') as string
@@ -43,7 +43,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
   }
 
   try {
-    console.log('Entered the try block')
+    // console.log('Entered the try block')
     await sendgrid.send(msg)
     revalidatePath('/contact')
     return { message: 'Thank you! Your message has been sent successfully !' }

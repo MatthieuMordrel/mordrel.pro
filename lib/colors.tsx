@@ -1,5 +1,5 @@
 import resolveConfig from 'tailwindcss/resolveConfig'
-import config from '../../tailwind.config'
+import config from '../tailwind.config'
 
 const fullConfig = resolveConfig(config)
 

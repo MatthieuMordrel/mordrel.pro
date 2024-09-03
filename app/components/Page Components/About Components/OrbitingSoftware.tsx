@@ -1,10 +1,10 @@
 'use client'
-import OrbitingCircles from '@/app/ui/Components/OrbitingCircles'
+import { ReactIcon } from '@/data/Sotftware'
 import { IconProps } from '@radix-ui/react-icons/dist/types'
-import Yoga from './Yoga'
+import OrbitingCircles from '@ui/Components/OrbitingCircles'
 import Image from 'next/image'
-import { PowerBI, ReactIcon } from '@/app/data/Sotftware'
 import { useEffect, useRef, useState } from 'react'
+import Yoga from './Yoga'
 //IconProps is a TypeScript type that defines the properties that an icon component can accept. By using this type, you can specify and validate the props you pass to the icon components, ensuring they are correct and adhering to the expected structure.
 
 export function OribitingSoftware({ className }: { className?: string }) {

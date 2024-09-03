@@ -21,11 +21,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@ui/*": ["app/ui/*"],
-      "@lib/*": ["app/lib/*"],
-      "@data/*": ["app/data/*"],
+      "@ui/*": ["./app/ui/*"],
+      "@lib/*": ["./lib/*"],
+      "@data/*": ["./data/*"],
       "@components/*": ["app/components/*"],
-      "@styles/*": ["app/styles/*"],
+      "@styles/*": ["./styles/*"],
       "@actions/*": ["app/actions/*"]
     }
   },

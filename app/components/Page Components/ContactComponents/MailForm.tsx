@@ -1,7 +1,7 @@
 'use client'
 
 import { sendEmail } from '@/actions/actions'
-import { cn } from '@/app/lib/utils'
+import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import { useFormState } from 'react-dom'
 import ButtonSubmit from './ButtonSubmit'
@@ -14,7 +14,7 @@ const MailForm = ({ className }: { className?: string }) => {
 
   useEffect(() => {
     if (submissionMessage?.message && !submissionMessage?.error) {
-      console.log(submissionMessage)
+      // console.log(submissionMessage)
       // Reset the form by updating the key
       setKey((prevKey) => prevKey + 1)
     }

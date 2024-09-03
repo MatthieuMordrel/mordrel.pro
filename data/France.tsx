@@ -1,8 +1,8 @@
 'use client'
-import * as React from 'react'
 import { colors } from '@lib/colors'
-import { motion, Easing } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import * as React from 'react'
+import { useRef } from 'react'
 
 export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...props }) => {
   const color = 'rgba(147, 194, 183,0.4)'

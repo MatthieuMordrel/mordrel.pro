@@ -1,6 +1,6 @@
 'use client'
-import { useData } from '@/app/lib/dataContext'
 import ButtonsList from '@/app/ui/Components/ButtonsList'
+import { useData } from '@lib/dataContext'
 import React, { useEffect } from 'react'
 
 interface ButtonsStocksProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -39,14 +39,13 @@ const ButtonsStocks: React.FC<ButtonsStocksProps> = ({ ...props }) => {
         annualReports: modifiedData.annualReports,
         quarterlyReports: modifiedData.quarterlyReports
       })
-      console.log(modifiedData)
+      // console.log(modifiedData)
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error)
     }
   }
   //fetch data on loading
   useEffect(() => {
-    console.log('hey')
     fetchData('MSFT')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

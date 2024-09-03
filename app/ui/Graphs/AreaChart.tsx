@@ -1,6 +1,6 @@
-import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { findMaxRevenue, formatData, formatCurrency, lineChartProps, tooltipProps, yAxisProps } from './utils'
 import { colors } from '@lib/colors'
+import { Area, AreaChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { findMaxRevenue, formatCurrency, formatData, lineChartProps, tooltipProps, yAxisProps } from './utils'
 
 interface AreaChartComponentProps extends React.HTMLAttributes<HTMLDivElement> {
   data: (number | string)[]
