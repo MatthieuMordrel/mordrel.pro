@@ -15,7 +15,11 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   // Initialize Embla Carousel
   // The emblaApi object contains a lot of methods and properties to control the carousel
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start' })
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    watchDrag: false // Change this line to disable dragging completely
+  })
 
   // Callback to update activeIndex when carousel slides
   const onSelect = useCallback(() => {
