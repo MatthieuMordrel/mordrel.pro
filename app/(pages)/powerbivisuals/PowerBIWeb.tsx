@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface PowerBIReportWebProps {
   title: string
   width: number

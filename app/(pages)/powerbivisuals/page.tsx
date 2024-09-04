@@ -1,7 +1,7 @@
 'use client'
 import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import { useEffect, useState } from 'react'
 import PowerBIReportweb from './PowerBIWeb'
-import { useState, useEffect } from 'react'
 
 const PowerbiPage = () => {
   const [reportWidth, setReportWidth] = useState(0)
