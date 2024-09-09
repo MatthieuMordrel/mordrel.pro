@@ -1,11 +1,11 @@
 'use client'
 
-import ButtonsList from '@/app/ui/Components/ButtonsList'
+import ButtonsList from '@ui/Components/ButtonsList'
+import { Process } from '@ui/Components/ProcessCard'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
+import { TextHighlight } from '@ui/Fonts/TextHighlight'
+import { Axe, BarChartIcon, Brush, CircleGauge, LineChartIcon, MonitorCheck, RefreshCcw, ScrollText, UserRoundCheck } from 'lucide-react'
 import { HTMLAttributes, useState } from 'react'
-import { Process } from '@/app/ui/Components/ProcessCard'
-import { UserRoundCheck, BarChartIcon, LineChartIcon, ScrollText, CircleGauge, Brush, RefreshCcw, Axe, MonitorCheck } from 'lucide-react'
-import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 
 const processTitles = ['Automation Solutions', 'Data Visualization', 'Custom Development']
 

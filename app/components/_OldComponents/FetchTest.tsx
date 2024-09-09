@@ -1,7 +1,7 @@
 'use client'
 // debugger
-import ShimmerButton from '@/app/ui/Components/Aceternity/ShimmerButton'
-import React, { useState } from 'react'
+import ShimmerButton from '@ui/Components/Aceternity/ShimmerButton'
+import { useState } from 'react'
 import { PowerBIReport } from './PowerBIReport'
 
 const FetchTest = () => {

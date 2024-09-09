@@ -1,7 +1,6 @@
-import FAQ from '@/app/components/Page Components/Pricing Components/FAQ'
-import Timeline from '@/app/components/Page Components/Pricing Components/Timeline'
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
-import React from 'react'
+import FAQ from '@components/Page Components/Pricing Components/FAQ'
+import Timeline from '@components/Page Components/Pricing Components/Timeline'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

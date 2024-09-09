@@ -1,5 +1,5 @@
-import { FirstSection } from '@/app/components/Page Components/About Components/Main Sections/FirstSection'
-import { SecondSection } from '@/app/components/Page Components/About Components/Main Sections/SecondSection'
+import { FirstSection } from '@components/Page Components/About Components/Main Sections/FirstSection'
+import { SecondSection } from '@components/Page Components/About Components/Main Sections/SecondSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

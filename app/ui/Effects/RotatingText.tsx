@@ -1,5 +1,5 @@
 'use client'
-import WordRotate from '@/app/ui/Effects/word-rotate'
+import WordRotate from '@ui/Effects/word-rotate'
 import React, { useEffect, useState } from 'react'
 
 interface RotatingTextProps {

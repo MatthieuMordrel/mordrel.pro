@@ -1,0 +1,9 @@
+ffmpeg -i PurpleVideo.mp4 -vf scale=1280:720 -c:v libx265 -crf 24 -preset slow -x265-params "pools=8:frame-threads=3" -r 30 -an "output_720p_30fps_crf24_h265.mp4"
+
+
+ffmpeg -i PurpleVideo.mp4 -vf scale=1280:720 -c:v libx264 -crf 23 -preset veryslow -x264-params me=umh:subme=11:ref=8:b-adapt=2:rc-lookahead=60:trellis=2:psy-rd=1.0:aq-mode=3 -r 30 -an output_720p_30fps_crf23_h264_max_compression.mp4
+ffmpeg -i PurpleVideo.mp4 -vf scale=1280:720 -c:v libx265 -crf 23 -preset slower -x265-params me=3:subme=5:rd=5:ref=6:b-adapt=2:rc-lookahead=60:aq-mode=3:psy-rd=1.0:psy-rdoq=1.0 -r 30 -an output_720p_30fps_crf23_h265_max_compression.mp4
+
+ffmpeg -i PurpleVideo.mp4 -vf scale=1280:720 -c:v libx265 -crf 26 -preset veryslow -x265-params me=3:subme=7:rd=6:ref=8:b-adapt=2:rc-lookahead=80:aq-mode=3:psy-rd=2.0:psy-rdoq=2.0:deblock=-1:-1:no-sao=1 -r 30 -an output_720p_30fps_crf26_h265_max_compression.mp4
+
+

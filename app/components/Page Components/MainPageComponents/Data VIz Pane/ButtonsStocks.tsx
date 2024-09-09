@@ -1,6 +1,6 @@
 'use client'
-import ButtonsList from '@/app/ui/Components/ButtonsList'
 import { useData } from '@lib/dataContext'
+import ButtonsList from '@ui/Components/ButtonsList'
 import React, { useEffect } from 'react'
 
 interface ButtonsStocksProps extends React.HTMLAttributes<HTMLDivElement> {

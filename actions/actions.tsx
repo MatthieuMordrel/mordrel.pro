@@ -9,6 +9,7 @@ if (!apiKey) {
 }
 sendgrid.setApiKey(apiKey)
 
+// Send email function
 export async function sendEmail(prevState: any, formData: FormData) {
   // console.log(formData)
   const firstName = formData.get('firstName') as string

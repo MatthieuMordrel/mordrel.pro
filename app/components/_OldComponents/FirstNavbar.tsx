@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@lib/utils'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -6,8 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger
-} from '@/app/ui/Components/Shadcn/NavBarShadCn'
-import { cn } from '@lib/utils'
+} from '@ui/Components/Shadcn/NavBarShadCn'
 import Link from 'next/link'
 import React from 'react'
 

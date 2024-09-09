@@ -1,6 +1,6 @@
 'use client'
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
-import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
+import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import 'animate.css/animate.min.css'
 import { HTMLAttributes } from 'react'
 import ExcelContent from './Carousel/ExcelContent'

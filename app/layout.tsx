@@ -1,3 +1,4 @@
+import Footer from '@components/Layout Components/Footer'
 import { DataProvider } from '@lib/dataContext'
 import { cn } from '@lib/utils'
 import '@styles/animation.css'
@@ -7,7 +8,6 @@ import '@styles/variables.css'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { Bitter } from 'next/font/google'
-import Footer from './components/Layout Components/Footer'
 import Navbar from './components/Layout Components/NavBar'
 
 // Font Import: When you import a font using next/font/google, it generates a CSS class with the necessary font-face declarations.

@@ -1,7 +1,7 @@
 'use client'
 
-import { sendEmail } from '@/actions/actions'
-import { cn } from '@/lib/utils'
+import { sendEmail } from '@actions/actions'
+import { cn } from '@lib/utils'
 import { useEffect, useState } from 'react'
 import { useFormState } from 'react-dom'
 import ButtonSubmit from './ButtonSubmit'

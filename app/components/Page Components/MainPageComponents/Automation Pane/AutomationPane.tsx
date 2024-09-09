@@ -1,9 +1,9 @@
 'use client'
-import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
-import React, { useEffect, useState } from 'react'
+import { TextHighlight } from '@ui/Fonts/TextHighlight'
+import { useEffect, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { AnimateTextDiv } from './AnimatedTextDiv'
 import { GlobeDemo } from './Globe'
-import { useMediaQuery } from 'react-responsive'
 
 const AutomationPane = () => {
   const [showGlobe, setShowGlobe] = useState(false)

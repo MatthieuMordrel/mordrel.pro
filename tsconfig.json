@@ -21,12 +21,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
+      "@components/*": ["./app/components/*"], //"app/components/*" would work too, but this is more explicit
       "@ui/*": ["./app/ui/*"],
       "@lib/*": ["./lib/*"],
       "@data/*": ["./data/*"],
-      "@components/*": ["app/components/*"],
       "@styles/*": ["./styles/*"],
-      "@actions/*": ["app/actions/*"]
+      "@actions/*": ["./actions/*"]
     }
   },
   "typeRoots": ["./node_modules/@types", "./"],

@@ -12,7 +12,7 @@ const ScriptContent = () => {
   return (
     <CarouselComponent
       title="Automated Scripts"
-      description="Run office scripts to automate various Excel tasks."
+      description="Run office scripts directly within your Excel Workbooks."
       items={listContent}
       imageSrc="/Excel Images/Scripts.JPG"
       imageAlt="ExcelScriptsImage"

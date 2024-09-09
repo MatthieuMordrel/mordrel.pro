@@ -1,8 +1,8 @@
 'use client'
-import ButtonsList from '@/app/ui/Components/ButtonsList'
-import CustomIcon from '@/app/ui/Components/LucideIcons'
 import { useData } from '@lib/dataContext'
 import { ChartType } from '@lib/types'
+import ButtonsList from '@ui/Components/ButtonsList'
+import CustomIcon from '@ui/Components/LucideIcons'
 import { AreaChartIcon, BarChartIcon, LineChartIcon } from 'lucide-react'
 import React from 'react'
 

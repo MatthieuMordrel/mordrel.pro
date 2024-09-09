@@ -1,4 +1,4 @@
-import WordRotate from '@/app/ui/Effects/word-rotate'
+import WordRotate from '@ui/Effects/word-rotate'
 
 export const AboutComponentWordRotate = () => (
   <WordRotate

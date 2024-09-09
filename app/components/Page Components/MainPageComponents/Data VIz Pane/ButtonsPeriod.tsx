@@ -1,6 +1,6 @@
 'use client'
-import ButtonsList from '@/app/ui/Components/ButtonsList'
 import { useData } from '@lib/dataContext'
+import ButtonsList from '@ui/Components/ButtonsList'
 import React from 'react'
 
 const ButtonsPeriod: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {

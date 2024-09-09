@@ -1,9 +1,9 @@
 'use client'
+import { BulletPointsList } from '@ui/Components/BulletPointsList'
+import { HighlightedSentenceContent } from '@ui/Components/ContentPaneHighlightedSentence'
+import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css' // Styling theme, you can choose others
-import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
-import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
-import { HighlightedSentenceContent } from '@/app/ui/Components/ContentPaneHighlightedSentence'
 
 const ApiIntegrationShowcase = () => {
   const codeSnippet = `

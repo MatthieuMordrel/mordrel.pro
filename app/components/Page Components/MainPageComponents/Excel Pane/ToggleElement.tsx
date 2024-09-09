@@ -1,5 +1,5 @@
 'use client'
-import ButtonsList from '@/app/ui/Components/ButtonsList'
+import ButtonsList from '@ui/Components/ButtonsList'
 import useEmblaCarousel from 'embla-carousel-react'
 import React, { useCallback, useEffect, useState } from 'react'
 
@@ -62,18 +62,13 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
         items={items.map((item) => item.title)}
         className="flex justify-center gap-x-1 sm:gap-x-2 md:gap-x-4"
       />
-      <div className="mt-3 h-full w-full rounded-lg border-gray-500">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {items.map((item, index) => (
-              <div key={index} className="min-w-0 flex-[0_0_100%]">
-                <div className="p-3">
-                  {/* Components are passed as children to the carousel */}
-                  <div className="relative h-[60vh]">{item.component}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="mt-3 h-full w-full overflow-hidden rounded-lg border-gray-500" ref={emblaRef}>
+        <div className="flex">
+          {items.map((item, index) => (
+            <div key={index} className="min-w-0 flex-[0_0_100%] p-3">
+              <div className="relative h-[60vh]">{item.component}</div>
+            </div>
+          ))}
         </div>
       </div>
     </>

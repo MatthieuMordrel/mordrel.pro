@@ -1,4 +1,5 @@
 import { CheckMarkLucid } from '@/data/Icons'
+import { cn } from '@/lib/utils'
 import { FontTextPanes } from '../Fonts/FontTextPanes'
 
 interface BulletPointsListtProps {
@@ -8,7 +9,7 @@ interface BulletPointsListtProps {
 
 export const BulletPointsList: React.FC<BulletPointsListtProps> = ({ items, className }) => {
   return (
-    <ul className={`mt-2 ${className}`}>
+    <ul className={cn('mt-2', className)}>
       <FontTextPanes>
         {items.map((item, index) => (
           <li key={index} className="mb-2 flex items-center text-[clamp(0.75rem,1.5vw,1rem)]">

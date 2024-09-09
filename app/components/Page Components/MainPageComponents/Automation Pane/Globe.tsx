@@ -1,14 +1,13 @@
 'use client'
 import dynamic from 'next/dynamic'
-import { motion, useInView } from 'framer-motion'
-import { Suspense, useRef } from 'react'
-// import { World } from '@/app/ui/Components/globe'
+import { useRef } from 'react'
+// import { World } from '@ui/Components/globe'
 
 // const World = dynamic(
 //   () =>
 //     new Promise((resolve) => {
 //       setTimeout(() => {
-//         import('@/app/ui/Components/globe').then((m) => resolve(m.World))
+//         import('@ui/Components/globe').then((m) => resolve(m.World))
 //       }, 1500)
 //     }),
 //   {
@@ -18,9 +17,9 @@ import { Suspense, useRef } from 'react'
 
 const World = dynamic(
   () =>
-    new Promise<{ default: typeof import('@/app/ui/Components/globe').World }>((resolve) => {
+    new Promise<{ default: typeof import('@ui/Components/globe').World }>((resolve) => {
       setTimeout(() => {
-        import('@/app/ui/Components/globe').then((m) => resolve({ default: m.World }))
+        import('@ui/Components/globe').then((m) => resolve({ default: m.World }))
       }, 3000)
     }),
   {

@@ -1,6 +1,5 @@
 // components/PowerBISkillsCard.js
-import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
-import React from 'react'
+import { FontTextPanes } from '@ui/Fonts/FontTextPanes'
 
 const PowerBISkillsCard = () => {
   const skills = [

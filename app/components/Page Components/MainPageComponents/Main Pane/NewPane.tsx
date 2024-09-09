@@ -1,5 +1,5 @@
 'use client'
-import { Pane } from '@/app/ui/Effects/Pane'
+import { Pane } from '@ui/Effects/Pane'
 import { motion } from 'framer-motion'
 
 const containerVariants = {

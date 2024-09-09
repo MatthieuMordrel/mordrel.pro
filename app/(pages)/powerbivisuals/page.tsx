@@ -1,5 +1,5 @@
 'use client'
-import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import { useEffect, useState } from 'react'
 import PowerBIReportweb from './PowerBIWeb'
 

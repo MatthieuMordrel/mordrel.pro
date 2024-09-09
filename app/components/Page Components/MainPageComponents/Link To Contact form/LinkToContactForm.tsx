@@ -1,6 +1,6 @@
 'use client'
-import { TypewriterEffectSmooth } from '@/app/ui/Effects/TypeWriter'
 import { HeartHandShake } from '@/data/Icons'
+import { TypewriterEffectSmooth } from '@ui/Effects/TypeWriter'
 import Link from 'next/link'
 export function TypewriterEffectSmoothDemo() {
   const words = [

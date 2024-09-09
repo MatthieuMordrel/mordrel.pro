@@ -1,5 +1,5 @@
 'use client'
-import ShimmerButton from '@/app/ui/Components/Aceternity/ShimmerButton'
+import ShimmerButton from '@ui/Components/Aceternity/ShimmerButton'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 

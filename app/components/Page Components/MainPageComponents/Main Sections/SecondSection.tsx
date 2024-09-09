@@ -1,5 +1,5 @@
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
-import { Pane } from '@/app/ui/Effects/Pane'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
+import { Pane } from '@ui/Effects/Pane'
 import ApiIntegrationShowcase from '../API Pane/_PaneAPI'
 import AutomationPane from '../Automation Pane/AutomationPane'
 import { PaneDataViz } from '../Data VIz Pane/_PaneDataViz'

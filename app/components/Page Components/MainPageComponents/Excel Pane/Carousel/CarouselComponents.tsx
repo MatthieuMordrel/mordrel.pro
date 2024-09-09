@@ -1,6 +1,6 @@
-import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
-import { Pane } from '@/app/ui/Effects/Pane'
-import { FontTextPanes } from '@/app/ui/Fonts/FontTextPanes'
+import { BulletPointsList } from '@ui/Components/BulletPointsList'
+import { Pane } from '@ui/Effects/Pane'
+import { FontTextPanes } from '@ui/Fonts/FontTextPanes'
 import Image from 'next/image'
 
 interface TopDivProps {
@@ -29,10 +29,10 @@ export const TopDiv: React.FC<TopDivProps & React.HTMLAttributes<HTMLDivElement>
 //export the full carouselcomponent for each skill
 export const CarouselComponent: React.FC<CarouselComponentProps> = ({ title, description, items, imageSrc, imageAlt }) => {
   return (
-    <div className="grid h-full w-full grid-rows-[auto_1fr_auto] gap-4 md:grid-cols-[1fr_1fr] md:grid-rows-2 xl:grid-cols-[2fr_1fr]">
+    <div className="grid h-full w-full grid-rows-[auto_1fr_auto] gap-4 md:grid-cols-[1fr_1fr] md:grid-rows-[1fr_auto] xl:grid-cols-[2fr_1fr]">
       <TopDiv title={title} description={description} className="md:col-start-2 md:px-[clamp(0rem,1vw,1.25rem)]" />
       <div className="relative md:row-span-2 md:row-start-1">
-        <Image src={imageSrc} alt={imageAlt} fill={true} className="rounded-xl object-cover object-[top_center]" quality={100} />
+        <Image src={imageSrc} alt={imageAlt} fill={true} className="rounded-xl object-cover object-[top_center]" quality={100} sizes="100vw" />
       </div>
       <Pane
         includeBorderBeam={false}

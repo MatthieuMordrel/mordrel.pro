@@ -52,7 +52,6 @@ const FormField: React.FC<FormFieldProps> = ({ id, label, name, type = 'text', r
         type={type !== 'textarea' ? type : undefined}
         value={value}
         onChange={handleChange}
-        // The onBlur event is no longer needed as we're setting touched on first input
         required={required}
         //This works by applying the 'touched' variant if touched is true,
         //and the 'hasValue' variant if value.length > 0.

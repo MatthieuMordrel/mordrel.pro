@@ -1,9 +1,9 @@
 // Contact component
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
+import ContactText from '@components/Page Components/ContactComponents/ContactText'
+import MailForm from '@components/Page Components/ContactComponents/MailForm'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import { Mail } from 'lucide-react'
 import { Metadata } from 'next'
-import ContactText from '../../components/Page Components/ContactComponents/ContactText'
-import MailForm from '../../components/Page Components/ContactComponents/MailForm'
 
 export const metadata: Metadata = {
   title: 'Contact',

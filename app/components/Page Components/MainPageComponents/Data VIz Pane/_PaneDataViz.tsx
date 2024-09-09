@@ -1,6 +1,6 @@
-import { BulletPointsList } from '@/app/ui/Components/BulletPointsList'
-import { HighlightedSentenceContent } from '@/app/ui/Components/ContentPaneHighlightedSentence'
-import { TextHighlight } from '@/app/ui/Fonts/TextHighlight'
+import { BulletPointsList } from '@ui/Components/BulletPointsList'
+import { HighlightedSentenceContent } from '@ui/Components/ContentPaneHighlightedSentence'
+import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import Link from 'next/link'
 import ButtonsCharts from './ButtonsCharts'
 import ButtonsPeriod from './ButtonsPeriod'
@@ -27,9 +27,9 @@ export const PaneDataViz = () => {
 
       <div className="col-start-1 row-start-5 flex items-center justify-between lg:col-start-1 lg:row-start-5">
         <ButtonsStocks className="flex gap-x-4 pt-2" />
-        <ButtonsPeriod className="z-10 hidden gap-x-2 md:flex" />
+        <ButtonsPeriod className="z-10 hidden gap-x-2 lg:flex" />
       </div>
-      <div className="col-start-1 row-start-5 hidden items-center justify-self-end text-gray-400 hover:text-techBlue md:flex lg:col-start-2 lg:row-start-5">
+      <div className="col-start-1 row-start-5 hidden items-center justify-self-end text-gray-400 hover:text-techBlue sm:flex lg:col-start-2 lg:row-start-5">
         <Link href="/powerbivisuals" className="">
           Browse more visuals
         </Link>

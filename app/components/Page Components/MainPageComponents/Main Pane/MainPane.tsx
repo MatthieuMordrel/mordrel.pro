@@ -1,5 +1,5 @@
 // components/MainDiv.js
-import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
+import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import RotatingText from '@ui/Effects/RotatingText'
 
 const MainPane = ({ className }: { className?: string }) => {
