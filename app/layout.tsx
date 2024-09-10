@@ -17,7 +17,8 @@ const bitter = Bitter({
   weight: '400',
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-bitter'
+  variable: '--font-bitter',
+  preload: false
 })
 
 // export const fetchCache = 'default-cache'
