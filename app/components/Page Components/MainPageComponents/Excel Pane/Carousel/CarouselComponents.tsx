@@ -21,7 +21,7 @@ export const TopDiv: React.FC<TopDivProps & React.HTMLAttributes<HTMLDivElement>
   return (
     <div className="w-full" {...props}>
       <h2 className="mb-4 text-xl font-bold">{title}</h2>
-      <FontTextPanes className="font-bold">{description}</FontTextPanes>
+      <FontTextPanes className="">{description}</FontTextPanes>
     </div>
   )
 }

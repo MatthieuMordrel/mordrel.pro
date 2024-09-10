@@ -1,6 +1,7 @@
 'use client'
+import { cn } from '@/lib/utils'
+import { Easing, motion, MotionProps, Variants } from 'framer-motion'
 import React, { HTMLAttributes, ReactNode } from 'react'
-import { motion, Variants, Easing, MotionProps } from 'framer-motion'
 
 // Creating a MergedProps to pass both the properties of framer motion MotionProps and an html div elements
 //We also resolve the conflict of the property onAnimationStart which is on both properties type
@@ -89,7 +90,7 @@ export const FadeInEffect: React.FC<FadeInEffectProps> = ({
       viewport={{ once: true, amount: 0.3 }}
       variants={variants}
       transition={{ duration, delay, ease: easing, staggerChildren: 0.1 }}
-      className={`fadeInDiv ${className}`}
+      className={cn('fadeInDiv', className)}
       layout
       {...props}
     >
