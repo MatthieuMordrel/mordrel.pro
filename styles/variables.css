@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400&display=swap');
-
 /* CSS Variables */
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -13,8 +11,4 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-:root {
-  --font-bitter: 'Bitter', serif;
 }

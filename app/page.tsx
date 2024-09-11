@@ -1,6 +1,11 @@
 import { FirstSection } from '@components/Page Components/MainPageComponents/Main Sections/FirstSection'
-import { SecondSection } from '@components/Page Components/MainPageComponents/Main Sections/SecondSection'
 import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
+
+const SecondSection = dynamic(
+  () => import('@components/Page Components/MainPageComponents/Main Sections/SecondSection').then((mod) => mod.SecondSection),
+  { ssr: true }
+)
 
 export const metadata: Metadata = {
   title: 'Home | Automation Services'
