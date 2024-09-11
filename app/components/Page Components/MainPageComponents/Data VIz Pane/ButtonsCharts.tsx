@@ -20,6 +20,8 @@ const ButtonsCharts: React.FC<ButtonsChartsProps> = ({ ...props }) => {
   return (
     <ButtonsList
       classButton="p-2 bg-paneGrey"
+      ids={chartTypes.map((type) => type.label)}
+      ariaLabel={chartTypes.map((type) => type.label)}
       items={chartTypes.map((type) => type.label)}
       buttonDisplay={chartTypes.map((type) => type.icon)}
       onActiveIndexChange={(index) => setChartType(chartTypes[index].label.toLowerCase() as ChartType)}

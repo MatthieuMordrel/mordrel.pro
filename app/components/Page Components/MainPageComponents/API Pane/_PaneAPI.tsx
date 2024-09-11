@@ -1,4 +1,3 @@
-'use client'
 import { BulletPointsList } from '@ui/Components/BulletPointsList'
 import { HighlightedSentenceContent } from '@ui/Components/ContentPaneHighlightedSentence'
 import { TextHighlight } from '@ui/Fonts/TextHighlight'

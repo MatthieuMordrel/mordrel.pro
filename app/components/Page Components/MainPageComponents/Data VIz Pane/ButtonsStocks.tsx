@@ -52,7 +52,15 @@ const ButtonsStocks: React.FC<ButtonsStocksProps> = ({ ...props }) => {
 
   return (
     <>
-      <ButtonsList classButton="p-1 sm:p-2" className="" items={stocks} onActiveIndexChange={(index) => fetchData(stocks[index])} {...props} />
+      <ButtonsList
+        classButton="p-1 sm:p-2"
+        className=""
+        ids={stocks}
+        ariaLabel={stocks}
+        items={stocks}
+        onActiveIndexChange={(index) => fetchData(stocks[index])}
+        {...props}
+      />
     </>
   )
 }

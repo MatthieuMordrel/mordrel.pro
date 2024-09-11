@@ -15,6 +15,8 @@ const ButtonsPeriod: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ ...prop
     <ButtonsList
       classButton="px-2 py-1 bg-paneGrey"
       items={types.map((type) => type.label)}
+      ids={types.map((type) => type.label)}
+      ariaLabel={types.map((type) => type.label)}
       buttonDisplay={types.map((type) => type.text)}
       onActiveIndexChange={(index) => setDataFrequency(types[index].label as 'quarterlyReports' | 'annualReports')}
       {...props}

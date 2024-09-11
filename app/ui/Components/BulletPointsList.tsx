@@ -9,8 +9,8 @@ interface BulletPointsListtProps {
 
 export const BulletPointsList: React.FC<BulletPointsListtProps> = ({ items, className }) => {
   return (
-    <ul className={cn('mt-2', className)}>
-      <FontTextPanes>
+    <FontTextPanes>
+      <ul className={cn('mt-2', className)}>
         {items.map((item, index) => (
           <li key={index} className="mb-2 flex items-center text-[clamp(0.75rem,1.5vw,1rem)]">
             <span>
@@ -19,7 +19,7 @@ export const BulletPointsList: React.FC<BulletPointsListtProps> = ({ items, clas
             <span className="ml-2">{item}</span>
           </li>
         ))}
-      </FontTextPanes>
-    </ul>
+      </ul>
+    </FontTextPanes>
   )
 }
