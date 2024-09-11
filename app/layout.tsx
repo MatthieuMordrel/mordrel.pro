@@ -5,6 +5,8 @@ import '@styles/animation.css'
 import '@styles/globals.css'
 import '@styles/scrollbar.css'
 import '@styles/variables.css'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import Navbar from './components/Layout Components/NavBar'
@@ -29,6 +31,8 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Analytics />
+          <SpeedInsights />
         </DataProvider>
       </body>
     </html>
