@@ -1,4 +1,3 @@
-import React from 'react'
 import MainPane from '../Main Pane/MainPane'
 import PaneValue from '../Main Pane/NewPane'
 import MainVideo from '../MainVideo'
