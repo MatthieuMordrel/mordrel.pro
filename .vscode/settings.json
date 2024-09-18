@@ -2,6 +2,26 @@
   "files.associations": {
     "*.css": "tailwindcss" //Convert CSS files to Tailwind
   },
-  "svg.preview.background": "custom" //Add SVG preview with the extension
+  "svg.preview.background": "custom",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#b5a1b0",
+    "activityBar.background": "#b5a1b0",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#e7efcf",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#b5a1b0",
+    "statusBar.background": "#9f8498",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#87697f",
+    "statusBarItem.remoteBackground": "#9f8498",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#9f8498",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#9f849899",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "hsl(315, 12%, 57%)" //Add SVG preview with the extension
   // "typescript.referencesCodeLens.enabled": true
 }
