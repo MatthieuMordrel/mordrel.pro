@@ -1,7 +1,7 @@
 'use client'
+import { motion } from 'framer-motion'
 import { ArrowDownWideNarrow } from 'lucide-react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 interface ScrollButtonProps {
@@ -9,9 +9,16 @@ interface ScrollButtonProps {
   id: string
   delay?: number
   mobileOffset?: number
+  text?: string // New prop for custom text
 }
 
-export const ScrollButton: React.FC<ScrollButtonProps> = ({ id, customOffset = 0, delay = 0, mobileOffset = 0 }) => {
+export const ScrollButton: React.FC<ScrollButtonProps> = ({
+  id,
+  customOffset = 0,
+  delay = 0,
+  mobileOffset = 0,
+  text = 'Click to continue...' // Default text
+}) => {
   const [isBouncing, setIsBouncing] = useState(false)
 
   useEffect(() => {
@@ -27,7 +34,7 @@ export const ScrollButton: React.FC<ScrollButtonProps> = ({ id, customOffset = 0
 
   return (
     <Link
-      href={'#TestID'}
+      href={`#${id}`} // Fixed: Use the provided id
       onClick={(e) => {
         e.preventDefault()
         const element = document.getElementById(id)
@@ -41,11 +48,11 @@ export const ScrollButton: React.FC<ScrollButtonProps> = ({ id, customOffset = 0
           })
         }
       }}
-      className={`${isBouncing ? 'animate-bounce1' : ''} inline-flex flex-row gap-2 font-inter hover:text-techBlue`}
+      className={`${isBouncing ? 'animate-bounce1' : ''} font-inter inline-flex flex-row gap-2 hover:text-techBlue`}
     >
       <ArrowDownWideNarrow />{' '}
       <motion.span whileHover={{ scale: 1.02 }} transition={{ type: 'spring', stiffness: 300, damping: 10 }}>
-        Click to continue...
+        {text}
       </motion.span>
     </Link>
   )

@@ -79,9 +79,6 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
 
           <text className="svgTextStyling" dx="0" dy="-15" fontSize={fontSize / scaleFrance} fill={colorCitiesText} textAnchor="middle">
             Marseille
-            <tspan dx={5} dy={-4}>
-              🚤
-            </tspan>
           </text>
         </g>
       </motion.g>
@@ -114,12 +111,8 @@ export const CountryVisual: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...prop
         />
         <g id="brussels">
           <use href="#PointBrussels" x="360" y="200" filter="url(#modernGlow)" />
-
           <text className="svgTextStyling" x="360" y="145" fontSize={fontSize / scaleBelgium} fill={colorCitiesText} textAnchor="middle">
             Brussels
-            <tspan dx="5" dy="-3">
-              🍟
-            </tspan>
           </text>
         </g>
       </motion.g>

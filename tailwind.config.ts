@@ -151,6 +151,9 @@ const config: Config = {
         '.reportClass': {
           width: '600px',
           height: '600px'
+        },
+        '.fullheight': {
+          height: 'calc(100vh - 62px)'
         }
       })
     }),

@@ -1,10 +1,12 @@
+import { cn } from '@/lib/utils'
+
 // AboutComponent.jsx or AboutComponent.tsx if you are using TypeScript
 const AboutPane: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <p className={` ${className}`}>
-      I&apos;m a french<span className="text-techBlue"> independent freelancer</span> in Belgium,
+    <p className={cn(className, 'leading-9')}>
+      We are delighted to introduce you to our consulting company enabling growing businesses to
+      <span className="text-techBlue"> become more competitive faster and more efficiently.</span>
       <br />
-      with a passion in many technologies.
     </p>
   )
 }

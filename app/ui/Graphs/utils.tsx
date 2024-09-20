@@ -1,15 +1,20 @@
 import { colors } from '@lib/colors'
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
-export const formatCurrency = (value: number) => {
-  if (value >= 1e9) {
-    return `$${(value / 1e9).toFixed(1)}b`
-  } else if (value >= 1e6) {
-    return `$${(value / 1e6).toFixed(1)}m`
-  } else if (value >= 1e3) {
-    return `$${(value / 1e3).toFixed(1)}k`
+export const formatCurrency = (value: number | string | null | undefined) => {
+  const numValue = Number(value)
+
+  if (isNaN(numValue)) {
+    return 'N/A'
+  }
+
+  if (numValue >= 1e9) {
+    return `$${(numValue / 1e9).toFixed(1)}b`
+  } else if (numValue >= 1e6) {
+    return `$${(numValue / 1e6).toFixed(1)}m`
+  } else if (numValue >= 1e3) {
+    return `$${(numValue / 1e3).toFixed(1)}k`
   } else {
-    return `$${value.toFixed(2)}`
+    return `$${numValue.toFixed(2)}`
   }
 }
 

@@ -1,9 +1,10 @@
 'use client'
 import { ReactIcon } from '@/data/Sotftware'
+import { cn } from '@/lib/utils'
 import { IconProps } from '@radix-ui/react-icons/dist/types'
 import OrbitingCircles from '@ui/Components/OrbitingCircles'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Yoga from './Yoga'
 //IconProps is a TypeScript type that defines the properties that an icon component can accept. By using this type, you can specify and validate the props you pass to the icon components, ensuring they are correct and adhering to the expected structure.
 
@@ -12,14 +13,20 @@ export function OribitingSoftware({ className }: { className?: string }) {
   const [outerRadius, setOuterRadius] = useState<number>(0)
   const outerLogoRadius = 25
   const maxOuterRadius = 180
+  const largestIconSize = 50 // Size of the largest orbiting icon
 
-  const updateOuterRadius = () => {
+  const calculateComponentSize = useCallback(() => {
+    const componentSize = 2 * (maxOuterRadius + largestIconSize / 2)
+    return componentSize
+  }, [maxOuterRadius, largestIconSize])
+
+  const updateOuterRadius = useCallback(() => {
     if (parentRef.current) {
       const parentWidth = parentRef.current.offsetWidth
-      const calculatedRadius = parentWidth / 2 - outerLogoRadius
-      setOuterRadius(Math.min(calculatedRadius, maxOuterRadius))
+      const calculatedRadius = Math.min(parentWidth / 2 - outerLogoRadius, maxOuterRadius)
+      setOuterRadius(calculatedRadius)
     }
-  }
+  }, [maxOuterRadius, outerLogoRadius])
 
   useEffect(() => {
     updateOuterRadius()
@@ -27,31 +34,42 @@ export function OribitingSoftware({ className }: { className?: string }) {
     return () => {
       window.removeEventListener('resize', updateOuterRadius)
     }
-  }, [])
+  }, [updateOuterRadius])
+
+  const componentSize = calculateComponentSize()
 
   return (
-    <div ref={parentRef} className={`relative flex w-full items-center justify-center rounded-lg ${className}`}>
-      <Yoga className="h-[8rem]" />
-      <OrbitingCircles className="h-[30px] w-[30px] border-none bg-transparent" duration={20} delay={20} radius={80}>
-        <ReactIcon />
-      </OrbitingCircles>
-      <OrbitingCircles className="h-[30px] w-[30px] border-none bg-transparent" duration={20} delay={10} radius={80}>
-        <Icons.notion />
-      </OrbitingCircles>
+    <div className="flex flex-col items-center justify-center">
+      <div
+        ref={parentRef}
+        className={cn('relative flex items-center justify-center rounded-lg', className)}
+        style={{ width: `${componentSize}px`, height: `${componentSize}px` }}
+      >
+        <Yoga className="h-[8rem]" />
+        <OrbitingCircles className="h-[30px] w-[30px] border-none bg-transparent" duration={20} delay={20} radius={80}>
+          <ReactIcon />
+        </OrbitingCircles>
+        <OrbitingCircles className="h-[30px] w-[30px] border-none bg-transparent" duration={20} delay={10} radius={80}>
+          <Icons.notion />
+        </OrbitingCircles>
 
-      {/* Outer Circles (reverse) */}
-      <OrbitingCircles className="h-[50px] w-[50px] border-none bg-transparent" reverse radius={outerRadius} duration={20}>
-        <Icons.openai />
-      </OrbitingCircles>
-      <OrbitingCircles className="h-[50px] w-[50px] border-none bg-transparent" reverse radius={outerRadius} duration={20} delay={15}>
-        <Image src="/Icons/Excel Icon.png" alt="Excel" width={400} height={400} />
-      </OrbitingCircles>
-      <OrbitingCircles className="h-[50px] w-[50px] border-none bg-transparent" reverse radius={outerRadius} duration={20} delay={5}>
-        <Image src="/Icons/Power Automate Icon.png" alt="Power Automate" width={400} height={400} />
-      </OrbitingCircles>
-      <OrbitingCircles className="h-[50px] w-[50px] border-none bg-white/10" reverse radius={outerRadius} duration={20} delay={20}>
-        <Icons.gitHub />
-      </OrbitingCircles>
+        {/* Outer Circles (reverse) */}
+        <OrbitingCircles className="h-[50px] w-[50px] border-none bg-transparent" reverse radius={outerRadius} duration={20}>
+          <Icons.openai />
+        </OrbitingCircles>
+        <OrbitingCircles className="h-[50px] w-[50px] border-none bg-transparent" reverse radius={outerRadius} duration={20} delay={15}>
+          <Image src="/Icons/Excel Icon.png" alt="Excel" width={400} height={400} />
+        </OrbitingCircles>
+        <OrbitingCircles className="h-[50px] w-[50px] border-none bg-transparent" reverse radius={outerRadius} duration={20} delay={5}>
+          <Image src="/Icons/Power Automate Icon.png" alt="Power Automate" width={400} height={400} />
+        </OrbitingCircles>
+        <OrbitingCircles className="h-[50px] w-[50px] border-none bg-white/10" reverse radius={outerRadius} duration={20} delay={20}>
+          <Icons.gitHub />
+        </OrbitingCircles>
+      </div>
+      <p className="mt-2 max-w-[80%] text-center text-sm italic text-gray-600">
+        New tools? Stay relaxed, we take care of ensuring you stay up to date while securing your business continuity so you can focus on your growth
+      </p>
     </div>
   )
 }

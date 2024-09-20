@@ -1,8 +1,7 @@
 'use client'
-import * as React from 'react'
 import { colors } from '@lib/colors'
-import { motion, Easing } from 'framer-motion'
-import { useRef, useState } from 'react'
+import * as React from 'react'
+import { useRef } from 'react'
 
 export const CountryVisualMobile: React.FC<React.SVGProps<SVGSVGElement>> = ({ ...props }) => {
   const color = 'rgba(147, 194, 183,0.4)'
@@ -79,9 +78,6 @@ export const CountryVisualMobile: React.FC<React.SVGProps<SVGSVGElement>> = ({ .
 
           <text className="svgTextStyling" dx="0" dy="-15" fontSize={fontSize / scaleFrance} fill={colorCitiesText} textAnchor="middle">
             Marseille
-            <tspan dx={5} dy={-4}>
-              🚤
-            </tspan>
           </text>
         </g>
       </g>
@@ -117,9 +113,6 @@ export const CountryVisualMobile: React.FC<React.SVGProps<SVGSVGElement>> = ({ .
 
           <text className="svgTextStyling" x="360" y="145" fontSize={fontSize / scaleBelgium} fill={colorCitiesText} textAnchor="middle">
             Brussels
-            <tspan dx="5" dy="-3">
-              🍟
-            </tspan>
           </text>
         </g>
       </g>
