@@ -124,10 +124,10 @@ const config: Config = {
       },
       boxShadow: {
         neon: "0 0 2px theme('colors.blue.200'), 0 0 2px theme('colors.blue.700')"
+      },
+      height: {
+        customSize: 'calc(100vh - 62px)'
       }
-      // height: {
-      //   'screen-dynamic': 'calc(var(--app-height) - 4.5rem)'
-      // }
     }
   },
   plugins: [
@@ -153,7 +153,7 @@ const config: Config = {
           height: '600px'
         },
         '.fullheight': {
-          height: 'calc(100vh - 62px)'
+          minHeight: 'calc(100vh - 62px)'
         }
       })
     }),

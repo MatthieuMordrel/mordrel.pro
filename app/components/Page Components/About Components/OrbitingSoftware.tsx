@@ -5,15 +5,17 @@ import { IconProps } from '@radix-ui/react-icons/dist/types'
 import OrbitingCircles from '@ui/Components/OrbitingCircles'
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import Yoga from './Yoga'
 //IconProps is a TypeScript type that defines the properties that an icon component can accept. By using this type, you can specify and validate the props you pass to the icon components, ensuring they are correct and adhering to the expected structure.
 
 export function OribitingSoftware({ className }: { className?: string }) {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
   const parentRef = useRef<HTMLDivElement>(null)
   const [outerRadius, setOuterRadius] = useState<number>(0)
   const outerLogoRadius = 25
-  const maxOuterRadius = 180
-  const largestIconSize = 50 // Size of the largest orbiting icon
+  const maxOuterRadius = isMobile ? 160 : 190
+  const largestIconSize = 50 // Size of the largest orbiting ico
 
   const calculateComponentSize = useCallback(() => {
     const componentSize = 2 * (maxOuterRadius + largestIconSize / 2)

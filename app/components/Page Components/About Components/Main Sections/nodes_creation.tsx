@@ -3,12 +3,8 @@
 import { Line, OrbitControls, Sphere } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing'
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
-
-const MAX_NODES = 50 // Maximum number of nodes
-const INITIAL_NODE_SCALE = 0.2 // Increased initial node size
-const NODE_SCALE_VARIATION = 0.2 // New constant for scale variation
 
 const useSmoothTransition = (target: number, speed = 0.01) => {
   const ref = useRef(target)
@@ -18,7 +14,17 @@ const useSmoothTransition = (target: number, speed = 0.01) => {
   return ref
 }
 
-const CoreStructure = ({ growth }: { growth: number }) => {
+const CoreStructure = ({
+  growth,
+  maxNodes,
+  initialNodeScale,
+  nodeScaleVariation
+}: {
+  growth: number
+  maxNodes: number
+  initialNodeScale: number
+  nodeScaleVariation: number
+}) => {
   const groupRef = useRef<THREE.Group>(null!)
   const { viewport, clock } = useThree()
 
@@ -26,12 +32,12 @@ const CoreStructure = ({ growth }: { growth: number }) => {
   const smoothScale = useSmoothTransition(1 + growth, 0.01) // Increased overall scale
 
   const [nodes, setNodes] = useState<{ position: THREE.Vector3; scale: number }[]>([
-    { position: new THREE.Vector3(0, 0, 0), scale: INITIAL_NODE_SCALE }
+    { position: new THREE.Vector3(0, 0, 0), scale: initialNodeScale }
   ])
   const [lines, setLines] = useState<{ start: THREE.Vector3; end: THREE.Vector3; progress: number }[]>([])
 
   const addNode = useCallback((position: THREE.Vector3) => {
-    const scale = INITIAL_NODE_SCALE * (1 + Math.random() * NODE_SCALE_VARIATION)
+    const scale = initialNodeScale * (1 + Math.random() * nodeScaleVariation)
     setNodes((prev) => [...prev, { position, scale }])
   }, [])
 
@@ -45,7 +51,7 @@ const CoreStructure = ({ growth }: { growth: number }) => {
     groupRef.current.rotation.x = Math.sin(time * 0.1) * 0.05
 
     // Only create new lines if we haven't reached the max number of nodes
-    if (growth < 1 && Math.random() < 0.05 && nodes.length < MAX_NODES) {
+    if (growth < 1 && Math.random() < 0.05 && nodes.length < maxNodes) {
       const startNode = nodes[Math.floor(Math.random() * nodes.length)]
       const angle = Math.random() * Math.PI * 2
       const distance = 1 + Math.random() * 1 // Increased distance for more spread
@@ -92,10 +98,22 @@ const CoreStructure = ({ growth }: { growth: number }) => {
   )
 }
 
-export default function TechBusinessGrowthSculpture() {
+interface TechBusinessGrowthSculptureProps {
+  initialZoom?: number
+  maxNodes?: number
+  initialNodeScale?: number
+  nodeScaleVariation?: number
+}
+
+export default function TechBusinessGrowthSculpture({
+  initialZoom = 12,
+  maxNodes = 50,
+  initialNodeScale = 0.2,
+  nodeScaleVariation = 0.2
+}: TechBusinessGrowthSculptureProps) {
   const [growth, setGrowth] = React.useState(0)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setGrowth((prev) => {
         if (prev >= 1) {
@@ -110,12 +128,12 @@ export default function TechBusinessGrowthSculpture() {
   }, [])
 
   return (
-    <div className="fullheight relative inset-0 w-full">
-      <Canvas camera={{ position: [0, 0, 12], fov: 60 }} className="">
+    <div className="relative inset-0 h-full w-full">
+      <Canvas camera={{ position: [0, 0, initialZoom], fov: 60 }} className="h-full">
         <OrbitControls enableZoom={false} enablePan={false} />
         <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={0.8} />
-        <CoreStructure growth={growth} />
+        <CoreStructure growth={growth} maxNodes={maxNodes} initialNodeScale={initialNodeScale} nodeScaleVariation={nodeScaleVariation} />
         <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} intensity={0.5} />
           <Vignette eskil={false} offset={0.1} darkness={1.1} />

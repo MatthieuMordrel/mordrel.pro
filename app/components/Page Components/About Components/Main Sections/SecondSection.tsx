@@ -1,14 +1,17 @@
 'use client'
 
+import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 import { BusinessIcon } from '@/data/BusinessIcon'
+import QuestionMark from '@/public/Icon SVG/Question'
 import Link from 'next/link'
 import { OribitingSoftware } from '../OrbitingSoftware'
 import { ContentSection } from './ContentSection'
+import OurPromise from './OurPromise'
 
 export const SecondSection: React.FC = () => {
   return (
     <section className="space-y-24 py-16">
-      <ContentSection title="Why Choose Us?" id="FirstDiv" visual={<div className="h-64 w-full bg-gray-200">Placeholder for visual</div>} visualLeft>
+      <ContentSection title="Why Choose Us?" id="FirstDiv" visual={<QuestionMark />} visualLeft>
         <p>
           In today&apos;s rapidly evolving business landscape, the sheer number of tools, methods, and technologies can be overwhelming. While
           incumbents have the luxury of time and resources to explore every option, growing companies like yours need to stay laser-focused on their
@@ -21,7 +24,7 @@ export const SecondSection: React.FC = () => {
         </p>
       </ContentSection>
 
-      <ContentSection id="our-promise" title="Our Promise to You" visual={<OribitingSoftware />}>
+      {/* <ContentSection id="our-promise" title="Our Promise to You" visual={<OribitingSoftware />}>
         <ul className="space-y-2">
           <li>
             <span className="font-semibold">Tailored Solutions:</span> We understand that one size doesn&apos;t fit all. Our recommendations are based
@@ -40,7 +43,13 @@ export const SecondSection: React.FC = () => {
             rates.
           </li>
         </ul>
-      </ContentSection>
+      </ContentSection> */}
+      <FadeInEffect animationStyle="fadeUp" delay={0.25} className="">
+        <OurPromise />
+      </FadeInEffect>
+      <FadeInEffect animationStyle="fadeUp" delay={0.25} className="">
+        <OribitingSoftware />
+      </FadeInEffect>
 
       <ContentSection id="ready-to-accelerate" title="Ready to Accelerate?" visual={<BusinessIcon className="h-full w-full" />} visualLeft>
         <p>

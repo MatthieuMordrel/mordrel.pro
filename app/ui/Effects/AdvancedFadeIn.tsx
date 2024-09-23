@@ -90,7 +90,7 @@ export const FadeInEffect: React.FC<FadeInEffectProps> = ({
       viewport={{ once: true, amount: 0.3 }}
       variants={variants}
       transition={{ duration, delay, ease: easing, staggerChildren: 0.1 }}
-      className={cn('fadeInDiv', className)}
+      className={cn(className)}
       layout
       {...props}
     >

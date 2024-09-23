@@ -1,5 +1,12 @@
 import { FirstSection } from '@components/Page Components/About Components/Main Sections/FirstSection'
-import { SecondSection } from '@components/Page Components/About Components/Main Sections/SecondSection'
+import dynamic from 'next/dynamic'
+
+const SecondSection = dynamic(
+  () => import('@components/Page Components/About Components/Main Sections/SecondSection').then((mod) => mod.SecondSection),
+  {
+    ssr: false
+  }
+)
 
 export default function About() {
   return (
