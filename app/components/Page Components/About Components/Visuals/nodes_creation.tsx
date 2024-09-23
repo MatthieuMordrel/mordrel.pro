@@ -36,10 +36,13 @@ const CoreStructure = ({
   ])
   const [lines, setLines] = useState<{ start: THREE.Vector3; end: THREE.Vector3; progress: number }[]>([])
 
-  const addNode = useCallback((position: THREE.Vector3) => {
-    const scale = initialNodeScale * (1 + Math.random() * nodeScaleVariation)
-    setNodes((prev) => [...prev, { position, scale }])
-  }, [])
+  const addNode = useCallback(
+    (position: THREE.Vector3) => {
+      const scale = initialNodeScale + Math.random() * nodeScaleVariation
+      setNodes((prev) => [...prev, { position, scale }])
+    },
+    [initialNodeScale, nodeScaleVariation]
+  )
 
   const addLine = useCallback((start: THREE.Vector3, end: THREE.Vector3) => {
     setLines((prev) => [...prev, { start, end, progress: 0 }])
