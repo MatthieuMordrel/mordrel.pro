@@ -11,7 +11,7 @@ export const PaneDataViz = () => {
   return (
     <section className="grid h-full w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-x-4 p-8 md:p-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr_1fr_auto]">
       <div className="grid grid-rows-[auto_auto_1fr] lg:col-start-2 lg:row-span-full">
-        <TextHighlight className="row-start-1 text-2xl sm:mb-2 md:text-3xl lg:text-4xl">Get insights from your data</TextHighlight>
+        <TextHighlight className="row-start-1 sm:mb-2">Get insights from your data</TextHighlight>
         <HighlightedSentenceContent
           className="pb-1"
           HighlightedSentence="Don't let your data sleep."

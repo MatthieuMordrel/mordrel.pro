@@ -131,16 +131,24 @@ const config: Config = {
     }
   },
   plugins: [
-    plugin(function ({ addComponents }: PluginAPI) {
+    plugin(function ({ theme, addComponents }: PluginAPI) {
       addComponents({
         '.textSmall': {
           fontSize: 'clamp(0.75rem, 0.464rem + 1.429vw, 1rem)',
           fontStretch: '100%'
         },
         '.textMedium': {
-          fontSize: 'clamp(1rem, 0.464rem + 1.429vw, 1.625rem)',
+          fontSize: 'clamp(1.3rem, 1.157rem + 0.381vw, 1.5rem)',
           fontStretch: '100%',
-          lineHeight: '2rem'
+          lineHeight: 'clamp(1.5rem, 0.464rem + 1.429vw, 2rem)'
+        },
+        '.textLarge': {
+          fontSize: 'clamp(1.3rem, 0.086rem + 3.238vw, 2rem)',
+          fontStretch: '100%',
+          lineHeight: 'clamp(2rem, 0.464rem + 1.429vw, 3rem)'
+        },
+        '.titleResponsive': {
+          fontSize: 'clamp(1.5rem, 0.429rem + 2.857vw, 3rem)'
         },
         '.svgTextStyling': {
           fontWeight: '600',

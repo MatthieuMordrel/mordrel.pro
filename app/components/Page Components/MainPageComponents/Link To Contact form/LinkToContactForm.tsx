@@ -17,7 +17,6 @@ export function TypewriterEffectSmoothDemo() {
       <div className="rounded-3xl border p-4 shadow-2xl">
         <HeartHandShake className="h-16 w-16 border-techPurple" />
       </div>
-      {/* <p className="mt-2 text-xs text-neutral-600 sm:text-base dark:text-neutral-200">Contact us for an assessment of your situation</p> */}
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col space-x-0 space-y-4 md:flex-row md:space-x-4 md:space-y-0">
         <Link

@@ -50,7 +50,7 @@ const ApiIntegrationShowcase = () => {
         />
       </div>
       <BulletPointsList items={listItems} className="self-end sm:row-start-3 md:mt-4 lg:row-start-2" />
-      <div className="row-span-1 row-start-2 flex items-center justify-center overflow-auto lg:col-start-2 lg:row-span-full lg:row-start-1 lg:self-center">
+      <div className="row-span-1 row-start-2 flex max-h-[10rem] items-center justify-center overflow-auto md:max-h-full lg:col-start-2 lg:row-span-full lg:row-start-1 lg:self-center">
         <pre className="max-h-full w-full overflow-auto border-borderGrey bg-techGrey font-mono text-xs">
           <code className="language-python" dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
         </pre>

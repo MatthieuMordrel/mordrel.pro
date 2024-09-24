@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" translate="no">
-      <body className={cn('min-h-screen bg-techGrey font-geist text-primaryText', GeistSans.variable)}>
+      <body className={cn('min-h-screen min-w-[100vw] overflow-x-hidden bg-techGrey font-geist text-primaryText', GeistSans.variable)}>
         <DataProvider>
           <Navbar />
           {children}

@@ -23,9 +23,6 @@
   .pane {
     @apply rounded-xl bg-gradient-to-b from-paneGrey to-paneGrey; /* Example uses Tailwind default colors */
   }
-  .title-responsive {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-  }
   .card-wrapper::before {
     @apply absolute h-[800%] w-[200%] animate-smooth-spin content-[''];
     background: transparent; /* Default background */

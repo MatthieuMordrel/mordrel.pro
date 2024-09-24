@@ -24,11 +24,9 @@ export const ProcessCard: React.FC<ProcessCardProps> = ({ icon: Icon, title, des
       <Icon className="h-6 w-6" />
     </span>
     <div className="ml-4">
-      <h4 className="text-lg font-medium">{title}</h4>
+      <h4 className="textMedium font-medium">{title}</h4>
       <p className="textSmall mt-2 text-gray-400">{description}</p>
     </div>
-    {/* Solution below allows to create border, which appears when the element with group class is hovered */}
-    {/* <div className={`absolute inset-0 rounded-lg border-2 opacity-0 group-hover:opacity-100 ${borderColor}`} /> */}
   </motion.article>
 )
 

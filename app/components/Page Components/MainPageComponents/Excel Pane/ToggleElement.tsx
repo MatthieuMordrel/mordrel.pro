@@ -62,11 +62,11 @@ const ToggleComponent: React.FC<ToggleComponentProps> = ({ items }) => {
         items={items.map((item) => item.title)}
         className="flex justify-center gap-x-1 sm:gap-x-2 md:gap-x-4"
       />
-      <div className="mt-3 h-full w-full overflow-hidden rounded-lg border-gray-500" ref={emblaRef}>
+      <div className="mt-3 w-full overflow-hidden rounded-lg border-gray-500" ref={emblaRef}>
         <div className="flex">
           {items.map((item, index) => (
             <div key={index} className="min-w-0 flex-[0_0_100%] p-3">
-              <div className="relative h-[60vh]">{item.component}</div>
+              <div className="relative">{item.component}</div>
             </div>
           ))}
         </div>
