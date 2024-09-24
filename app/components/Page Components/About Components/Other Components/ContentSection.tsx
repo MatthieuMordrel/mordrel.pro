@@ -13,7 +13,7 @@ interface ContentSectionProps {
 export const ContentSection: React.FC<ContentSectionProps> = ({ title, children, visual, delay = 0.25, visualLeft = false, id }) => {
   return (
     <FadeInEffect animationStyle="fadeUp" delay={delay}>
-      <div className="fullheight grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16" id={id}>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16" id={id}>
         <div className={`order-1 flex items-center justify-center ${visualLeft ? 'md:order-2' : 'md:order-1'}`}>
           <div className="space-y-4">
             <h2 className="mb-2 text-2xl font-bold">{title}</h2>

@@ -3,13 +3,16 @@ import { Pane } from '@ui/Effects/Pane'
 import ApiIntegrationShowcase from '../API Pane/_PaneAPI'
 import AutomationPane from '../Automation Pane/AutomationPane'
 import { PaneDataViz } from '../Data VIz Pane/_PaneDataViz'
-import Examples from '../Examples/Examples'
+import { ExamplesParent } from '../Examples/ExampleParent'
+import { Examples } from '../Examples/Examples'
 import ExcelProposition from '../Excel Pane/_PaneExcel'
 import { TypewriterEffectSmoothDemo } from '../Link To Contact form/LinkToContactForm'
 
 export const SecondSection = () => (
   <section className="flex w-[90vw] flex-col items-center gap-y-16 md:w-[80vw] md:gap-y-28 3xl:w-[60vw]">
-    <Examples className="w-full scroll-mt-28" id="exemples-block" />
+    <ExamplesParent className="w-full scroll-mt-28" id="exemples-block">
+      <Examples />
+    </ExamplesParent>
     <FadeInEffect id="visu-block" animationStyle="fadeLeft" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
       <Pane className="h-full" includeBorderBeam={false}>
         <PaneDataViz />

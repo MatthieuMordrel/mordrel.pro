@@ -3,7 +3,7 @@
 import { Line, OrbitControls, Sphere } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Bloom, EffectComposer, Vignette } from '@react-three/postprocessing'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 
 const useSmoothTransition = (target: number, speed = 0.01) => {
@@ -106,17 +106,32 @@ interface TechBusinessGrowthSculptureProps {
   maxNodes?: number
   initialNodeScale?: number
   nodeScaleVariation?: number
+  startDelay?: number // New prop for start delay
 }
 
 export default function TechBusinessGrowthSculpture({
   initialZoom = 12,
   maxNodes = 50,
   initialNodeScale = 0.2,
-  nodeScaleVariation = 0.2
+  nodeScaleVariation = 0.2,
+  startDelay = 1500 // Default delay of 1.5 seconds
 }: TechBusinessGrowthSculptureProps) {
-  const [growth, setGrowth] = React.useState(0)
+  const [growth, setGrowth] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Start the animation after the specified delay
+    const startTimer = setTimeout(() => {
+      setIsAnimating(true)
+    }, startDelay)
+
+    return () => clearTimeout(startTimer)
+  }, [startDelay])
+
+  useEffect(() => {
+    if (!isAnimating) return
+
     const timer = setInterval(() => {
       setGrowth((prev) => {
         if (prev >= 1) {
@@ -128,15 +143,21 @@ export default function TechBusinessGrowthSculpture({
     }, 50)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [isAnimating])
 
   return (
-    <div className="relative inset-0 h-full w-full">
-      <Canvas camera={{ position: [0, 0, initialZoom], fov: 60 }} className="h-full">
+    <div ref={containerRef} className="relative h-[400px] w-full md:h-[600px]">
+      <Canvas
+        camera={{ position: [0, 0, initialZoom], fov: 60 }}
+        resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+      >
         <OrbitControls enableZoom={false} enablePan={false} />
         <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={0.8} />
-        <CoreStructure growth={growth} maxNodes={maxNodes} initialNodeScale={initialNodeScale} nodeScaleVariation={nodeScaleVariation} />
+        {isAnimating && (
+          <CoreStructure growth={growth} maxNodes={maxNodes} initialNodeScale={initialNodeScale} nodeScaleVariation={nodeScaleVariation} />
+        )}
         <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} intensity={0.5} />
           <Vignette eskil={false} offset={0.1} darkness={1.1} />

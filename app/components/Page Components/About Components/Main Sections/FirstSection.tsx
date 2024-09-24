@@ -6,7 +6,7 @@ import TechBusinessGrowthSculpture from '../Visuals/nodes_creation'
 
 export const FirstSection = () => {
   return (
-    <section className="fullheight grid grid-cols-1 items-start md:grid-cols-2 md:grid-rows-1 md:items-center">
+    <section className="fullheight grid grid-cols-1 grid-rows-2 items-start md:grid-cols-2 md:grid-rows-1 md:items-center">
       <div className="row-start-1 max-w-[42rem] text-pretty md:col-start-1">
         <FadeInEffect animationStyle={'fadeUp'} className={`pt-4 text-[clamp(2.75rem,1.143rem+4.286vw,5rem)] md:pt-0`}>
           <h1>Welcome </h1>

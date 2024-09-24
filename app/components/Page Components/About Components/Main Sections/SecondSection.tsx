@@ -10,7 +10,7 @@ import { OribitingSoftware } from '../Visuals/OrbitingSoftware'
 
 export const SecondSection: React.FC = () => {
   return (
-    <section className="space-y-24 py-16">
+    <section className="space-y-10 pb-16 md:space-y-24">
       <ContentSection title="Why Choose Us?" id="FirstDiv" visual={<QuestionMark />} visualLeft>
         <p>
           In today&apos;s rapidly evolving business landscape, the sheer number of tools, methods, and technologies can be overwhelming. While

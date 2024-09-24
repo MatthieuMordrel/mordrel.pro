@@ -8,7 +8,7 @@ export default function OurPromise() {
   const [hoveredPromise, setHoveredPromise] = useState<number | null>(null)
 
   return (
-    <div className="fullheight flex flex-col justify-center bg-gradient-to-br p-8">
+    <div className="flex flex-col justify-center bg-gradient-to-br p-8">
       <h2 className="mb-12 text-center text-4xl font-bold">Our Promise to you</h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         {promises.map((promise, index: number) => (
