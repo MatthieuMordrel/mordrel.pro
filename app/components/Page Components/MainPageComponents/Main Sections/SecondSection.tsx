@@ -1,6 +1,7 @@
 import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import { Pane } from '@ui/Effects/Pane'
 import ApiIntegrationShowcase from '../API Pane/PaneAPI'
+import AutomationPane from '../Automation Pane/AutomationPane'
 import { PaneDataViz } from '../Data VIz Pane/_PaneDataViz'
 import { ExamplesParent } from '../Examples/ExampleParent'
 import { Examples } from '../Examples/Examples'
@@ -23,11 +24,11 @@ export const SecondSection = () => (
       </Pane>
     </FadeInEffect>
     <ExcelProposition id="excel-block" className="w-full scroll-mt-28" />
-    {/* <FadeInEffect animationStyle="zoom">
+    <FadeInEffect animationStyle="zoom">
       <Pane className="flex min-h-[20rem] w-full flex-col md:h-[37.5rem]">
         <AutomationPane />
       </Pane>
-    </FadeInEffect> */}
+    </FadeInEffect>
 
     <TypewriterEffectSmoothDemo />
   </section>
