@@ -16,20 +16,11 @@ const config: Config = {
         techGrey: 'hsl(0, 0%, 11%)',
         primaryText: 'hsl(6, 0%, 83%)',
         techBlue: 'hsl(170, 35%, 74%)',
-        techGreen: 'hsl(156, 68%, 53%)',
-        techOrange: 'hsl(24, 71%, 72%)',
         techPurple: 'hsl(315, 12%, 57%)',
-        techYellow: 'hsl(49, 100%, 62%)',
         borderGrey: 'hsl(0, 0%, 15%)',
         paneGrey: 'hsl(0, 0%, 14%)',
         textGrey: 'hsl(0, 0%, 40%)',
-        activeBorderGrey: 'hsl(0, 0%, 26%)',
-        primary: {
-          DEFAULT: 'hsl(222.2, 47.4%, 11.2%)', // Your primary color
-          foreground: 'hsl(210, 40%, 98%)' // Your primary foreground color
-        },
-        background: 'hsl(0, 0%, 100%)', // Background color
-        foreground: 'hsl(222.2, 47.4%, 11.2%)' // Foreground color
+        activeBorderGrey: 'hsl(0, 0%, 26%)'
       },
       screens: {
         '3xl': '2000px'
@@ -46,40 +37,6 @@ const config: Config = {
         shimmer: 'shimmer 2s linear infinite'
       },
       keyframes: {
-        'keyframe-border-spin': {
-          '100%': {
-            transform: 'rotate(-360deg)'
-          }
-        },
-        'keyframes-smooth-spin': {
-          '0%': {
-            transform: 'rotate(22.5deg)'
-          },
-          '10%': {
-            transform: 'rotate(-22.5deg)'
-          },
-          '25%': {
-            transform: 'rotate(-67.5deg)'
-          },
-          '35%': {
-            transform: 'rotate(-112.5deg)'
-          },
-          '50%': {
-            transform: 'rotate(-157.5deg)'
-          },
-          '60%': {
-            transform: 'rotate(-202.5deg)'
-          },
-          '75%': {
-            transform: 'rotate(-247.5deg)'
-          },
-          '85%': {
-            transform: 'rotate(-292.5deg)'
-          },
-          '100%': {
-            transform: 'rotate(-337.5deg)'
-          }
-        },
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' }
@@ -99,14 +56,6 @@ const config: Config = {
         'border-beam': {
           '100%': {
             'offset-distance': '100%'
-          }
-        },
-        bounceWithDelay: {
-          '0%, 100%': {
-            transform: 'translateY(0)'
-          },
-          '50%': {
-            transform: 'translateY(-25%)'
           }
         },
         shimmer: {

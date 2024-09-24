@@ -1,4 +1,4 @@
-function MainVideo({ src }: { src: string }) {
+function MainVideo() {
   return (
     <>
       <video

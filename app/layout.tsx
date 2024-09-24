@@ -1,14 +1,13 @@
-import Footer from '@components/Layout Components/Footer'
 import { DataProvider } from '@lib/dataContext'
 import { cn } from '@lib/utils'
 import '@styles/animation.css'
 import '@styles/globals.css'
 import '@styles/scrollbar.css'
-import '@styles/variables.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
+import Footer from './components/Layout Components/Footer'
 import Navbar from './components/Layout Components/NavBar'
 
 export const metadata: Metadata = {

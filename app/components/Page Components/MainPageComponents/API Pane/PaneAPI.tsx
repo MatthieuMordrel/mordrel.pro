@@ -1,5 +1,5 @@
+import { HighlightedSentenceContent } from '@/app/ui/Fonts/ContentPaneHighlightedSentence'
 import { BulletPointsList } from '@ui/Components/BulletPointsList'
-import { HighlightedSentenceContent } from '@ui/Components/ContentPaneHighlightedSentence'
 import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css' // Styling theme, you can choose others

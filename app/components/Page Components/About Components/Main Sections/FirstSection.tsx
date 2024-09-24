@@ -1,8 +1,8 @@
 'use client'
 
 import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
-import AboutPane from '../Other Components/AboutPane'
-import TechBusinessGrowthSculpture from '../Visuals/nodes_creation'
+import AboutPane from '../AboutPane'
+import TechBusinessGrowthSculpture from '../Visuals/TechBusinessGrowthSculpture'
 
 export const FirstSection = () => {
   return (

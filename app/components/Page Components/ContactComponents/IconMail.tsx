@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './icon.module.css' //This doesn't work for some reason, because you need to use style.blabla, and here everything is defined as classes while the classes from module are made-up on the go.
 
 export const MailIconAnimated = ({ className, ...props }: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement> & { className?: string }) => (
   <svg

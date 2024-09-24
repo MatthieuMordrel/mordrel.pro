@@ -1,0 +1,11 @@
+Always ensure proper Typescript usage.
+Only use functional components and hooks.
+Only use Tailwind CSS for styling.
+Use Next.js features when relevant.
+Use absolute import as per the tsconfig file.
+Use latest React features such as server actions, useFormState ect.
+Ensure that the code is clean and easy to understand.
+Use meaningful variable names.
+Use comments to explain the code.
+
+If needed ask for more information.

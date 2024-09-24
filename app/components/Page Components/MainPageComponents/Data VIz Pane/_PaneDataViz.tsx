@@ -1,11 +1,11 @@
 import { BulletPointsList } from '@ui/Components/BulletPointsList'
-import { HighlightedSentenceContent } from '@ui/Components/ContentPaneHighlightedSentence'
 import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import Link from 'next/link'
 import ButtonsCharts from './ButtonsCharts'
 import ButtonsPeriod from './ButtonsPeriod'
 import ButtonsStocks from './ButtonsStocks'
 import { LineChartFinancials } from './LineChartFinancials'
+import { HighlightedSentenceContent } from '@/app/ui/Fonts/ContentPaneHighlightedSentence'
 
 export const PaneDataViz = () => {
   return (

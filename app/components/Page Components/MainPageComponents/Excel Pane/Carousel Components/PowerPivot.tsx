@@ -1,4 +1,4 @@
-import { CarouselComponent } from './CarouselComponents'
+import { CarouselComponent } from '../CarouselComponents'
 
 const listContent = [
   'Utilize the Power Pivot Vertipaq engine',

@@ -1,12 +1,12 @@
 import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import { Pane } from '@ui/Effects/Pane'
-import ApiIntegrationShowcase from '../API Pane/_PaneAPI'
+import ApiIntegrationShowcase from '../API Pane/PaneAPI'
 import AutomationPane from '../Automation Pane/AutomationPane'
 import { PaneDataViz } from '../Data VIz Pane/_PaneDataViz'
 import { ExamplesParent } from '../Examples/ExampleParent'
 import { Examples } from '../Examples/Examples'
 import ExcelProposition from '../Excel Pane/_PaneExcel'
-import { TypewriterEffectSmoothDemo } from '../Link To Contact form/LinkToContactForm'
+import { TypewriterEffectSmoothDemo } from '../Typewriter/LinkToContactForm'
 
 export const SecondSection = () => (
   <section className="flex w-[90vw] flex-col items-center gap-y-16 md:w-[80vw] md:gap-y-28 3xl:w-[60vw]">

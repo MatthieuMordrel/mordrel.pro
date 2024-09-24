@@ -1,4 +1,5 @@
 import { FirstSection } from '@components/Page Components/MainPageComponents/Main Sections/FirstSection'
+// import { SecondSection } from '@components/Page Components/MainPageComponents/Main Sections/SecondSection'
 import { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 

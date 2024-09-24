@@ -1,7 +1,6 @@
 'use client'
-import WordRotate from '@ui/Effects/word-rotate'
 import React, { useEffect, useState } from 'react'
-
+import WordRotate from './WordRotate'
 interface RotatingTextProps {
   firstWord: string
   words: string[]
@@ -20,12 +19,12 @@ const RotatingText: React.FC<RotatingTextProps> = ({ firstWord, words, className
   }, [])
 
   return (
-    <h1 className={`pb-4 ${className}`}>
+    <div className={`pb-4 ${className}`}>
       <span>{firstWord}</span>
       <span className="relative ml-2 inline-block w-16 md:w-24">
         <WordRotate className="left-0 text-techPurple" words={words} animate={isToggled} />
       </span>
-    </h1>
+    </div>
   )
 }
 

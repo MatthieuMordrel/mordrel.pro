@@ -1,4 +1,3 @@
-import React from 'react'
 import { MailIconAnimated } from './IconMail'
 
 const ContactText = ({ className = '', ...props }) => {

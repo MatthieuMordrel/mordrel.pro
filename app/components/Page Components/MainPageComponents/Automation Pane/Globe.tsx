@@ -1,25 +1,12 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { useRef } from 'react'
-// import { World } from '@ui/Components/globe'
-
-// const World = dynamic(
-//   () =>
-//     new Promise((resolve) => {
-//       setTimeout(() => {
-//         import('@ui/Components/globe').then((m) => resolve(m.World))
-//       }, 1500)
-//     }),
-//   {
-//     ssr: false
-//   }
-// )
 
 const World = dynamic(
   () =>
-    new Promise<{ default: typeof import('@ui/Components/globe').World }>((resolve) => {
+    new Promise<{ default: typeof import('@/app/ui/Components/Globe').World }>((resolve) => {
       setTimeout(() => {
-        import('@ui/Components/globe').then((m) => resolve({ default: m.World }))
+        import('@/app/ui/Components/Globe').then((m) => resolve({ default: m.World }))
       }, 3000)
     }),
   {

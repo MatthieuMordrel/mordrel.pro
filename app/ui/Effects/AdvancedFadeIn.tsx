@@ -1,11 +1,9 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { Easing, motion, MotionProps, Variants } from 'framer-motion'
-import React, { HTMLAttributes, ReactNode } from 'react'
+import React, { HTMLAttributes, memo, ReactNode, useMemo } from 'react'
 
-// Creating a MergedProps to pass both the properties of framer motion MotionProps and an html div elements
-//We also resolve the conflict of the property onAnimationStart which is on both properties type
-//You could also use type assertion when spreading the props to assert which props to use, and resolve the conflict
+// MergedProps combines MotionProps with HTMLDivElement attributes, excluding 'onAnimationStart'
 type MergedProps = Omit<HTMLAttributes<HTMLDivElement>, 'onAnimationStart'> & MotionProps
 
 interface FadeInEffectProps extends MergedProps {
@@ -66,37 +64,56 @@ const defaultAnimationVariants: Record<string, Variants> = {
   }
 }
 
-export const FadeInEffect: React.FC<FadeInEffectProps> = ({
-  children,
-  duration = 0.8,
-  delay = 0.1,
-  easing = easings.easeOutQuint,
-  animationStyle = 'fadeUp',
-  customAnimation,
-  className = '',
-  ...props
-}) => {
-  const variants = customAnimation
-    ? {
-        hidden: customAnimation.initial,
-        visible: customAnimation.animate
-      }
-    : defaultAnimationVariants[animationStyle]
+export const FadeInEffect: React.FC<FadeInEffectProps> = memo(
+  ({
+    children,
+    duration = 0.8,
+    delay = 0.1,
+    easing = easings.easeOutQuint,
+    animationStyle = 'fadeUp',
+    customAnimation,
+    className = '',
+    ...props
+  }) => {
+    // Memoize variants to prevent unnecessary recalculations
+    const variants = useMemo(() => {
+      return customAnimation
+        ? {
+            hidden: customAnimation.initial,
+            visible: customAnimation.animate
+          }
+        : defaultAnimationVariants[animationStyle]
+    }, [customAnimation, animationStyle])
 
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={variants}
-      transition={{ duration, delay, ease: easing, staggerChildren: 0.1 }}
-      className={cn(className)}
-      layout
-      {...props}
-    >
-      {children}
-    </motion.div>
-  )
-}
+    // Memoize transition object
+    const transition = useMemo(
+      () => ({
+        duration,
+        delay,
+        ease: easing,
+        staggerChildren: 0.1
+      }),
+      [duration, delay, easing]
+    )
+
+    return (
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={variants}
+        transition={transition}
+        className={cn(className)}
+        layout
+        {...props}
+      >
+        {children}
+      </motion.div>
+    )
+  }
+)
+
+// Assign a display name for easier debugging
+FadeInEffect.displayName = 'FadeInEffect'
 
 export default FadeInEffect

@@ -4,7 +4,7 @@ import FadeInEffect from '@/app/ui/Effects/AdvancedFadeIn'
 import { BusinessIcon } from '@/data/BusinessIcon'
 import QuestionMark from '@/public/Icon SVG/Question'
 import Link from 'next/link'
-import { ContentSection } from '../Other Components/ContentSection'
+import { ContentSection } from '../ContentSection'
 import OurPromise from '../Promise Section/OurPromise'
 import { OribitingSoftware } from '../Visuals/OrbitingSoftware'
 
