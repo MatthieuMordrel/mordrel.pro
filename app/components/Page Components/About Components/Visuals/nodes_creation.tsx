@@ -146,7 +146,7 @@ export default function TechBusinessGrowthSculpture({
   }, [isAnimating])
 
   return (
-    <div ref={containerRef} className="relative h-[400px] w-full md:h-[600px]">
+    <div ref={containerRef} className="relative h-full w-full">
       <Canvas
         camera={{ position: [0, 0, initialZoom], fov: 60 }}
         resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
