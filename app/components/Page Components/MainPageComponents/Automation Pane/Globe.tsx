@@ -1,5 +1,5 @@
 'use client'
-import { World } from '@/app/ui/Components/Globe'
+import { World } from '@ui/Components/Globe'
 import { useRef } from 'react'
 
 // const World = dynamic(
