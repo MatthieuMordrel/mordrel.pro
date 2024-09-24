@@ -12,6 +12,7 @@ const AutomationPane = () => {
   useEffect(() => {
     setShowGlobe(isMdScreen)
   }, [isMdScreen])
+
   return (
     <>
       <section className="grid h-full flex-1 grid-cols-1 grid-rows-[auto_1fr] gap-y-2 p-4 md:grid-cols-2 md:grid-rows-[auto_1fr]">
@@ -24,11 +25,7 @@ const AutomationPane = () => {
 
         <AnimateTextDiv className="col-span-1 row-start-2 w-full self-center pt-4 md:items-start md:py-4" />
 
-        <div className="col-span-1 row-span-1 row-start-3 hidden md:col-start-2 md:row-start-2 md:block">
-          {/* <Profiler id="GlobeDemo" onRender={onRenderCallback}> */}
-          {showGlobe && <GlobeDemo />}
-          {/* </Profiler> */}
-        </div>
+        <div className="col-span-1 row-span-1 row-start-3 hidden md:col-start-2 md:row-start-2 md:block">{showGlobe && <GlobeDemo />}</div>
       </section>
     </>
   )
