@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils'
 import FadeInEffect from '@ui/Effects/AdvancedFadeIn'
 import { TextHighlight } from '@ui/Fonts/TextHighlight'
-import 'animate.css/animate.min.css'
 import { HTMLAttributes } from 'react'
 import ExcelContent from './Carousel Components/ExcelContent'
 import PowerPivotContent from './Carousel Components/PowerPivot'

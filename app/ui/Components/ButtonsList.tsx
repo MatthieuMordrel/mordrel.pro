@@ -1,6 +1,5 @@
 'use client'
 import { cn } from '@/lib/utils'
-import 'animate.css/animate.min.css'
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 
