@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@/lib/utils'
 import React, { useEffect, useState } from 'react'
 import WordRotate from './WordRotate'
 interface RotatingTextProps {
@@ -19,12 +20,12 @@ const RotatingText: React.FC<RotatingTextProps> = ({ firstWord, words, className
   }, [])
 
   return (
-    <div className={`pb-4 ${className}`}>
-      <span>{firstWord}</span>
-      <span className="relative ml-2 inline-block w-16 md:w-24">
-        <WordRotate className="left-0 text-techPurple" words={words} animate={isToggled} />
-      </span>
-    </div>
+      <div className={cn('pb-4 w-64 flex justify-start', className)}>
+        <span>{firstWord}</span>
+        <span className="relative ml-2 inline-block">
+          <WordRotate className="left-0 text-techPurple" words={words} animate={isToggled} />
+        </span>
+      </div>
   )
 }
 
