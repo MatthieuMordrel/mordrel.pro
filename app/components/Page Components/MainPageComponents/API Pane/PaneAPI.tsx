@@ -42,7 +42,7 @@ const ApiIntegrationShowcase = () => {
 
   return (
     <section className="relative grid h-full grid-cols-1 overflow-hidden p-8 sm:grid-rows-[auto_1fr_auto] gap-4 md:p-6 lg:grid-cols-2">
-      <div className="row-start-1 flex h-full flex-col text-center sm:text-left items-center sm:items-start ">
+      <div className="row-start-1 flex h-full flex-col">
         <TextHighlight className="mb-2 textLarge">Improve your data management</TextHighlight>
         <HighlightedSentenceContent
           className="flex-grow flex flex-col justify-center"
@@ -51,7 +51,7 @@ const ApiIntegrationShowcase = () => {
         />
       </div>
       <BulletPointsList items={listItems} className="self-end hidden sm:block sm:row-start-3 md:mt-4 lg:row-start-2" />
-      <div className="row-span-1 row-start-2 overflow-visible sm:flex  max-h-[10rem] items-center justify-center sm:overflow-auto md:max-h-full lg:col-start-2 lg:row-span-full lg:row-start-1 lg:self-center">
+      <div className="row-span-1 row-start-2 overflow-visible sm:flex  items-center justify-center sm:overflow-auto md:max-h-full lg:col-start-2 lg:row-span-full lg:row-start-1 lg:self-center">
         <pre className="max-h-full w-full overflow-auto border-borderGrey bg-techGrey font-mono text-xs">
           <code className="language-python" dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
         </pre>
