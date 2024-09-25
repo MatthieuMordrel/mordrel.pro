@@ -1,4 +1,4 @@
-import { SecondSection } from '@/app/components/Page Components/MainPageComponents/Main Sections/SecondSection'
+import { SecondSection } from '@/app/components/Page Components/About Components/Main Sections/SecondSection'
 import { FirstSection } from '@components/Page Components/About Components/Main Sections/FirstSection'
 
 
