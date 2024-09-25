@@ -44,7 +44,7 @@ export const SecondSection: React.FC = () => {
           </li>
         </ul>
       </ContentSection> */}
-      <FadeInEffect animationStyle="fadeUp" delay={0.25} className="">
+      <FadeInEffect animationStyle="fadeUp" delay={0.25} className="md:pb-16">
         <OurPromise />
       </FadeInEffect>
       <FadeInEffect animationStyle="fadeUp" delay={0.25} className="">
