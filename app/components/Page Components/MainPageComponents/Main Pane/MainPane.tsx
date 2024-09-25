@@ -8,7 +8,7 @@ const MainPane = ({ className }: { className?: string }) => {
       <header>
         {' '}
         <h1 className="flex max-w-[90vw] flex-col space-y-2 md:max-w-[70vw]">
-          <AutomateOnce className="-ml-10 self-center text-2xl font-semibold uppercase sm:text-4xl lg:text-6xl" />
+          <AutomateOnce className="-ml-10 self-center titleResponsive font-semibold uppercase " />
         </h1>
       </header>
       <p className="space-y-2">

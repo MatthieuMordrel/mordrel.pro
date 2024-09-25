@@ -13,19 +13,27 @@ export const SecondSection = () => (
     <ExamplesParent className="w-full scroll-mt-28" id="exemples-block">
       <Examples />
     </ExamplesParent>
-    <FadeInEffect id="visu-block" animationStyle="fadeLeft" className="h-[30rem] w-full scroll-mt-28 md:h-[37.5rem]">
-      <Pane className="h-full" includeBorderBeam={false}>
-        <PaneDataViz />
-      </Pane>
+    <FadeInEffect id="visu-block" animationStyle="fadeLeft" className="w-full scroll-mt-28 md:h-[37.5rem]">
+      <div className="aspect-square w-full md:h-full">
+        <Pane className="h-full" includeBorderBeam={false}>
+          <PaneDataViz />
+        </Pane>
+      </div>
     </FadeInEffect>
-    <FadeInEffect id="api-block" animationStyle="fadeRight" className="min-h-[25rem] w-full scroll-mt-28 md:h-[37.5rem]">
-      <Pane className="h-full">
-        <ApiIntegrationShowcase />
-      </Pane>
+    <FadeInEffect 
+      id="api-block" 
+      animationStyle="fadeRight" 
+      className="w-full scroll-mt-28 md:h-[37.5rem]"
+    >
+      <div className="aspect-square w-full md:h-full">
+        <Pane className="h-full" includeBorderBeam={false}>
+          <ApiIntegrationShowcase />
+        </Pane>
+      </div>
     </FadeInEffect>
     <ExcelProposition id="excel-block" className="w-full scroll-mt-28" />
     <FadeInEffect animationStyle="zoom">
-      <Pane className="flex min-h-[20rem] w-full flex-col md:h-[37.5rem]">
+      <Pane className="flex min-h-[20rem] w-full flex-col md:h-[37.5rem]" includeBorderBeam={false}>
         <AutomationPane />
       </Pane>
     </FadeInEffect>

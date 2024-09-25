@@ -10,7 +10,7 @@ interface BulletPointsListtProps {
 export const BulletPointsList: React.FC<BulletPointsListtProps> = ({ items, className }) => {
   return (
     <FontTextPanes className={cn(className)}>
-      <ul className={cn('mt-2')}>
+      <ul className={cn('p-2 ')}>
         {items.map((item, index) => (
           <li key={index} className="textSmall mb-2 flex items-center">
             <span>

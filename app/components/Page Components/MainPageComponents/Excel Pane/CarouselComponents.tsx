@@ -39,7 +39,7 @@ export const CarouselComponent: React.FC<CarouselComponentProps> = ({ title, des
         includeBorderBeam={false}
         className="row-span-2 flex w-full flex-col justify-around overflow-auto p-[clamp(0.25rem,1.5vw,1.25rem)] md:row-span-1"
       >
-        <h2 className="text-center text-xl font-bold">Let us help!</h2>
+        <h2 className="text-center text-xl font-bold pt-2">Let us help!</h2>
         <BulletPointsList items={items} className="" />
       </Pane>
     </div>

@@ -87,7 +87,7 @@ const config: Config = {
           fontStretch: '100%'
         },
         '.textMedium': {
-          fontSize: 'clamp(1.3rem, 1.157rem + 0.381vw, 1.5rem)',
+          fontSize: 'clamp(1rem, 1.157rem + 0.381vw, 1.5rem)',
           fontStretch: '100%',
           lineHeight: 'clamp(1.5rem, 0.464rem + 1.429vw, 2rem)'
         },

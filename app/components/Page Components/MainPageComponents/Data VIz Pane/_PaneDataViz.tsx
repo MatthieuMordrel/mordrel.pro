@@ -1,3 +1,4 @@
+import { HighlightedSentenceContent } from '@/app/ui/Fonts/ContentPaneHighlightedSentence'
 import { BulletPointsList } from '@ui/Components/BulletPointsList'
 import { TextHighlight } from '@ui/Fonts/TextHighlight'
 import Link from 'next/link'
@@ -5,18 +6,20 @@ import ButtonsCharts from './ButtonsCharts'
 import ButtonsPeriod from './ButtonsPeriod'
 import ButtonsStocks from './ButtonsStocks'
 import { LineChartFinancials } from './LineChartFinancials'
-import { HighlightedSentenceContent } from '@/app/ui/Fonts/ContentPaneHighlightedSentence'
+import { div } from 'three/webgpu'
 
 export const PaneDataViz = () => {
   return (
-    <section className="grid h-full w-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-x-4 p-8 md:p-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr_1fr_auto]">
+    <section className="grid h-full grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-x-4 p-8 md:p-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr_1fr_auto] ">
       <div className="grid grid-rows-[auto_auto_1fr] lg:col-start-2 lg:row-span-full">
-        <TextHighlight className="row-start-1 sm:mb-2">Get insights from your data</TextHighlight>
-        <HighlightedSentenceContent
-          className="pb-1"
-          HighlightedSentence="Don't let your data sleep."
-          MainContent="Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics."
-        />
+        <TextHighlight className="row-start-1 mb-2 text-center">Get insights from your data</TextHighlight>
+        <div className='hidden sm:inline '>
+          <HighlightedSentenceContent
+            className="pb-1"
+            HighlightedSentence="Don't let your data sleep."
+            MainContent="Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics."
+          />
+        </div>
         <BulletPoints className="ml-3 hidden lg:self-end" />
       </div>
       <ButtonsCharts className="z-10 flex gap-x-2 justify-self-end lg:col-start-1 lg:row-start-1 lg:mt-3 lg:self-start" />
