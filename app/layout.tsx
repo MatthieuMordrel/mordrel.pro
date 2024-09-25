@@ -18,20 +18,19 @@ export const metadata: Metadata = {
   description: 'Automation, data visualisation and custom services provided for your business.',
   icons: {
     icon: [
-      { url: '/Fav Icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/Fav Icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/Fav Icons/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/Fav Icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
-      { rel: 'mask-icon', url: '/Fav Icons/safari-pinned-tab.svg', color: '#5bbad5' },
-      { rel: 'icon', url: '/Fav Icons/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { rel: 'icon', url: '/Fav Icons/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#5bbad5' },
+      { rel: 'icon', url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
-  manifest: '/Fav Icons/site.webmanifest',
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({
