@@ -6,7 +6,8 @@ const nextConfig = {
     fetches: {
       fullUrl: true
     }
-  }
+  },
+  swcMinify: true,
 }
 
 export default nextConfig

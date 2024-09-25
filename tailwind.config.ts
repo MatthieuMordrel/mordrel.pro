@@ -13,6 +13,7 @@ const config: Config = {
         'gradient-techGrey': 'linear-gradient(180deg, #1c1c1c, #2a2a2a)'
       },
       colors: {
+        //To clean
         techGrey: 'hsl(0, 0%, 11%)',
         primaryText: 'hsl(6, 0%, 83%)',
         techBlue: 'hsl(170, 35%, 74%)',
