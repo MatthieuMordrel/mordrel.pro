@@ -18,7 +18,7 @@ const childVariant = {
 export const ProcessCard: React.FC<ProcessCardProps> = ({ icon: Icon, title, description, borderColor }) => (
   <motion.article
     variants={childVariant}
-    className={`group relative flex items-start rounded-lg border-gray-800 bg-paneGrey p-6 shadow-sm outline-2 hover:outline ${borderColor}`}
+    className={`group relative flex items-start rounded-lg border-gray-800 bg-paneGrey p-6 shadow-sm outline-2  ${borderColor}`}
   >
     <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full">
       <Icon className="h-6 w-6" />
