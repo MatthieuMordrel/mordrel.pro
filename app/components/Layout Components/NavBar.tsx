@@ -1,5 +1,5 @@
 'use client'
-import ShimmerButton from '@/components/ui/ShimmerButton'
+import { Button } from '@/components/ui/button'
 import { BarChart, FileCode, FileSpreadsheet, Webhook } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -100,8 +100,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex h-full w-full items-center justify-end">
-          <Link href="/contact" className={getLinkClasses('/contact', 'mr-4 font-medium')}>
-            <ShimmerButton label={'Contact'} className="" />
+          <Link href="/contact" className="mr-6" passHref>
+            <Button variant="outline" className='text-black w-28 '>Contact</Button>
           </Link>
         </div>
       </div>
