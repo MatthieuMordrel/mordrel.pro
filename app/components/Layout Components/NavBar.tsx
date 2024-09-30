@@ -84,7 +84,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div
-              className={`absolute -ml-3 mt-2 w-48 rounded-lg border-2 border-borderGrey py-3 shadow-lg transition-all duration-300 ease-in-out ${isDropdownOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-[-10px] opacity-0'}`}
+              className={`absolute -ml-3 mt-2 w-48 rounded-lg border-2 bg-background border-borderGrey py-3 shadow-lg transition-all duration-300 ease-in-out ${isDropdownOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-[-10px] opacity-0'}`}
             >
               {links.map((link, index) => (
                 <Link key={index} href={link.href} className={getLinkClasses(link.href, 'flex items-center px-4 py-1')}>
