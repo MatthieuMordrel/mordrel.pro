@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/lib/ThemeProvider'
 import { DataProvider } from '@lib/dataContext'
 import { cn } from '@lib/utils'
 import '@styles/animation.css'
@@ -40,15 +41,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" translate="no">
-      <body className={cn('min-h-screen min-w-[100vw] overflow-x-hidden bg-techGrey font-geist text-primaryText', GeistSans.variable)}>
-        <DataProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </DataProvider>
-        <Analytics />
-        <SpeedInsights />
-      </body>
+        <body className={cn('min-h-screen min-w-[100vw] overflow-x-hidden bg-background font-geist text-foreground', GeistSans.variable)}>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false}>
+          <DataProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </DataProvider>
+          <Analytics />
+          <SpeedInsights />
+      </ThemeProvider>
+        </body>
     </html>
   )
 }

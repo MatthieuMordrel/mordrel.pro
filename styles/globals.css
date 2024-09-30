@@ -4,26 +4,22 @@
 
 /* Base  */
 @layer base {
-  /* body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-  } */
-
-  .text-balance {
-    text-wrap: balance;
+  /* Define a CSS variable radius */
+  :root {
+    --radius: 0.5rem;
+  }
+  body {
+    text-wrap: pretty;
+    letter-spacing: -0.03em;
+    /* color: rgb(var(--foreground-rgb)); */
+    /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
   }
   /* Remove Opera Lucid Mode */
   #detach-button-host {
     display: none;
   }
-  :root {
-    --radius: 0.5rem;
-  }
 }
 
 /* Standard classes to use sparingly */
 @layer components {
-  .pane {
-    @apply rounded-xl bg-gradient-to-b from-paneGrey to-paneGrey;
-  }
 }

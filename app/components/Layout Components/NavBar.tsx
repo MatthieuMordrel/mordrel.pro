@@ -69,10 +69,12 @@ const Navbar = () => {
   `.trim()
 
   return (
-    <nav className="sticky top-0 z-50 h-16 border-b-2 border-borderGrey bg-techGrey">
+    <nav className="sticky top-0 z-50 h-16 border-b-2 border-borderGrey bg-background">
       <div className="relative grid h-full w-full grid-cols-[auto_auto_auto] items-center sm:grid-cols-3">
         <div className="flex h-full w-full items-center gap-x-4">
-          <div className="">{/* Logo */}</div>
+          <div className="">
+            {/* <DarkModeToggle /> */}
+            </div>
         </div>
         <div className="flex w-full items-center justify-center gap-4 sm:gap-14">
           <div ref={dropdownRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -82,7 +84,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div
-              className={`absolute -ml-3 mt-2 w-48 rounded-lg border-2 border-borderGrey bg-techGrey py-3 shadow-lg transition-all duration-300 ease-in-out ${isDropdownOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-[-10px] opacity-0'}`}
+              className={`absolute -ml-3 mt-2 w-48 rounded-lg border-2 border-borderGrey py-3 shadow-lg transition-all duration-300 ease-in-out ${isDropdownOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-[-10px] opacity-0'}`}
             >
               {links.map((link, index) => (
                 <Link key={index} href={link.href} className={getLinkClasses(link.href, 'flex items-center px-4 py-1')}>

@@ -4,25 +4,27 @@ import plugin from 'tailwindcss/plugin'
 import type { PluginAPI } from 'tailwindcss/types/config'
 
 const config: Config = {
-    darkMode: ['class'],
+    darkMode: ['selector'],
     content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
   	extend: {
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-  			'gradient-techGrey': 'linear-gradient(180deg, #1c1c1c, #2a2a2a)'
+  			'gradient-background': 'linear-gradient(180deg, #1c1c1c, #2a2a2a)',
+			'gradient-tech-to-white': 'linear-gradient(to bottom right, hsl(170, 35%, 74%), white)',
   		},
   		colors: {
-  			techGrey: 'hsl(0, 0%, 11%)',
-  			primaryText: 'hsl(6, 0%, 83%)',
-  			techBlue: 'hsl(170, 35%, 74%)',
+			background: 'hsl(0, 0%, 11%)',
+  			foreground: 'hsl(6, 0%, 83%)',			
+			techBlue: 'hsl(170, 35%, 74%)',
   			techPurple: 'hsl(315, 12%, 57%)',
   			borderGrey: 'hsl(0, 0%, 15%)',
   			paneGrey: 'hsl(0, 0%, 14%)',
   			textGrey: 'hsl(0, 0%, 40%)',
   			activeBorderGrey: 'hsl(0, 0%, 26%)'
   		},
+	
   		screens: {
   			'3xl': '2000px'
   		},
@@ -111,8 +113,14 @@ const config: Config = {
           lineHeight: 'clamp(2rem, 0.464rem + 1.429vw, 3rem)'
         },
         '.titleResponsive': {
-          fontSize: 'clamp(1.5rem, 0.429rem + 2.857vw, 3rem)'
+          fontSize: 'clamp(1.5rem, 0.429rem + 2.857vw, 3rem)',
+		  lineHeight: "1",
         },
+		'.whiteToGrey': {
+			backgroundClip: 'text',
+			color: 'transparent',
+			backgroundImage: 'linear-gradient(to right, #e5e7eb, #d1d5db)',
+		},
         '.svgTextStyling': {
           fontWeight: '600',
           fontFamily: 'var(--font-bitter)',

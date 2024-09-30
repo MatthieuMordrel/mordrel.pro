@@ -3,7 +3,7 @@ import 'tailwindcss/tailwind'
 
 declare module 'tailwindcss/tailwind' {
   export interface DefaultColors {
-    techGrey: string
+    background: string
     techBlue: string
     techGreen: string
     techOrange: string

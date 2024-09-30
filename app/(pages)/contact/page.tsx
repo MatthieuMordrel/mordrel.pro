@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 // Contact page
 export default function ContactPage() {
   return (
-    <main className="grid min-h-[100vh] grid-rows-[auto_auto_auto_auto_auto] gap-y-4 bg-techGrey px-5">
+    <main className="grid min-h-[100vh] grid-rows-[auto_auto_auto_auto_auto] gap-y-4 px-5">
       <FadeInEffect>
         <ContactText className="pt-8 text-center" />
       </FadeInEffect>

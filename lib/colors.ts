@@ -4,10 +4,10 @@ import config from '../tailwind.config'
 const fullConfig = resolveConfig(config)
 
 interface ExtendedColors {
-  techGrey: string
+  background: string
   techPurple: string
   techBlue: string
-  primaryText: string
+  foreground: string
   techGreen: string
   techOrange: string
   techYellow: string

@@ -8,7 +8,7 @@ const AutomationPane = () => {
       <section className="grid h-full flex-1 grid-cols-1 grid-rows-[auto_1fr] gap-y-2 p-4 md:grid-cols-2 md:grid-rows-[auto_1fr]">
         <header className="col-span-full row-span-1 flex h-auto w-full flex-col justify-center gap-y-2 text-center">
           <TextHighlight className="titleResponsive">Automate your processes</TextHighlight>
-          <p className="hidden text-balance text-base tracking-tight sm:block sm:text-lg md:text-xl">
+          <p className="hidden text-base tracking-tight sm:block sm:text-lg md:text-xl">
             Ensure your business stays connected during all parts of its processes.
           </p>
         </header>
