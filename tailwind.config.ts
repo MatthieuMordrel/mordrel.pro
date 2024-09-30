@@ -4,7 +4,7 @@ import plugin from 'tailwindcss/plugin'
 import type { PluginAPI } from 'tailwindcss/types/config'
 
 const config: Config = {
-    darkMode: ['selector'],
+    darkMode: ['class'],
     content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
   	extend: {

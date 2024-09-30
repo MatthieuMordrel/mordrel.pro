@@ -40,9 +40,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" translate="no">
+    <html lang="en" translate="no" className='dark'>
         <body className={cn('min-h-screen min-w-[100vw] overflow-x-hidden bg-background font-geist text-foreground', GeistSans.variable)}>
-        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false}>
+        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false} forcedTheme="dark">
           <DataProvider>
             <Navbar />
             {children}
