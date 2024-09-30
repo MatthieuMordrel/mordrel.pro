@@ -2,21 +2,21 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import {
-    Area,
-    AreaChart,
-    Bar,
-    BarChart,
-    Line,
-    LineChart,
-    PolarAngleAxis,
-    PolarGrid,
-    Radar,
-    RadarChart,
-    ResponsiveContainer,
-    Tooltip,
-    TooltipProps,
-    XAxis,
-    YAxis
+  Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  Line,
+  LineChart,
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+  Tooltip,
+  TooltipProps,
+  XAxis,
+  YAxis
 } from 'recharts';
 
 // Updated interface for the data
@@ -44,7 +44,7 @@ const mockData: DataPoint[] = [
   { month: 'Dec', softwareSales: 3800, hardwareSales: 5000, serviceSales: 2800, digitalSales: 4200 },
 ]
 
-const chartTypes = ['area', 'radar','stackedBar', 'line', 'bar'] as const
+const chartTypes = ['area', 'stackedBar', 'line', 'bar', 'radar'] as const
 type ChartType = typeof chartTypes[number]
 
 // Function to generate HSL color with a given hue

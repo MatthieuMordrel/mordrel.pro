@@ -1,5 +1,5 @@
 'use client'
-import ShimmerButton from '@ui/Components/Aceternity/ShimmerButton'
+import ShimmerButton from '@/components/ui/ShimmerButton'
 import { BarChart, FileCode, FileSpreadsheet, Webhook } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

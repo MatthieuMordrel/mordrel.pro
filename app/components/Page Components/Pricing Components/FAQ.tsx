@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Components/Shadcn/AccordionComp'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/AccordionComp"
 
 export default function FAQ({ className }: { className?: string }) {
   const faqData = [
