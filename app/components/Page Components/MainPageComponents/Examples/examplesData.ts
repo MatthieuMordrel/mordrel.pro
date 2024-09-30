@@ -27,21 +27,21 @@ export const examplesData: ExamplesData = {
     // Data Visualization
     [
       {
+        icon: BarChartIcon,
+        title: 'Power BI Expertise',
+        description: 'Track main KPIs, compare performance across regions, forecast trends and more with interactive Power BI dashboards'
+      },
+      {
+        icon: LineChartIcon,
+        title: 'Excel visualisations',
+        description: 'Ensure the performance of your Excel visualisations, minimize refresh time and create advanced visuals for your needs.'
+      },
+      {
         icon: Brush,
         title: 'Custom visualisation',
         description:
         'Give life to any visualisation through custom javascript-based and library-based visuals without being limited by standard tools.'
       },
-      {
-        icon: LineChartIcon,
-        title: 'Excel visualisations',
-        description: 'Create advanced Excel visuals and ensure minimizing the performance impact on your files.'
-      },
-      {
-        icon: BarChartIcon,
-        title: 'Sales & Financial Dashboards',
-        description: 'Track main KPIs, compare performance across regions, and forecast trends with interactive Power BI dashboards'
-      }
     ],
       // Automation
       [
