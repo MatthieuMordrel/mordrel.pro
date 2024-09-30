@@ -15,45 +15,27 @@ type ExamplesData = {
 
 // Export the data
 export const examplesData: ExamplesData = {
-  processTitles: ['Automation Solutions', 'Data Visualization', 'Custom Development'],
+  processTitles: ['Data Visualization','Automation Solutions', 'Custom Development'],
 
   processDescriptions: [
-    'Eliminate manual work; automate for efficiency and accuracy.',
     'Explore and analyze your data with powerful visualization.',
+    'Eliminate manual work; automate for efficiency and accuracy.',
     'Need a specific service that does not fit in any category ?'
   ],
 
   processSteps: [
-    // Automation
-    [
-      {
-        icon: RefreshCcw,
-        title: 'Automate your reports',
-        description: 'Generate insightful financial reports by extracting, cleaning and formatting data from various sources.'
-      },
-      {
-        icon: MonitorCheck,
-        title: 'HR Onboarding',
-        description: 'Automate the creation of employee records in HR systems and send welcome emails or documentation to new hires.'
-      },
-      {
-        icon: UserRoundCheck,
-        title: 'Customer Service Automation',
-        description: 'Automate the handling of customer emails by reading, categorizing, and responding. Update data accodingly in your CRM.'
-      }
-    ],
     // Data Visualization
     [
-      {
-        icon: LineChartIcon,
-        title: 'Excel visualisations',
-        description: 'Create advanced Excel visuals and ensure minimizing the performance impact on your files.'
-      },
       {
         icon: Brush,
         title: 'Custom visualisation',
         description:
-          'Give life to any visualisation through custom javascript-based and library-based visuals without being limited by standard tools.'
+        'Give life to any visualisation through custom javascript-based and library-based visuals without being limited by standard tools.'
+      },
+      {
+        icon: LineChartIcon,
+        title: 'Excel visualisations',
+        description: 'Create advanced Excel visuals and ensure minimizing the performance impact on your files.'
       },
       {
         icon: BarChartIcon,
@@ -61,12 +43,30 @@ export const examplesData: ExamplesData = {
         description: 'Track main KPIs, compare performance across regions, and forecast trends with interactive Power BI dashboards'
       }
     ],
+      // Automation
+      [
+        {
+          icon: RefreshCcw,
+          title: 'Automate your reports',
+          description: 'Generate insightful financial reports by extracting, cleaning and formatting data from various sources.'
+        },
+        {
+          icon: MonitorCheck,
+          title: 'HR Onboarding',
+          description: 'Automate the creation of employee records in HR systems and send welcome emails or documentation to new hires.'
+        },
+        {
+          icon: UserRoundCheck,
+          title: 'Customer Service Automation',
+          description: 'Automate the handling of customer emails by reading, categorizing, and responding. Update data accodingly in your CRM.'
+        }
+      ],
     // Custom Development
     [
       {
         icon: ScrollText,
         title: 'API integration',
-        description: 'Remove manual work by using programatic language to retrieve data from your software.'
+        description: 'Integrate any APIs, add concurrrency and ensure your data is always up to date.'
       },
       {
         icon: CircleGauge,

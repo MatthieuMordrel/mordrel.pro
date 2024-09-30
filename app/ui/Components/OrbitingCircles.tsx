@@ -21,7 +21,7 @@ export default function OrbitingCircles({
     <>
       {path && (
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" className="pointer-events-none absolute inset-0 h-full w-full">
-          <circle className="stroke-black/10 stroke-1 dark:stroke-white/10" cx="50%" cy="50%" r={radius} fill="none" strokeDasharray={'4 4'} />
+          <circle className="stroke-white/10 stroke-1 dark:stroke-white/10" cx="50%" cy="50%" r={radius} fill="none" strokeDasharray={'4 4'} />
         </svg>
       )}
 

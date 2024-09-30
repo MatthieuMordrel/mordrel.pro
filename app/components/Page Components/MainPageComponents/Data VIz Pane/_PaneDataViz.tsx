@@ -6,7 +6,6 @@ import ButtonsCharts from './ButtonsCharts'
 import ButtonsPeriod from './ButtonsPeriod'
 import ButtonsStocks from './ButtonsStocks'
 import { LineChartFinancials } from './LineChartFinancials'
-import { div } from 'three/webgpu'
 
 export const PaneDataViz = () => {
   return (
@@ -17,7 +16,7 @@ export const PaneDataViz = () => {
           <HighlightedSentenceContent
             className="pb-1"
             HighlightedSentence="Don't let your data sleep."
-            MainContent="Unlock your potential of data visualization to maximize your business insights. We specialize in crafting intuitive visual representations that enhance decision-making and highlight key metrics."
+            MainContent="Unlock your potential of data visualization to extract hidden business insights. We specialize in crafting intuitive visual representations that enhance decision-making and drive growth."
           />
         </div>
         <BulletPoints className="ml-3 hidden lg:self-end" />
