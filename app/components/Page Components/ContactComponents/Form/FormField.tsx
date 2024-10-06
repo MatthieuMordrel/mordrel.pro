@@ -5,12 +5,7 @@ import { cva, VariantProps } from 'class-variance-authority'
 import React, { useState } from 'react'
 
 const fieldStyles = cva(
-  [
-    'neon-slate',
-    'flex w-full rounded-md border bg-paneGrey px-3 text-sm ring-offset-background transition',
-    'focus:outline-none',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
-  ],
+  ['neon-slate', 'flex w-full rounded-md border bg-paneGrey px-3 text-sm ring-offset-background transition', 'focus:outline-none'],
   {
     variants: {
       touched: { true: 'invalid:border-[hsl(0,70%,80%,0.5)] invalid:neon-[hsl(0,70%,80%,0.5)]' },

@@ -5,9 +5,9 @@ const fullConfig = resolveConfig(config)
 
 interface ExtendedColors {
   background: string
+  foreground: string
   techPurple: string
   techBlue: string
-  foreground: string
   techGreen: string
   techOrange: string
   techYellow: string

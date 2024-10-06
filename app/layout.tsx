@@ -20,18 +20,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' }
     ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
     other: [
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#5bbad5' },
       { rel: 'icon', url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
+      { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+    ]
   },
-  manifest: '/site.webmanifest',
+  manifest: '/site.webmanifest'
 }
 
 export default function RootLayout({
@@ -40,9 +38,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" translate="no" className='dark'>
-        <body className={cn('min-h-screen min-w-[100vw] overflow-x-hidden bg-background font-geist text-foreground', GeistSans.variable)}>
-        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false} forcedTheme="dark">
+    <html lang="en" translate="no" className="dark">
+      <body className={cn('min-h-screen min-w-[100vw] overflow-x-hidden bg-background font-geist text-foreground', GeistSans.variable)}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
           <DataProvider>
             <Navbar />
             {children}
@@ -50,8 +48,8 @@ export default function RootLayout({
           </DataProvider>
           <Analytics />
           <SpeedInsights />
-      </ThemeProvider>
-        </body>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

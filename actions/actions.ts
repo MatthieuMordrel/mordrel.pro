@@ -1,7 +1,6 @@
 'use server'
 
 import sendgrid from '@sendgrid/mail'
-import { revalidatePath } from 'next/cache'
 
 const apiKey = process.env.SENDGRID_API_KEY
 if (!apiKey) {
@@ -46,7 +45,7 @@ export async function sendEmail(prevState: any, formData: FormData) {
   try {
     // console.log('Entered the try block')
     await sendgrid.send(msg)
-    revalidatePath('/contact')
+    // revalidatePath('/contact')
     return { message: 'Thank you! Your message has been sent successfully !' }
   } catch (error: unknown) {
     console.error('SendGrid error:', error)
