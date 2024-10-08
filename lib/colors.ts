@@ -8,9 +8,6 @@ interface ExtendedColors {
   foreground: string
   techPurple: string
   techBlue: string
-  techGreen: string
-  techOrange: string
-  techYellow: string
   borderGrey: string
   paneGrey: string
   textGrey: string

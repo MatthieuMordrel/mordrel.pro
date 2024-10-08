@@ -1,3 +1,4 @@
+import { colors } from '@/lib/colors'
 import { motion } from 'framer-motion'
 import { useFormStatus } from 'react-dom'
 
@@ -13,7 +14,7 @@ export default function ButtonSubmit({ className = '' }: ButtonSubmitProps) {
       type="submit"
       className={`relative w-full overflow-hidden rounded-lg px-8 py-4 text-lg font-semibold text-background transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-techBlue/50 disabled:cursor-not-allowed disabled:opacity-50 ${className} `}
       style={{
-        background: `linear-gradient(135deg, hsl(170, 35%, 74%) 0%, hsl(315, 12%, 57%) 100%)`
+        background: `linear-gradient(135deg, ${colors.techBlue} 0%, ${colors.techPurple} 100%)`
       }}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
