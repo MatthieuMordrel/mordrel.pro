@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/AccordionComp"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
 export default function FAQ({ className }: { className?: string }) {
   const faqData = [
@@ -27,7 +27,7 @@ export default function FAQ({ className }: { className?: string }) {
     }
   ]
   return (
-    <section className={className} id="FAQ">
+    <section id="FAQ">
       <h2 className="py-4 text-center text-2xl font-bold">Frequently Asked Questions</h2>
       <Accordion type="single" collapsible className="w-full">
         {faqData.map((item) => (

@@ -23,7 +23,6 @@ const config: Config = {
         paneGrey: 'hsl(0, 0%, 14%)',
         activeBorderGrey: 'hsl(0, 0%, 26%)'
       },
-
       screens: {
         '3xl': '2000px'
       },

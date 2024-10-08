@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const Pricing = () => {
   return (
-    <main className="flex min-h-screen flex-col space-y-12  px-8">
+    <main className="flex min-h-screen flex-col space-y-12 px-8">
       <FadeInEffect>
         <Timeline />
       </FadeInEffect>

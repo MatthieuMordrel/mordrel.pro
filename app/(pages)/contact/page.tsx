@@ -20,7 +20,7 @@ export default function ContactPage() {
           <MailForm className="mb-3 w-full" />
           <section className="flex items-center justify-center gap-x-2">
             <Mail className="h-6 w-6"> </Mail>
-            <p className="text-[clamp(0.75rem,2vw,1rem)] font-normal">
+            <p className="textSmall font-normal">
               Or contact me at&nbsp;
               <a href="mailto:matthieu@mordrel.pro" target="_blank" className="underline">
                 matthieu@mordrel.pro
