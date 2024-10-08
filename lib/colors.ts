@@ -10,7 +10,6 @@ interface ExtendedColors {
   techBlue: string
   borderGrey: string
   paneGrey: string
-  textGrey: string
   // Add other color properties as needed
 }
 

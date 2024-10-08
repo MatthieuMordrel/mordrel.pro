@@ -21,7 +21,6 @@ const config: Config = {
         techPurple: 'hsl(350, 35%, 74%)',
         borderGrey: 'hsl(0, 0%, 15%)',
         paneGrey: 'hsl(0, 0%, 14%)',
-        textGrey: 'hsl(0, 0%, 40%)',
         activeBorderGrey: 'hsl(0, 0%, 26%)'
       },
 

@@ -12,7 +12,7 @@ export default function ButtonSubmit({ className = '' }: ButtonSubmitProps) {
   return (
     <motion.button
       type="submit"
-      className={`relative w-full overflow-hidden rounded-lg px-8 py-4 text-lg font-semibold text-background transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-techBlue/50 disabled:cursor-not-allowed disabled:opacity-50 ${className} `}
+      className={`relative w-full overflow-hidden rounded-lg px-8 py-3 text-lg font-semibold text-background transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-techBlue/50 disabled:cursor-not-allowed disabled:opacity-50 ${className} `}
       style={{
         background: `linear-gradient(135deg, ${colors.techBlue} 0%, ${colors.techPurple} 100%)`
       }}

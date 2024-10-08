@@ -11,7 +11,6 @@ declare module 'tailwindcss/tailwind' {
     techYellow: string
     borderGrey: string
     paneGrey: string
-    textGrey: string
     activeBorderGrey: string
   }
 }

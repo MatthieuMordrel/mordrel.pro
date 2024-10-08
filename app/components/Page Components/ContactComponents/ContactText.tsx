@@ -1,10 +1,14 @@
-import { MailIconAnimated } from './IconMail'
+import { cn } from '@/lib/utils'
 
 const ContactText = ({ className = '', ...props }) => {
   return (
-    <header className={`relative flex items-center justify-center ${className}`} {...props}>
-      <h1 className="text-[clamp(1.4rem,2vw+1rem,2.5rem)] font-extrabold text-white md:tracking-wide">Ensure the future of your business today</h1>
-      <MailIconAnimated className="-right-[clamp(4.5rem,5vw,4.5rem)] hidden h-[clamp(4.5rem,10vw,6rem)] sm:block" />
+    <header className={cn('relative flex flex-col gap-y-2', className)} {...props}>
+      <div className="flex items-center">
+        {/* <h1 className="textMedium bg-gradient-to-r from-techBlue to-techPurple bg-clip-text font-extrabold text-transparent md:tracking-wide"> */}
+        <h1 className="textMedium font-extrabold md:tracking-wide">Get in Touch</h1>
+        {/* <MailIconAnimated className="-right-[clamp(4.5rem,5vw,4.5rem)] hidden h-[clamp(4.5rem,10vw,6rem)] sm:block" /> */}
+      </div>
+      <p className="text-start text-gray-400">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
     </header>
   )
 }
