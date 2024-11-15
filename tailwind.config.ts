@@ -6,6 +6,11 @@ import type { PluginAPI } from 'tailwindcss/types/config'
 const config: Config = {
   darkMode: ['class'],
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
+  safelist: [
+    'neon-slate',
+    'invalid:border-[hsl(0,70%,80%,0.5)] invalid:neon-[hsl(0,70%,80%,0.5)]',
+    'border-[hsl(140,70%,80%,0.5)] neon-[hsl(140,70%,80%,0.5)]'
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -92,6 +97,9 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)'
       }
     }
+  },
+  future: {
+    hoverOnlyWhenSupported: true
   },
   plugins: [
     plugin(function ({ theme, addComponents }: PluginAPI) {
