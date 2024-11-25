@@ -13,7 +13,7 @@ export const MainPaneText: React.FC = () => {
       </div>
       <div className="mx-auto w-full max-w-sm space-y-2 lg:mx-0">
         <Link href="https://calendly.com/matthieumordrel/introduction" passHref>
-          <Button className="w-full bg-gray-200 text-gray-900 hover:bg-gray-300" size="lg">
+          <Button variant="default" className="w-72" size="lg">
             Get a Free Consultation
           </Button>
         </Link>

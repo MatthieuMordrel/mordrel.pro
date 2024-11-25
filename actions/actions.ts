@@ -9,6 +9,7 @@ if (!apiKey) {
 sendgrid.setApiKey(apiKey)
 
 // Send email function
+// This function receives the form data because it is called by useFormState
 export async function sendEmail(prevState: any, formData: FormData) {
   // console.log(formData)
   const firstName = formData.get('firstName') as string

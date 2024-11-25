@@ -8,3 +8,6 @@ ffmpeg -i PurpleVideo.mp4 -vf scale=1280:720 -c:v libx265 -crf 26 -preset verysl
 
 
 ffmpeg -i PurpleVideo.mp4 -vf scale=854:480 -c:v libx265 -crf 28 -preset medium -x265-params me=2:subme=4:rd=4:ref=4:b-adapt=2:rc-lookahead=40:aq-mode=2 -r 30 -an output_480p_30fps_mobile_noaudio.mp4
+
+//Create poster
+ffmpeg -i https://atwtabp83g2jwfsy.public.blob.vercel-storage.com/output_720p_30fps_crf23_h264_max_compression-ejYRM9VbGOwrs4t1mSmBkf3ruh5zRJ.mp4 -vframes 1 -q:v 2 poster_720p.webp

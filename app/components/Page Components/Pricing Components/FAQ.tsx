@@ -29,9 +29,10 @@ export default function FAQ({ className }: { className?: string }) {
   return (
     <section id="FAQ">
       <h2 className="py-4 text-center text-2xl font-bold">Frequently Asked Questions</h2>
+      {/* If animation is not working, ensure tailwind is properly scanning this file in the content prop, or add the classes to safelist */}
       <Accordion type="single" collapsible className="w-full">
         {faqData.map((item) => (
-          <AccordionItem value={item.id} className="whitespace-pre-line border-b border-paneGrey" key={item.id}>
+          <AccordionItem value={item.id} key={item.id} className="border-b border-paneGrey px-4">
             <AccordionTrigger>{item.question}</AccordionTrigger>
             <AccordionContent>{item.answer}</AccordionContent>
           </AccordionItem>

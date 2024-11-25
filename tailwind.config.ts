@@ -1,11 +1,12 @@
 import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
 import type { PluginAPI } from 'tailwindcss/types/config'
 
 const config: Config = {
   darkMode: ['class'],
-  content: ['./app/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   safelist: [
     'neon-slate',
     'invalid:border-[hsl(0,70%,80%,0.5)] invalid:neon-[hsl(0,70%,80%,0.5)]',
@@ -20,27 +21,53 @@ const config: Config = {
         'gradient-tech-to-white': 'linear-gradient(to bottom right, hsl(170, 35%, 74%), white)'
       },
       colors: {
-        background: 'hsl(0, 0%, 11%)',
-        foreground: 'hsl(6, 0%, 83%)',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         techBlue: 'hsl(170, 35%, 74%)',
         techPurple: 'hsl(350, 35%, 74%)',
         borderGrey: 'hsl(0, 0%, 15%)',
         paneGrey: 'hsl(0, 0%, 14%)',
-        activeBorderGrey: 'hsl(0, 0%, 26%)'
+        activeBorderGrey: 'hsl(0, 0%, 26%)',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))'
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))'
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))'
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))'
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))'
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))'
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))'
+        },
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+        radius: 'var(--radius)',
+        chart1: 'var(--chart1)',
+        chart2: 'var(--chart2)',
+        chart3: 'var(--chart3)',
+        chart4: 'var(--chart4)',
+        chart5: 'var(--chart5)'
       },
       screens: {
         '3xl': '2000px'
-      },
-      animation: {
-        'border-spin': 'keyframe-border-spin 10s linear infinite',
-        'smooth-spin': 'keyframes-smooth-spin 10s linear infinite',
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        orbit: 'orbit calc(var(--duration)*1s) linear infinite',
-        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-        'sliding-in': 'keyframe-sliding-in ',
-        bounce1: 'bounceWithDelay 1s infinite',
-        shimmer: 'shimmer 2s linear infinite'
       },
       keyframes: {
         'accordion-down': {
@@ -80,6 +107,17 @@ const config: Config = {
             backgroundPosition: '-200% 0'
           }
         }
+      },
+      animation: {
+        'border-spin': 'border-spin 10s linear infinite',
+        'smooth-spin': 'smooth-spin 10s linear infinite',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        orbit: 'orbit calc(var(--duration)*1s) linear infinite',
+        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+        'sliding-in': 'sliding-in 0.5s ease-in-out',
+        bounce1: 'bounceWithDelay 1s infinite',
+        shimmer: 'shimmer 2s linear infinite'
       },
       fontFamily: {
         bitter: ['var(--font-bitter)', 'serif'],
@@ -161,7 +199,7 @@ const config: Config = {
 
       matchUtilities(neonUtilities, neonOptions)
     }),
-    require('tailwindcss-animate')
+    tailwindcssAnimate
   ]
 }
 export default config
